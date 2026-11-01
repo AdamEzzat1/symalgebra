@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algebra Steps</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Algebra steps</h1>
+
+  <section id="intro">
+    <p>This is a test of typing algebra steps on a screen. It is for adults aged 18 or over.</p>
+    <p>You will work through ten short equations, one line at a time. Each line is checked when you press Check.</p>
+    <p>What you type goes to the server to be checked and is not saved there. The hosting service can see your IP address and your steps. At the end you choose whether to send a summary, which holds counts and the shape of any lines that failed, not what you typed.</p>
+    <label for="code">Code from the person running this test</label>
+    <input id="code" maxlength="12" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <button id="begin" type="button">Start</button>
+    <p id="intro-note" class="note" hidden></p>
+  </section>
+
+  <section id="work" hidden>
+    <p id="progress" class="note"></p>
+    <p id="worked" class="panel" hidden></p>
+    <ol id="lines"></ol>
+
+    <form id="entry" autocomplete="off">
+      <label for="line">Next line</label>
+      <div class="row">
+        <input id="line" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="256">
+        <button id="check" type="submit">Check</button>
+      </div>
+    </form>
+    <div id="keys" class="keys" aria-label="Symbols"></div>
+
+    <div id="reply" aria-live="polite">
+      <p id="echo-row" hidden>Read as <code id="echo"></code> <button id="not-meant" type="button" class="quiet">Not what I meant</button></p>
+      <p id="message"></p>
+      <button id="show-why" type="button" class="quiet" hidden>Show why</button>
+      <p id="why" hidden></p>
+    </div>
+
+    <div class="row wrap">
+      <button id="claim-none" type="button" class="quiet">No solution</button>
+      <button id="claim-all" type="button" class="quiet">All real numbers</button>
+      <button id="hint" type="button" class="quiet">Hint</button>
+    </div>
+    <p id="hint-text" class="panel" hidden></p>
+
+    <div class="row wrap">
+      <button id="next" type="button" hidden>Next problem</button>
+      <button id="stop" type="button" class="quiet">Stop here</button>
+    </div>
+  </section>
+
+  <section id="end" hidden>
+    <p>That is the end of the test. Thank you.</p>
+    <p>Below is the summary. It holds your code, counts, and the shape of any lines that failed. Please copy it and send it to the person running the test.</p>
+    <button id="copy" type="button">Copy</button>
+    <p id="copy-note" class="note" hidden></p>
+    <label for="summary">Summary</label>
+    <textarea id="summary" rows="10" readonly></textarea>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

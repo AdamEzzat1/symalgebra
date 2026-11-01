@@ -1,0 +1,3 @@
+[
+  {"name": "wrong root called equivalent", "problem": "lin-10", "previous": "2x = 6", "text": "x = 4", "expect": "equivalent"}
+]

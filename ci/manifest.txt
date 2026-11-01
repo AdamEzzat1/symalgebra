@@ -1,5 +1,7 @@
 repo ran=1 passed=1
 lisp ran=4 passed=4
 prolog ran=2 passed=2
-sabotage ran=4 passed=4
+m1 ran=126 passed=126
+sabotage ran=5 passed=5
+checker ran=98 passed=98
 lean ran=4 passed=4

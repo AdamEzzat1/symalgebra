@@ -1,0 +1,10 @@
+{"v": 1, "code": "SAMPLE", "problems": [
+  {"position": 0, "id": "lin-01", "kind": "worked", "attempts": 9, "claims": 0, "input_failures": 9, "intermediate_lines": 1, "bottom_out": false, "solved": true},
+  {"position": 1, "id": "lin-02", "kind": "single", "attempts": 4, "claims": 0, "input_failures": 4, "intermediate_lines": 0, "bottom_out": false, "solved": true},
+  {"position": 2, "id": "lin-10", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 3, "intermediate_lines": 1, "bottom_out": false, "solved": true},
+  {"position": 3, "id": "lin-11", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 0, "intermediate_lines": 1, "bottom_out": false, "solved": true},
+  {"position": 4, "id": "lin-12", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 0, "intermediate_lines": 1, "bottom_out": false, "solved": true},
+  {"position": 5, "id": "lin-13", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 1, "intermediate_lines": 2, "bottom_out": false, "solved": true},
+  {"position": 6, "id": "lin-14", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 0, "intermediate_lines": 2, "bottom_out": false, "solved": true},
+  {"position": 7, "id": "lin-15", "kind": "multi", "attempts": 3, "claims": 0, "input_failures": 0, "intermediate_lines": 0, "bottom_out": true, "solved": true}
+]}

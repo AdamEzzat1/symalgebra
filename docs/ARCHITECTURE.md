@@ -117,7 +117,7 @@ smoke test), `lean/` (toolchain, manifest, one theorem), `.github/workflows/`, `
 |---|---|---|
 | `config` | 2 min | Reads `lean_required`; computes the image cache key from the Dockerfile hash |
 | `build-test` | 20 min (a cold SBCL build took 771 s locally; cached runs are far shorter) | Digest-pinned image builds or loads from the Actions cache; pins, exec bits, LF; Lisp test; swipl smoke; versions printed |
-| `lean` | 30 min cold, until measured | Pinned Mathlib fetch; trivial theorem; `#print axioms`; `sorry` and axiom fixtures fail |
+| `lean` | 30 min; measured about 2 min, with no `.lake` cache | Pinned Mathlib fetch; trivial theorem; `#print axioms`; `sorry` and axiom fixtures fail |
 | `sabotage` | 6 min | Each bad fixture fails with its expected message |
 | `gate` | 2 min | `if: always()`; every `needs` result is `success`, with `skipped` accepted for `lean` only when `lean_required` is false; ran and passed counts match a committed manifest |
 
@@ -164,6 +164,13 @@ Lean run above 15 minutes: pause Lean, tell the owner, continue M1 only if the o
   still can. This is input handling, not algebra truth.
 - Strict CSP, all files self-hosted, system fonts. Export is both Copy and a selectable
   read-only textarea, since `navigator.clipboard` fails on plain HTTP over a LAN.
+
+**Choices made while building.** 24 problems: one worked, eight single-operation, fifteen
+multi-operation, one with no solution and one true for all reals. A session is the worked example
+plus three single and six multi, so nine count. `no solution` and `all real numbers` have their own
+counter and are not attempts. Off the authored path, hints use general wording and the last level
+is the final line, which is a bottom-out like any other. The echo becomes the next `previous`, so
+a test requires every echo to parse back to the same meaning.
 
 **Rejection feedback.** Branch on the shape of both solution sets (∅, {r}, ℝ). The witness comes
 from `S_prev \ S_line`, otherwise `S_line \ S_prev`.
@@ -248,9 +255,9 @@ The brief wins until the owner agrees.
 
 ## 10. Unverified figures
 
-- All Lean timings and every Lean snippet. Lean has not been run here.
-- Mathlib cache size: about 7 GB from an April 2026 PR, against a 14 GB runner disk. Community
-  reports of 25-29 GB free are unchecked.
+- Lean is measured only on GitHub's runner, never on this machine. On the first green run the
+  selective cache was 824 files and about 4 GB, leaving 8.8 GB of the runner's disk free. The
+  April figure of 7 GB for a full cache does not apply to a selective fetch.
 - The swipl bridge figures are Windows only. Linux, `--cpus=0.1` and real rule costs are unmeasured.
 - Render: IP retention, DPA terms and no-card signup rest on secondary or partial sources.
 - The report's own flagged figures (RAND, WWC, Pane, ASSISTments test, gaming link) are not used.
