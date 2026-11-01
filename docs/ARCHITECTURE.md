@@ -1,8 +1,9 @@
 # SymAlgebra: Architecture
 
 Status 2026-11-01: M0 is complete. M1a is built and M1b, the adult sessions, is not yet run. M2 is
-complete. No engine exists yet, and M3 waits for the M1 gate. Numbers marked *measured* come from
-throwaway probes on the development Windows machine.
+complete. The M4 five-rule trial ran early, on the owner's ruling, and passed. No engine exists yet,
+and M3 waits for the M1 gate. Numbers marked *measured* come from throwaway probes on the development
+Windows machine.
 
 Students type their own algebra steps. The system checks each step by its meaning, says
 what rule was used where it can, and explains itself.
@@ -119,6 +120,26 @@ both sides, so the guard-necessity check removed it.
 **What Lean does not prove.** The Lisp implementation, parser, printer, generator, hints, or
 any learning benefit. AC matching and instantiation are not covered by schema theorems, only by
 per-solution certificates. "The engine is proven correct" must never be claimed.
+
+**Five-rule trial, 2026-11-01.** The owner chose to run it during stage A because it needs no engine
+and mostly survives an input redesign. [oracle/gen_lean.py](../oracle/gen_lean.py) generates the
+statements of `distribute`, `mul-zero`, `div-by-fraction`, `add-both` and `cross-multiply` from the
+rule file, and CI fails if they are stale. [Trial.lean](../lean/SymAlgebra/Trial.lean) proves all
+five, plus a witness refuting each of the three rules with its semantic guard dropped. Every proof
+uses only `propext`, `Classical.choice` and `Quot.sound`. A false distribution rule fails the same
+tactic script with `unsolved goals`.
+
+The Lean job took 1 min 49 s *measured* with the cached Mathlib subset: 82 s to fetch it, 10 s to
+build, 12 s to audit, and about 4 GB of disk. Three of the four runs needed to reach green failed on
+one line each, from an import that `ring` and the cast lemmas need. No statement changed.
+
+What the trial does not show:
+- 23 of the 40 rules can be stated today. The other 17 need `sub` (10), `eval` (5), `neg` (1) and an
+  expression-level implication form (1), so the model and generator must grow before scaling.
+- `Total` means "has a value at every x". The `total` guard's syntactic check is not modelled, so
+  nothing proves that the check implies this meaning.
+- The trial's five were chosen to vary in shape, so their cost is no estimate for the rest.
+- Lean stays off the required path. `lean_required` is false and the job runs on demand.
 
 ## 5. M0 plan: toolchain
 
