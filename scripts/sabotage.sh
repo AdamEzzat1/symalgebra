@@ -24,6 +24,10 @@ ln -sf "$(command -v sbcl)" /tmp/only-sbcl/sbcl
 expect_failure missing-tool "MISSING TOOL: swipl" env PATH=/tmp/only-sbcl /bin/sh scripts/versions.sh
 expect_failure short-manifest "MANIFEST MISMATCH" sh ci/check-manifest.sh "COUNT lisp ran=0 passed=0" ci/manifest.txt
 expect_failure m1-no-guards "FAIL division by a variable factor" env M1_SABOTAGE=sabotage/m1-no-guards.lisp sbcl --script scaffold/m1/tests/run.lisp
+# A server that logs what it reads must fail the log canary.
+sed 's/(let ((head (read-head stream)))/& (format t "~a" head) (finish-output)/' scaffold/m1/server.lisp     > scaffold/m1/server-logging.lisp
+expect_failure m1-logs-requests "FAIL canary no marker in the output" sbcl --script scaffold/m1/tests/canary.lisp scaffold/m1/server-logging.lisp
+rm -f scaffold/m1/server-logging.lisp
 
 echo "COUNT sabotage ran=$ran passed=$passed"
 [ "$ran" = "$passed" ]

@@ -5,10 +5,12 @@ set -eu
 fail=0
 bad() { echo "PIN CHECK: $1" >&2; fail=1; }
 
-grep -q "$SWIPL_IMAGE_DIGEST" Dockerfile || bad "Dockerfile swipl digest differs from tools.lock"
-grep -q "swipl:$SWIPL_VERSION@" Dockerfile || bad "Dockerfile swipl version differs from tools.lock"
-grep -q "$SBCL_TARBALL_SHA256" Dockerfile || bad "Dockerfile SBCL checksum differs from tools.lock"
-grep -q "sbcl-$SBCL_VERSION-" Dockerfile || bad "Dockerfile SBCL version differs from tools.lock"
+for image in Dockerfile deploy/site.Dockerfile; do
+    grep -q "$SWIPL_IMAGE_DIGEST" "$image" || bad "$image swipl digest differs from tools.lock"
+    grep -q "swipl:$SWIPL_VERSION@" "$image" || bad "$image swipl version differs from tools.lock"
+    grep -q "$SBCL_TARBALL_SHA256" "$image" || bad "$image SBCL checksum differs from tools.lock"
+    grep -q "sbcl-$SBCL_VERSION-" "$image" || bad "$image SBCL version differs from tools.lock"
+done
 [ "$(tr -d '\r\n' < lean/lean-toolchain)" = "$LEAN_TOOLCHAIN" ] || bad "lean-toolchain differs from tools.lock"
 grep -q "\"rev\": \"$MATHLIB_COMMIT\"" lean/lake-manifest.json || bad "lake-manifest Mathlib rev differs from tools.lock"
 

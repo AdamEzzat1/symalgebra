@@ -2,8 +2,9 @@
 
 Status 2026-11-01: M0 is complete. M1a is built and M1b, the adult sessions, is not yet run. M2 is
 complete. The M4 five-rule trial ran early, on the owner's ruling, and passed. M3 started on
-2026-11-01 before the M1 gate, also on the owner's ruling: M1 is unresolved, no stage A session has
-counted, and a failed gate could still force an input redesign. The M3 core is built and Tiers A, D, E
+2026-11-01 before the M1 gate, also on the owner's ruling: M1 is unresolved, one stage A session has
+passed on a computer, no phone session has run, and a failed gate could still force an input
+redesign. The M3 core is built and Tiers A, D, E
 and F pass, but M3 is not exited: its hosted latency gate has not been run. Numbers marked *measured*
 come from throwaway probes on the development Windows machine.
 
@@ -263,8 +264,9 @@ re-substitutes every counterexample. A reducer failure test runs first. This is 
 Tier E evidence.
 
 **Sessions (M1b, run by the owner).**
-- Stage A: 3 people observed on the owner's machine plus a test phone over LAN. Zero passes of 3
-  stops before stage B. Stage A cannot certify on its own.
+- Stage A: 3 people observed on the owner's machine. A test phone over LAN is optional on the
+  owner's ruling of 2026-11-01, which puts the website first. Zero passes of 3 stops before stage
+  B. Stage A cannot certify on its own.
 - Stage B: 5 rusty non-contacts in booked slots on a hosted URL. The owner wakes the host first;
   wake time is excluded and reported apart. A no-show who never starts is replaced; one who starts
   and stops is a non-pass.
@@ -275,6 +277,9 @@ presses Copy and sends it. The owner keeps no name-to-code map, transcribes per-
 deletes the messages and the bookings. Stage B conditions: no card, an 18+ statement, a notice
 that the host sees IPs and steps, section 2's limits in the scaffold, a log canary test on the
 hosted image, and the service suspended outside slots.
+
+**Look.** The page was restyled with CSS only after the first counted session, on the owner's
+ruling. Input, checking and counters did not change.
 
 **Measures.** Attempt: one Check on a non-empty line, or a line refused locally. Input failure:
 parser rejection, a line refused locally, or an accepted line flagged "not what I meant".
