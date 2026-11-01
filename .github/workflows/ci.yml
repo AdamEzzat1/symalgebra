@@ -1,0 +1,152 @@
+name: ci
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      run_lean:
+        description: Run the Lean job even when ci/lean_required is false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# An explicit shell turns on pipefail, so `| tee` cannot hide a failure.
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  config:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    outputs:
+      lean_required: ${{ steps.flag.outputs.lean_required }}
+      image_key: ${{ steps.flag.outputs.image_key }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: flag
+        run: |
+          echo "lean_required=$(cat ci/lean_required)" >> "$GITHUB_OUTPUT"
+          echo "image_key=image-$(sha256sum Dockerfile | cut -c1-32)" >> "$GITHUB_OUTPUT"
+
+  build-test:
+    needs: config
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    outputs:
+      counts: ${{ steps.test.outputs.counts }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: image
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: image.tar.gz
+          key: ${{ needs.config.outputs.image_key }}
+      - name: Load or build image
+        run: sh scripts/image.sh
+      - name: Pins, executable bits, line endings
+        run: sh scripts/check-repo.sh | tee repo.out
+      - id: test
+        name: Lisp and Prolog tests
+        run: |
+          sh scripts/in-image.sh scripts/run-tests.sh | tee test.out
+          {
+            echo 'counts<<EOF'
+            grep -h '^COUNT' repo.out test.out
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+  sabotage:
+    needs: [config, build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    outputs:
+      counts: ${{ steps.bad.outputs.counts }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: image.tar.gz
+          key: ${{ needs.config.outputs.image_key }}
+          fail-on-cache-miss: true
+      - run: sh scripts/image.sh
+      - id: bad
+        name: Each bad fixture fails with its expected message
+        run: |
+          sh scripts/in-image.sh scripts/sabotage.sh | tee sabotage.out
+          {
+            echo 'counts<<EOF'
+            grep '^COUNT' sabotage.out
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+  lean:
+    needs: config
+    if: needs.config.outputs.lean_required == 'true' || inputs.run_lean
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      counts: ${{ steps.audit.outputs.counts }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install pinned toolchain
+        run: |
+          curl -fsSL -o /tmp/elan.tar.gz https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz
+          echo "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  /tmp/elan.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/elan.tar.gz -C /tmp
+          /tmp/elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Report disk
+        run: df -h /
+      - name: Fetch selected Mathlib cache
+        run: |
+          lake --version
+          time lake exe cache get Mathlib/Data/Real/Basic.lean Mathlib/Tactic/LinearCombination.lean
+          git diff --exit-code lake-manifest.json
+      - name: Build
+        run: |
+          df -h /
+          time lake build --no-build Mathlib.Data.Real.Basic Mathlib.Tactic.LinearCombination
+          time lake build 2>&1 | tee build.log
+      - id: audit
+        name: Axiom audit and sabotage fixtures
+        run: |
+          sh ../scripts/lean-audit.sh | tee audit.out
+          {
+            echo 'counts<<EOF'
+            grep '^COUNT' audit.out
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+  gate:
+    needs: [config, build-test, sabotage, lean]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Every job succeeded and the counts match the manifest
+        env:
+          CONFIG: ${{ needs.config.result }}
+          BUILD: ${{ needs.build-test.result }}
+          SABOTAGE: ${{ needs.sabotage.result }}
+          LEAN: ${{ needs.lean.result }}
+          REQUIRED: ${{ needs.config.outputs.lean_required }}
+          COUNTS: |
+            ${{ needs.build-test.outputs.counts }}
+            ${{ needs.sabotage.outputs.counts }}
+            ${{ needs.lean.outputs.counts }}
+        run: |
+          [ "$CONFIG" = success ] && [ "$BUILD" = success ] && [ "$SABOTAGE" = success ]
+          if [ "$REQUIRED" = true ]; then
+            [ "$LEAN" = success ]
+          else
+            [ "$LEAN" = success ] || [ "$LEAN" = skipped ]
+          fi
+          sh ci/check-manifest.sh "$(printf '%s\n' "$COUNTS" | sed 's/^ *//')" ci/manifest.txt

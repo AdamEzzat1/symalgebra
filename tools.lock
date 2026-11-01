@@ -1,0 +1,11 @@
+# Single source of pinned versions. scripts/check-pins.sh compares everything to this file.
+SBCL_VERSION=2.6.9
+SBCL_TARBALL_SHA256=c6fd1d735570eb4ff34caf9609988ca77ed0bd12b55d09a4fed075be890da513
+SWIPL_VERSION=10.0.2
+SWIPL_IMAGE_DIGEST=sha256:652375a3cbfd2ecbfa4f30b218d22b3c5fb3e60433996093125512fd023ad375
+PYTHON_IMAGE_DIGEST=sha256:eaee5f73efa9ae962d2077756292bc4878c04fcbc13dc168bb00cc365f35647e
+LEAN_TOOLCHAIN=leanprover/lean4:v4.35.0
+MATHLIB_TAG=v4.35.0
+MATHLIB_COMMIT=56a005855ea17e0b0958f73ec801ae140b0a1679
+# Licences: SBCL public domain and BSD-style; SWI-Prolog BSD-2-Clause; Lean 4, Mathlib and elan Apache-2.0.
+# SymPy (M1) BSD-3-Clause. actions/checkout and actions/cache MIT.

@@ -1,0 +1,4 @@
+.lake/
+*.fasl
+/results/
+image.tar.gz

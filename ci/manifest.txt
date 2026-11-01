@@ -1,0 +1,5 @@
+repo ran=1 passed=1
+lisp ran=4 passed=4
+prolog ran=2 passed=2
+sabotage ran=4 passed=4
+lean ran=4 passed=4
