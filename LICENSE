@@ -1,0 +1,16 @@
+Copyright (c) 2026 Adam Ezzat. All rights reserved.
+
+This repository is public so that it can be read. No licence is granted to copy, modify,
+distribute, publish, sublicense or sell this software or its documentation, in whole or in part,
+or to use them to provide a service, without the copyright holder's written permission. Viewing
+and forking on GitHub remain available as GitHub's Terms of Service provide.
+
+Third-party tools and libraries that this project uses or downloads, such as SBCL, SWI-Prolog,
+SymPy, Lean and Mathlib, are not covered by this notice and keep their own licences.
+
+THE SOFTWARE AND ITS DOCUMENTATION ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, ACCURACY AND NON-INFRINGEMENT. MATHEMATICAL RESULTS AND EXPLANATIONS MAY BE WRONG AND
+SHOULD NOT BE RELIED ON WITHOUT CHECKING. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS
+USE, TO THE EXTENT THE LAW ALLOWS.
