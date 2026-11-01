@@ -48,6 +48,15 @@ from meaning, and a gained root is handled as [SEMANTICS.md](SEMANTICS.md) descr
 to be necessary: with it removed, it must find a real counterexample. Parameter sources are `term`,
 `coefficient` and `lcd`. Adding to any closed list is a design change, not a data change.
 
+## How the matcher reads a line
+
+Rules match the `flat` view: sums and products are n-ary and sorted, a difference is a sum with a
+negated term, and `-3x` and `-1x` are written one way. Division stays, so no denominator is lost. On
+top of that, a matched line may read `x` as `1 * x`, `-a` in a product as `-1 * a`, and, for the two
+cancelling rules only, `(x/3) * 6` as `(x * 6)/3` and `6/4` as `(3 * 2)/(2 * 2)`. A result drops a `0`
+from a sum or a `1` from a product, and writes `1x` as `x` and `a/1` as `a`. These are readings of the
+same rule, so they add no rules. Every edge they produce is checked by meaning.
+
 ## Rules left out
 
 The brief caps the set at 40. Left out, all valid: `a - 0 → a`, `a / 1 → a`, `-(-a) → a`, and factoring

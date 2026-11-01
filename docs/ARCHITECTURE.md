@@ -1,9 +1,11 @@
 # SymAlgebra: Architecture
 
 Status 2026-11-01: M0 is complete. M1a is built and M1b, the adult sessions, is not yet run. M2 is
-complete. The M4 five-rule trial ran early, on the owner's ruling, and passed. No engine exists yet,
-and M3 waits for the M1 gate. Numbers marked *measured* come from throwaway probes on the development
-Windows machine.
+complete. The M4 five-rule trial ran early, on the owner's ruling, and passed. M3 started on
+2026-11-01 before the M1 gate, also on the owner's ruling: M1 is unresolved, no stage A session has
+counted, and a failed gate could still force an input redesign. The M3 core is built and Tiers A, D, E
+and F pass, but M3 is not exited: its hosted latency gate has not been run. Numbers marked *measured*
+come from throwaway probes on the development Windows machine.
 
 Students type their own algebra steps. The system checks each step by its meaning, says
 what rule was used where it can, and explains itself.
@@ -83,7 +85,7 @@ recommendations, `r1-*` and `r2-*` the critique rounds, `r3-*` the final review.
 mal-rules. [corpus/](../corpus) holds 39 solutions across the three scope areas and 43 verdict
 cases. [oracle/](../oracle) checks both with exhaustive strict evaluation, SymPy on schemas, and
 exact solution sets, and five planted faults must each fail first. The owner chose to run M2 before
-the M1 gate because it mostly survives an input redesign. M3 does not start until that gate passes.
+the M1 gate because it mostly survives an input redesign. The M3 hold was later lifted by the owner.
 
 Open at M2 exit: the corpus's rule labels only name rules that exist. Whether each label describes
 its step needs the AC matcher, so M3 checks that. No generator exists yet. Nothing here is proved.
@@ -105,6 +107,34 @@ both sides, so the guard-necessity check removed it.
   and a dead child are all `unavailable`, and the verdict still stands.
 - **Coverage data.** A plain integer count at runtime. Cases come from the corpus in CI. Hashes
   of short algebra strings can be brute-forced, so they are not logged.
+
+**M3 core, 2026-11-01.** [engine/src/](../engine/src) holds the ordered tree, the canonical form with
+its domain record, verdicts, bounded rule search, rperft and the step rules, in about 1,100 lines with
+no third-party libraries. Rational roots are found by exact bisection and irrational ones are compared
+by Sturm sequences, so no float enters. The rule table is read from `rules/rules.sexp` at load.
+
+| Tier | Evidence, in the pinned image |
+|---|---|
+| A | 346 of 346 checks: every corpus verdict and solution, the caution path, witnesses re-substituted |
+| D | 1,200 of 1,200 seeded cases match the oracle byte for byte, with CI checking the fixture is current |
+| E | SymPy re-checks 3,467 edges and all pass. They are a sample of the 16,695 walked, each of which also passes the Lisp verdict invariant. Every rule that moves a line appears |
+| F | 4,315 property and metamorphic checks. Mutation score 48 of 49, and the survivor flips one sign convention and is equivalent |
+
+A wrong distribution rule injected into rperft is caught by the invariant. All 171 corpus label checks
+pass, which closes the question M2 left open. Getting there needed the matcher readings in
+[RULE-FORMAT.md](RULE-FORMAT.md), and no label changed. rperft counts in
+[corpus/rperft.txt](../corpus/rperft.txt) are regression values, not truth.
+
+Latency over the 171 corpus steps, *measured* in the pinned image on the development machine, not on a
+server: verdict p50 58 µs, p95 127 µs, max 5 ms. Explanation at depth 2: p95 0.9 ms, max 37 ms, naming a
+rule for 169 of 171. The slowest refusal tried took 77 ms. That is one hand-picked line, not a proven worst case.
+
+**M3 is not exited.** The p95 gate is defined on the hosted server and no host exists, so that gate has
+not been run. The step rules are a library: nothing serves them yet, and the M1 scaffold still runs
+stage A unchanged. Expression tasks such as `(x²-1)/(x-1) → x+1` are not built, because a line here is
+an equation. Mal-rules and failed-guard edges reach Prolog at M5, so only the Lisp side exists. Lisp and
+SymPy can disagree on `degree_limit` when a line's numerator cancels near degree 8; no fixture case
+does. Tier D's reference shares a brief with this code, so agreement is strong evidence, not proof.
 
 ## 4. Lean (M4; one theorem in M0)
 

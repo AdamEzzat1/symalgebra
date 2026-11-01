@@ -84,6 +84,30 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
+  mutation:
+    needs: [config, build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      counts: ${{ steps.mutants.outputs.counts }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: image.tar.gz
+          key: ${{ needs.config.outputs.image_key }}
+          fail-on-cache-miss: true
+      - run: sh scripts/image.sh
+      - id: mutants
+        name: Each planted fault must fail the engine tests
+        run: |
+          sh scripts/in-image.sh scripts/mutation.sh | tee mutation.out
+          {
+            echo 'counts<<EOF'
+            grep '^COUNT' mutation.out
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
   checker:
     needs: config
     runs-on: ubuntu-24.04
@@ -163,7 +187,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   gate:
-    needs: [config, build-test, sabotage, checker, oracle, lean]
+    needs: [config, build-test, sabotage, mutation, checker, oracle, lean]
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 2
@@ -174,6 +198,7 @@ jobs:
           CONFIG: ${{ needs.config.result }}
           BUILD: ${{ needs.build-test.result }}
           SABOTAGE: ${{ needs.sabotage.result }}
+          MUTATION: ${{ needs.mutation.result }}
           CHECKER: ${{ needs.checker.result }}
           ORACLE: ${{ needs.oracle.result }}
           LEAN: ${{ needs.lean.result }}
@@ -181,11 +206,12 @@ jobs:
           COUNTS: |
             ${{ needs.build-test.outputs.counts }}
             ${{ needs.sabotage.outputs.counts }}
+            ${{ needs.mutation.outputs.counts }}
             ${{ needs.checker.outputs.counts }}
             ${{ needs.oracle.outputs.counts }}
             ${{ needs.lean.outputs.counts }}
         run: |
-          [ "$CONFIG" = success ] && [ "$BUILD" = success ] && [ "$SABOTAGE" = success ] && [ "$CHECKER" = success ] && [ "$ORACLE" = success ]
+          [ "$CONFIG" = success ] && [ "$BUILD" = success ] && [ "$SABOTAGE" = success ] && [ "$MUTATION" = success ] && [ "$CHECKER" = success ] && [ "$ORACLE" = success ]
           if [ "$REQUIRED" = true ]; then
             [ "$LEAN" = success ]
           else

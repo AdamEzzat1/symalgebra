@@ -1,0 +1,6002 @@
+[
+{
+"previous": "-4x - 6 = 2x - 8",
+"line": "(-4x - 6)^2 = (2x - 8)^2",
+"expected": "GAINS Finite{-7} witness=-7"
+},
+{
+"previous": "-5x - 2 = -1x + 1",
+"line": "-1x + 1 = -5x - 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x + 8 = 3x - 7",
+"line": "3x - 7 = 3x + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 9 = 1x - 9",
+"line": "5x - 9 + -6 = 1x - 9 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x - 9 = -3x - 6",
+"line": "(3x - 9)^2 = (-3x - 6)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x - 4 = -1x + 1",
+"line": "-2x - 4 + -3 = -1x + 1",
+"expected": "UNRELATED Finite{-5} witness=-5"
+},
+{
+"previous": "-2x + 4 = -1x + 1",
+"line": "(-2x + 4) * 2 = (-1x + 1) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x - 8 = 5x - 8",
+"line": "4x - 8 + -4 = 5x - 8 + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x + 6 = -3x + 6",
+"line": "1x + 6 + -4 = -3x + 6",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "2x - 5 = 6x + 8",
+"line": "x = 3/2",
+"expected": "UNRELATED Finite{-13/4} witness=-13/4"
+},
+{
+"previous": "5x - 9 = -4x - 5",
+"line": "x = 4",
+"expected": "UNRELATED Finite{4/9} witness=4/9"
+},
+{
+"previous": "5x + 6 = -2x + 6",
+"line": "5x + 6 + -3 = -2x + 6 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x - 8 = -3x + 0",
+"line": "(4x - 8) * 4 = (-3x + 0) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 1 = -5x - 6",
+"line": "-5x - 6 = 2x + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x + 1 = -5x + 9",
+"line": "(-1x + 1) * 1 = (-5x + 9) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x + 4 = -3x - 8",
+"line": "(3x + 4) * 1 = (-3x - 8) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x + 8 = 4x + 4",
+"line": "4x + 4 = -2x + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x - 6 = 4x + 7",
+"line": "x = 7",
+"expected": "UNRELATED Finite{13/2} witness=13/2"
+},
+{
+"previous": "-3x + 7 = 6x - 7",
+"line": "(-3x + 7)^2 = (6x - 7)^2",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "3x + 7 = -3x - 7",
+"line": "-1x - 1 = 1x - 6",
+"expected": "UNRELATED Finite{-7/3} witness=-7/3"
+},
+{
+"previous": "3x + 9 = -3x + 9",
+"line": "-3x + 9 = 3x + 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x + 3 = 1x - 4",
+"line": "1x - 4 = -5x + 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x + 8 = 3x + 6",
+"line": "(4x + 8)^2 = (3x + 6)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 5 = 3x + 6",
+"line": "(2x + 5) * x = (3x + 6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-3x - 7 = 6x - 8",
+"line": "6x - 8 = -3x - 7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 3 = -5x + 3",
+"line": "-5x + 3 = 2x - 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x + 5 = -4x - 5",
+"line": "(4x + 5)^2 = (-4x - 5)^2",
+"expected": "GAINS AllExcept{-5/4} witness=0"
+},
+{
+"previous": "3x + 8 = 1x + 8",
+"line": "(3x + 8)^2 = (1x + 8)^2",
+"expected": "GAINS Finite{-4} witness=-4"
+},
+{
+"previous": "-1x - 6 = 4x - 6",
+"line": "2x - 2 = -4x - 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x + 6 = 6x - 9",
+"line": "6x - 9 = -1x + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x - 5 = -5x + 6",
+"line": "x = 1",
+"expected": "GAINS Finite{1} witness=1"
+},
+{
+"previous": "-3x - 8 = 3x - 1",
+"line": "2x + 4 = -5x - 1",
+"expected": "UNRELATED Finite{-7/6} witness=-7/6"
+},
+{
+"previous": "4x - 8 = 4x + 1",
+"line": "(4x - 8) * -5 = (4x + 1) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 4 = 1x + 9",
+"line": "(-3x - 4) * x = (1x + 9) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4x - 6 = 3x + 6",
+"line": "(4x - 6) * x = (3x + 6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "5x - 8 = -3x + 7",
+"line": "5x - 8 + 6 = -3x + 7",
+"expected": "UNRELATED Finite{15/8} witness=15/8"
+},
+{
+"previous": "-1x - 5 = 3x + 5",
+"line": "(-1x - 5)^2 = (3x + 5)^2",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2x + 8 = -1x + 9",
+"line": "(2x + 8) * 2 = (-1x + 9) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 5 = 2x + 7",
+"line": "x = 2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "6x - 9 = -2x + 1",
+"line": "(6x - 9) * 2 = (-2x + 1) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x + 1 = -4x - 4",
+"line": "-4x - 4 = 1x + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x + 8 = -5x - 4",
+"line": "(6x + 8) * -5 = (-5x - 4) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 1 = 5x + 2",
+"line": "1x + 0 = -4x + 9",
+"expected": "UNRELATED Finite{-1/3} witness=-1/3"
+},
+{
+"previous": "1x - 8 = -2x - 5",
+"line": "(1x - 8)^2 = (-2x - 5)^2",
+"expected": "GAINS Finite{-13} witness=-13"
+},
+{
+"previous": "6x + 9 = -1x - 3",
+"line": "6x + 9 + 4 = -1x - 3",
+"expected": "UNRELATED Finite{-12/7} witness=-12/7"
+},
+{
+"previous": "6x + 9 = 1x - 4",
+"line": "6x + 9 + 2 = 1x - 4",
+"expected": "UNRELATED Finite{-13/5} witness=-13/5"
+},
+{
+"previous": "-1x + 4 = 2x + 9",
+"line": "-1x + 4 + 1 = 2x + 9",
+"expected": "UNRELATED Finite{-5/3} witness=-5/3"
+},
+{
+"previous": "2x - 7 = -3x + 5",
+"line": "-3x + 5 = 2x - 7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x + 5 = -2x + 9",
+"line": "1x + 5 + 8 = -2x + 9 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x - 8 = 2x + 0",
+"line": "(6x - 8) * 6 = (2x + 0) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x - 2 = -5x - 5",
+"line": "(-5x - 2) * 5 = (-5x - 5) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x - 6 = -1x + 4",
+"line": "1x - 6 + 1 = -1x + 4 + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x - 6 = 4x + 1",
+"line": "x = 5/2",
+"expected": "GAINS Finite{5/2} witness=5/2"
+},
+{
+"previous": "6x + 3 = -5x + 6",
+"line": "(6x + 3) * -2 = (-5x + 6) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x - 6 = 6x + 7",
+"line": "x = 3",
+"expected": "UNRELATED Finite{-13/7} witness=-13/7"
+},
+{
+"previous": "-5x - 9 = 1x - 7",
+"line": "(-5x - 9) * -3 = (1x - 7) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 1 = 3x - 1",
+"line": "(2x - 1)^2 = (3x - 1)^2",
+"expected": "GAINS Finite{2/5} witness=2/5"
+},
+{
+"previous": "2x + 4 = 3x + 3",
+"line": "(2x + 4)^2 = (3x + 3)^2",
+"expected": "GAINS Finite{-7/5} witness=-7/5"
+},
+{
+"previous": "-5x + 1 = 3x + 5",
+"line": "3x + 5 = -5x + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 5 = -2x - 3",
+"line": "(2x + 5) * -3 = (-2x - 3) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x + 6 = -2x + 3",
+"line": "3x + 6 + 5 = -2x + 3",
+"expected": "UNRELATED Finite{-3/5} witness=-3/5"
+},
+{
+"previous": "2x + 7 = 5x + 5",
+"line": "(2x + 7) * 5 = (5x + 5) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x - 5 = 6x + 1",
+"line": "6x + 1 = -2x - 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 4 = 5x + 8",
+"line": "5x + 8 = -4x + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 0 = -3x + 0",
+"line": "(-4x + 0) * x = (-3x + 0) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x + 5 = -4x + 5",
+"line": "-4x + 5 = 5x + 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 7 = 4x + 8",
+"line": "(-3x - 7) * x = (4x + 8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4x - 4 = 2x - 1",
+"line": "2x - 1 = 4x - 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 6 = 4x + 5",
+"line": "(2x - 6) * 1 = (4x + 5) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 4 = 2x - 9",
+"line": "2x - 9 = 5x - 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 8 = 3x - 6",
+"line": "(5x - 8)^2 = (3x - 6)^2",
+"expected": "GAINS Finite{7/4} witness=7/4"
+},
+{
+"previous": "4x + 9 = -2x + 7",
+"line": "(4x + 9)^2 = (-2x + 7)^2",
+"expected": "GAINS Finite{-8} witness=-8"
+},
+{
+"previous": "-5x + 3 = 3x - 7",
+"line": "-5x + 3 + -3 = 3x - 7 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 7 = 2x + 3",
+"line": "x = 0",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "2x + 4 = 2x + 1",
+"line": "(2x + 4) * x = (2x + 1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4x + 5 = 1x + 9",
+"line": "-5x + 2 = -4x + 2",
+"expected": "UNRELATED Finite{4/3} witness=4/3"
+},
+{
+"previous": "1x + 3 = 2x - 1",
+"line": "(1x + 3) * -3 = (2x - 1) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 1 = -4x + 7",
+"line": "(2x - 1) * -3 = (-4x + 7) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x - 3 = 3x + 1",
+"line": "(3x - 3)^2 = (3x + 1)^2",
+"expected": "GAINS Finite{1/3} witness=1/3"
+},
+{
+"previous": "-3x - 1 = 6x - 5",
+"line": "x = 3/2",
+"expected": "UNRELATED Finite{4/9} witness=4/9"
+},
+{
+"previous": "-1x + 7 = 2x - 5",
+"line": "(-1x + 7)^2 = (2x - 5)^2",
+"expected": "GAINS Finite{-2} witness=-2"
+},
+{
+"previous": "-4x + 2 = -4x - 2",
+"line": "x = -9/2",
+"expected": "GAINS Finite{-9/2} witness=-9/2"
+},
+{
+"previous": "-4x - 1 = -5x - 4",
+"line": "-5x - 4 = -4x - 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x + 2 = -2x - 4",
+"line": "(6x + 2) * x = (-2x - 4) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4x - 5 = 3x + 0",
+"line": "5x + 0 = 6x + 8",
+"expected": "UNRELATED Finite{5} witness=5"
+},
+{
+"previous": "-4x + 5 = -3x + 9",
+"line": "x = -1",
+"expected": "UNRELATED Finite{-4} witness=-4"
+},
+{
+"previous": "-4x - 9 = 1x + 0",
+"line": "1x + 0 = -4x - 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 8 = 2x + 9",
+"line": "-3x - 8 + 6 = 2x + 9",
+"expected": "UNRELATED Finite{-17/5} witness=-17/5"
+},
+{
+"previous": "-2x + 3 = 3x - 3",
+"line": "-2x + 3 + -2 = 3x - 3",
+"expected": "UNRELATED Finite{6/5} witness=6/5"
+},
+{
+"previous": "-5x + 1 = -3x - 9",
+"line": "-3x - 9 = -5x + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 1 = 4x - 6",
+"line": "-3x - 1 + 4 = 4x - 6 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x + 5 = -5x + 9",
+"line": "(1x + 5)^2 = (-5x + 9)^2",
+"expected": "GAINS Finite{7/2} witness=7/2"
+},
+{
+"previous": "1x - 3 = 6x - 3",
+"line": "(1x - 3) * -2 = (6x - 3) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x + 0 = -1x - 3",
+"line": "x = -8/3",
+"expected": "UNRELATED Finite{3/2} witness=3/2"
+},
+{
+"previous": "3x - 2 = 6x - 1",
+"line": "3x - 2 + 5 = 6x - 1",
+"expected": "UNRELATED Finite{-1/3} witness=-1/3"
+},
+{
+"previous": "6x - 7 = 1x + 0",
+"line": "6x - 7 + 4 = 1x + 0 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x + 0 = -3x - 2",
+"line": "-3x - 2 = -1x + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x + 8 = -1x - 4",
+"line": "-1x - 4 = -5x + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x + 5 = -4x + 3",
+"line": "-4x + 3 = -3x + 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 7 = -3x - 5",
+"line": "-3x - 4 = 5x - 6",
+"expected": "UNRELATED Finite{12} witness=12"
+},
+{
+"previous": "-2x - 2 = -1x - 6",
+"line": "(-2x - 2) * -5 = (-1x - 6) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x + 3 = 4x - 7",
+"line": "3x + 6 = 2x + 1",
+"expected": "UNRELATED Finite{-10} witness=-10"
+},
+{
+"previous": "-3x - 1 = 2x + 4",
+"line": "-3x - 1 + -2 = 2x + 4",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "-5x + 5 = -2x - 5",
+"line": "-5x + 5 + 4 = -2x - 5",
+"expected": "UNRELATED Finite{10/3} witness=10/3"
+},
+{
+"previous": "-3x + 4 = -5x + 3",
+"line": "-5x + 9 = 6x + 5",
+"expected": "UNRELATED Finite{-1/2} witness=-1/2"
+},
+{
+"previous": "-1x - 1 = -5x - 3",
+"line": "(-1x - 1)^2 = (-5x - 3)^2",
+"expected": "GAINS Finite{-2/3} witness=-2/3"
+},
+{
+"previous": "3x - 2 = -3x - 3",
+"line": "3x - 2 + 9 = -3x - 3 + 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 9 = -2x - 9",
+"line": "(-4x + 9) * 6 = (-2x - 9) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x + 8 = -2x - 7",
+"line": "-5x + 8 + -5 = -2x - 7 + -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 5 = -2x + 1",
+"line": "(2x - 5)^2 = (-2x + 1)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x + 1 = 5x + 0",
+"line": "(-1x + 1)^2 = (5x + 0)^2",
+"expected": "GAINS Finite{-1/4} witness=-1/4"
+},
+{
+"previous": "-3x + 1 = 6x + 3",
+"line": "-3x + 1 + -7 = 6x + 3 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 0 = 6x + 4",
+"line": "-4x + 0 + 3 = 6x + 4",
+"expected": "UNRELATED Finite{-2/5} witness=-2/5"
+},
+{
+"previous": "4x + 8 = 5x + 2",
+"line": "(4x + 8)^2 = (5x + 2)^2",
+"expected": "GAINS Finite{-10/9} witness=-10/9"
+},
+{
+"previous": "-2x - 9 = -3x - 2",
+"line": "-3x - 2 = -2x - 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 5 = -1x - 7",
+"line": "(5x - 5) * x = (-1x - 7) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2x - 8 = -1x + 5",
+"line": "(2x - 8) * x = (-1x + 5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-4x + 3 = 1x + 9",
+"line": "(-4x + 3) * -3 = (1x + 9) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x + 4 = 2x + 1",
+"line": "(-3x + 4)^2 = (2x + 1)^2",
+"expected": "GAINS Finite{5} witness=5"
+},
+{
+"previous": "3x + 8 = -3x - 9",
+"line": "(3x + 8)^2 = (-3x - 9)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x - 1 = -5x - 8",
+"line": "(-5x - 1) * -4 = (-5x - 8) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x - 8 = 2x + 7",
+"line": "(-1x - 8) * 5 = (2x + 7) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x - 4 = -3x - 8",
+"line": "(2x - 4) * 6 = (-3x - 8) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x + 0 = -5x - 8",
+"line": "-5x - 8 = -3x + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x + 7 = 6x - 9",
+"line": "(-2x + 7) * 4 = (6x - 9) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 7 = -4x - 6",
+"line": "-4x - 6 = 5x - 7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x + 3 = -2x - 1",
+"line": "(-4x + 3) * x = (-2x - 1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-4x + 7 = 6x - 3",
+"line": "(-4x + 7) * x = (6x - 3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "5x - 5 = 5x - 8",
+"line": "(5x - 5) * 5 = (5x - 8) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x + 2 = 1x - 5",
+"line": "1x - 5 = 2x + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x - 1 = 1x + 5",
+"line": "(-3x - 1)^2 = (1x + 5)^2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "4x - 4 = 4x - 5",
+"line": "(4x - 4)^2 = (4x - 5)^2",
+"expected": "GAINS Finite{9/8} witness=9/8"
+},
+{
+"previous": "-4x - 6 = -3x + 0",
+"line": "(-4x - 6) * 5 = (-3x + 0) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x - 8 = 3x + 2",
+"line": "(-2x - 8) * 6 = (3x + 2) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x + 4 = 6x - 8",
+"line": "-2x + 6 = -3x - 5",
+"expected": "UNRELATED Finite{12/11} witness=12/11"
+},
+{
+"previous": "-3x + 3 = -4x - 9",
+"line": "-5x + 0 = 2x + 3",
+"expected": "UNRELATED Finite{-12} witness=-12"
+},
+{
+"previous": "5x - 3 = -1x + 1",
+"line": "-1x + 1 = -2x + 0",
+"expected": "UNRELATED Finite{2/3} witness=2/3"
+},
+{
+"previous": "-3x - 1 = 3x - 8",
+"line": "(-3x - 1)^2 = (3x - 8)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x - 7 = 2x + 9",
+"line": "(-5x - 7)^2 = (2x + 9)^2",
+"expected": "GAINS Finite{2/3} witness=2/3"
+},
+{
+"previous": "6x - 1 = 4x + 0",
+"line": "4x + 0 = 6x - 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x + 0 = -1x + 1",
+"line": "(-5x + 0) * x = (-1x + 1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-4x - 6 = 3x - 9",
+"line": "(-4x - 6) * -3 = (3x - 9) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x - 3 = 6x + 8",
+"line": "(-5x - 3) * 2 = (6x + 8) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x - 2 = 6x - 2",
+"line": "5x - 2 + 0 = 6x - 2 + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x + 4 = 4x + 8",
+"line": "x = 1",
+"expected": "UNRELATED Finite{-4/5} witness=-4/5"
+},
+{
+"previous": "4x + 5 = -1x - 4",
+"line": "(4x + 5) * -2 = (-1x - 4) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x + 5 = -2x - 3",
+"line": "(5x + 5) * -5 = (-2x - 3) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x - 8 = 3x + 9",
+"line": "x = 2",
+"expected": "UNRELATED Finite{-17/2} witness=-17/2"
+},
+{
+"previous": "6x + 5 = 2x + 6",
+"line": "2x + 6 = 6x + 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x - 2 = -2x - 5",
+"line": "-1x - 2 + 9 = -2x - 5 + 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4(x - 4) = 1(x - 1) + 4",
+"line": "1(x - 1) + 4 = 4(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x + 3) = -1(x - 2) + 5",
+"line": "(-2(x + 3)) * x = (-1(x - 2) + 5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "1(x - 6) = 2(x + 7) + 5",
+"line": "(1(x - 6)) * -5 = (2(x + 7) + 5) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x - 9) = 6(x - 7) + 1",
+"line": "3(x - 9) + 1 = 6(x - 7) + 1 + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x + 3) = 6(x + 3) - 7",
+"line": "(3(x + 3)) * 2 = (6(x + 3) - 7) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x + 9) = -3(x - 4) + 5",
+"line": "-3(x - 4) + 5 = -4(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 2) = -1(x + 1) + 3",
+"line": "-2(x - 2) + 2 = -1(x + 1) + 3",
+"expected": "UNRELATED Finite{2} witness=2"
+},
+{
+"previous": "4(x + 6) = 1(x - 6) - 4",
+"line": "1(x - 6) - 4 = 4(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 7) = 5(x - 1) - 5",
+"line": "(-2(x - 7)) * 5 = (5(x - 1) - 5) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x + 6) = 4(x - 2) - 6",
+"line": "-2(x + 6) + 6 = 4(x - 2) - 6",
+"expected": "UNRELATED Finite{1/3} witness=1/3"
+},
+{
+"previous": "6(x - 4) = -2(x + 6) + 3",
+"line": "x = 3",
+"expected": "UNRELATED Finite{15/8} witness=15/8"
+},
+{
+"previous": "-2(x - 8) = -2(x + 9) - 5",
+"line": "(-2(x - 8)) * 5 = (-2(x + 9) - 5) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x - 5) = -2(x + 5) + 0",
+"line": "x = -2/3",
+"expected": "UNRELATED Finite{15} witness=15"
+},
+{
+"previous": "5(x - 1) = 2(x + 6) - 1",
+"line": "5(x - 1) + -3 = 2(x + 6) - 1",
+"expected": "UNRELATED Finite{16/3} witness=16/3"
+},
+{
+"previous": "5(x - 7) = 5(x - 3) - 8",
+"line": "x = 0",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6(x + 0) = 5(x + 2) - 4",
+"line": "6(x + 0) + 8 = 5(x + 2) - 4 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x - 3) = -5(x + 8) + 5",
+"line": "(-1(x - 3)) * 2 = (-5(x + 8) + 5) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6(x + 0) = 5(x + 1) + 1",
+"line": "6(x + 0) + -3 = 5(x + 1) + 1",
+"expected": "UNRELATED Finite{6} witness=6"
+},
+{
+"previous": "4(x + 2) = 2(x - 1) - 7",
+"line": "2(x - 1) - 7 = 4(x + 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x - 5) = -5(x - 5) + 3",
+"line": "(3(x - 5))^2 = (-5(x - 5) + 3)^2",
+"expected": "GAINS Finite{13/2} witness=13/2"
+},
+{
+"previous": "3(x + 7) = 3(x + 8) + 0",
+"line": "(3(x + 7)) * x = (3(x + 8) + 0) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-1(x - 9) = 5(x - 2) + 4",
+"line": "(-1(x - 9)) * -1 = (5(x - 2) + 4) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x - 6) = -5(x - 4) + 2",
+"line": "1(x - 2) = 2(x - 3) - 5",
+"expected": "GAINS Finite{9} witness=9"
+},
+{
+"previous": "2(x + 0) = 2(x + 0) + 0",
+"line": "-3(x + 3) = 5(x + 4) + 4",
+"expected": "LOSES AllExcept{-33/8} witness=0"
+},
+{
+"previous": "4(x + 0) = 1(x - 3) + 2",
+"line": "(4(x + 0))^2 = (1(x - 3) + 2)^2",
+"expected": "GAINS Finite{1/5} witness=1/5"
+},
+{
+"previous": "-4(x - 1) = -4(x - 5) - 4",
+"line": "-4(x - 1) + -9 = -4(x - 5) - 4 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x + 8) = 2(x + 7) - 6",
+"line": "2(x + 7) - 6 = 5(x + 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6(x - 7) = 6(x + 2) - 4",
+"line": "6(x + 2) - 4 = 6(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x + 6) = 5(x + 6) - 5",
+"line": "-3(x + 9) = -2(x + 7) - 7",
+"expected": "UNRELATED Finite{-7/2} witness=-7/2"
+},
+{
+"previous": "4(x + 0) = -1(x - 4) + 9",
+"line": "x = -6",
+"expected": "UNRELATED Finite{13/5} witness=13/5"
+},
+{
+"previous": "1(x + 3) = -2(x - 6) - 1",
+"line": "1(x + 3) + -6 = -2(x - 6) - 1 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x - 9) = -3(x + 0) + 2",
+"line": "-3(x + 0) + 2 = 5(x - 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x + 7) = -1(x + 7) - 1",
+"line": "-3(x - 3) = 6(x + 5) + 6",
+"expected": "UNRELATED Finite{-6} witness=-6"
+},
+{
+"previous": "6(x - 3) = -5(x - 7) + 5",
+"line": "(6(x - 3)) * x = (-5(x - 7) + 5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-2(x - 5) = -3(x - 4) - 3",
+"line": "-3(x - 4) - 3 = -2(x - 5)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x - 2) = 2(x - 4) + 1",
+"line": "2(x - 2) + -3 = 2(x - 4) + 1 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x + 3) = -3(x - 8) + 3",
+"line": "x = -2",
+"expected": "UNRELATED Finite{6} witness=6"
+},
+{
+"previous": "-3(x - 6) = 2(x + 6) - 9",
+"line": "-3(x - 6) + 4 = 2(x + 6) - 9 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4(x - 2) = -5(x + 2) - 5",
+"line": "(4(x - 2)) * 4 = (-5(x + 2) - 5) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x - 1) = 3(x - 2) + 8",
+"line": "3(x - 2) + 8 = 5(x - 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x - 8) = -2(x + 9) + 1",
+"line": "5(x - 8) = 2(x - 8) + 7",
+"expected": "UNRELATED Finite{23/7} witness=23/7"
+},
+{
+"previous": "4(x - 7) = 5(x - 9) + 6",
+"line": "5(x - 9) + 6 = 4(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x - 9) = -3(x + 7) - 8",
+"line": "(2(x - 9))^2 = (-3(x + 7) - 8)^2",
+"expected": "GAINS Finite{-47} witness=-47"
+},
+{
+"previous": "-2(x + 9) = -4(x - 8) + 8",
+"line": "(-2(x + 9)) * -4 = (-4(x - 8) + 8) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x - 8) = -2(x + 5) - 6",
+"line": "x = -5/3",
+"expected": "UNRELATED Finite{-24} witness=-24"
+},
+{
+"previous": "6(x + 3) = -2(x + 7) + 6",
+"line": "(6(x + 3)) * x = (-2(x + 7) + 6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2(x + 9) = 6(x - 7) + 8",
+"line": "2(x + 9) + -5 = 6(x - 7) + 8 + -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x - 5) = -1(x + 9) - 7",
+"line": "-3(x - 5) + 6 = -1(x + 9) - 7 + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 8) = -2(x + 1) - 9",
+"line": "-4(x + 9) = 6(x + 1) + 3",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "-4(x + 1) = 4(x - 7) - 7",
+"line": "(-4(x + 1)) * -1 = (4(x - 7) - 7) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 1) = 2(x + 4) + 2",
+"line": "2(x + 4) + 2 = 1(x - 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 7) = -5(x + 5) - 5",
+"line": "(-2(x - 7)) * x = (-5(x + 5) - 5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "3(x - 9) = -1(x + 7) + 7",
+"line": "3(x - 9) + -4 = -1(x + 7) + 7",
+"expected": "UNRELATED Finite{27/4} witness=27/4"
+},
+{
+"previous": "4(x + 3) = 1(x + 0) - 6",
+"line": "4(x + 3) + 6 = 1(x + 0) - 6 + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6(x - 9) = 1(x - 3) - 2",
+"line": "x = -1/3",
+"expected": "UNRELATED Finite{49/5} witness=49/5"
+},
+{
+"previous": "-1(x + 8) = -1(x + 9) + 5",
+"line": "(-1(x + 8)) * -3 = (-1(x + 9) + 5) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 1) = 1(x + 6) - 4",
+"line": "1(x + 6) - 4 = -2(x - 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x + 1) = -4(x - 1) + 6",
+"line": "(-2(x + 1))^2 = (-4(x - 1) + 6)^2",
+"expected": "GAINS Finite{4/3} witness=4/3"
+},
+{
+"previous": "-5(x - 6) = 6(x - 1) + 9",
+"line": "6(x - 1) + 9 = -5(x - 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x - 2) = -4(x + 9) + 8",
+"line": "-1(x + 1) = -1(x - 6) + 5",
+"expected": "LOSES Finite{-2} witness=-2"
+},
+{
+"previous": "6(x - 4) = 3(x - 2) + 1",
+"line": "x = 2",
+"expected": "UNRELATED Finite{19/3} witness=19/3"
+},
+{
+"previous": "5(x - 8) = 1(x + 4) + 0",
+"line": "x = 4",
+"expected": "UNRELATED Finite{11} witness=11"
+},
+{
+"previous": "-5(x - 9) = 6(x + 4) + 8",
+"line": "(-5(x - 9)) * x = (6(x + 4) + 8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2(x + 5) = 2(x + 1) - 2",
+"line": "(2(x + 5))^2 = (2(x + 1) - 2)^2",
+"expected": "GAINS Finite{-5/2} witness=-5/2"
+},
+{
+"previous": "-3(x - 4) = -5(x + 5) + 9",
+"line": "x = -5/2",
+"expected": "UNRELATED Finite{-14} witness=-14"
+},
+{
+"previous": "4(x - 2) = -5(x - 6) + 7",
+"line": "4(x - 2) + -4 = -5(x - 6) + 7 + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x + 7) = -1(x - 6) - 8",
+"line": "(-3(x + 7)) * x = (-1(x - 6) - 8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6(x + 2) = -3(x - 9) - 9",
+"line": "6(x + 2) + 3 = -3(x - 9) - 9",
+"expected": "UNRELATED Finite{2/3} witness=2/3"
+},
+{
+"previous": "-3(x + 9) = 3(x - 5) + 7",
+"line": "(-3(x + 9)) * -3 = (3(x - 5) + 7) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x + 0) = 6(x - 8) - 6",
+"line": "(3(x + 0)) * 3 = (6(x - 8) - 6) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x - 6) = -5(x - 8) - 8",
+"line": "-5(x - 8) - 8 = -4(x - 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x - 8) = -3(x - 2) + 2",
+"line": "x = -3/4",
+"expected": "UNRELATED Finite{16} witness=16"
+},
+{
+"previous": "5(x - 4) = -4(x - 3) - 8",
+"line": "5(x - 4) + 2 = -4(x - 3) - 8",
+"expected": "UNRELATED Finite{8/3} witness=8/3"
+},
+{
+"previous": "-3(x + 2) = 2(x - 6) - 2",
+"line": "(-3(x + 2))^2 = (2(x - 6) - 2)^2",
+"expected": "GAINS Finite{-20} witness=-20"
+},
+{
+"previous": "-4(x - 7) = 6(x + 9) + 2",
+"line": "6(x + 9) + 2 = -4(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4(x - 6) = 6(x - 3) - 2",
+"line": "(4(x - 6)) * x = (6(x - 3) - 2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-3(x + 1) = 5(x - 9) + 7",
+"line": "5(x - 9) + 7 = -3(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 2) = 2(x + 9) - 1",
+"line": "(-2(x - 2)) * 3 = (2(x + 9) - 1) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x - 5) = 5(x + 2) - 5",
+"line": "5(x + 2) - 5 = 2(x - 5)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x + 3) = 5(x + 4) + 8",
+"line": "-3(x - 2) = -2(x - 4) + 3",
+"expected": "GAINS Finite{-5} witness=-5"
+},
+{
+"previous": "-1(x + 2) = 1(x + 0) - 3",
+"line": "x = -7/2",
+"expected": "UNRELATED Finite{1/2} witness=1/2"
+},
+{
+"previous": "-1(x + 6) = -2(x - 3) + 1",
+"line": "-1(x + 6) + 3 = -2(x - 3) + 1",
+"expected": "UNRELATED Finite{13} witness=13"
+},
+{
+"previous": "-2(x + 6) = 6(x - 1) - 3",
+"line": "(-2(x + 6)) * x = (6(x - 1) - 3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "3(x - 2) = 6(x - 8) + 2",
+"line": "6(x - 8) + 2 = 3(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x + 3) = -1(x - 9) - 7",
+"line": "-1(x - 9) - 7 = -1(x + 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x + 2) = 5(x + 0) - 5",
+"line": "(-4(x + 2)) * -3 = (5(x + 0) - 5) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 3) = -1(x + 2) + 6",
+"line": "-1(x + 2) + 6 = 1(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x + 1) = 6(x + 6) - 4",
+"line": "-3(x + 1) + 3 = 6(x + 6) - 4",
+"expected": "UNRELATED Finite{-35/9} witness=-35/9"
+},
+{
+"previous": "6(x - 8) = -2(x + 5) - 1",
+"line": "(6(x - 8)) * x = (-2(x + 5) - 1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4(x + 3) = 6(x - 1) - 5",
+"line": "6(x - 1) - 5 = 4(x + 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x + 1) = -4(x + 5) + 4",
+"line": "-4(x + 5) + 4 = -4(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x + 5) = -5(x - 9) - 6",
+"line": "(-1(x + 5))^2 = (-5(x - 9) - 6)^2",
+"expected": "GAINS Finite{17/3} witness=17/3"
+},
+{
+"previous": "5(x - 3) = -4(x - 7) - 5",
+"line": "-4(x - 7) - 5 = 5(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4(x + 7) = -1(x + 8) - 8",
+"line": "-1(x + 8) - 8 = -4(x + 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x - 8) = 5(x + 9) + 3",
+"line": "-3(x - 8) + -1 = 5(x + 9) + 3",
+"expected": "UNRELATED Finite{-3} witness=-3"
+},
+{
+"previous": "-3(x - 9) = 6(x + 0) - 6",
+"line": "x = 2",
+"expected": "UNRELATED Finite{11/3} witness=11/3"
+},
+{
+"previous": "-1(x - 2) = 5(x - 1) + 6",
+"line": "x = -7/2",
+"expected": "UNRELATED Finite{1/6} witness=1/6"
+},
+{
+"previous": "-4(x + 8) = 3(x + 2) + 9",
+"line": "(-4(x + 8)) * 1 = (3(x + 2) + 9) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x - 7) = 3(x - 8) - 1",
+"line": "-1(x - 7) + -7 = 3(x - 8) - 1 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4(x - 9) = -1(x + 1) + 7",
+"line": "5(x - 7) = 3(x + 2) + 5",
+"expected": "UNRELATED Finite{42/5} witness=42/5"
+},
+{
+"previous": "1(x - 4) = -1(x - 7) - 2",
+"line": "-3(x + 3) = 2(x + 7) + 0",
+"expected": "UNRELATED Finite{9/2} witness=9/2"
+},
+{
+"previous": "-3(x + 0) = 4(x - 3) + 2",
+"line": "4(x - 3) + 2 = -3(x + 0)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x - 3) = 6(x - 8) + 2",
+"line": "x = -5",
+"expected": "UNRELATED Finite{10} witness=10"
+},
+{
+"previous": "-1(x + 7) = -5(x - 7) - 3",
+"line": "-5(x - 7) - 3 = -1(x + 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x + 1) = -5(x + 5) + 2",
+"line": "x = 1/2",
+"expected": "UNRELATED Finite{-14/5} witness=-14/5"
+},
+{
+"previous": "2(x - 4) = -2(x + 4) + 0",
+"line": "2(x - 4) + -2 = -2(x + 4) + 0",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "1(x + 0) = 1(x + 6) + 6",
+"line": "1(x + 0) + 2 = 1(x + 6) + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x + 7) = 2(x - 1) - 9",
+"line": "-1(x + 7) + 5 = 2(x - 1) - 9",
+"expected": "UNRELATED Finite{4/3} witness=4/3"
+},
+{
+"previous": "-5(x - 8) = -4(x + 2) - 5",
+"line": "-2(x + 5) = 3(x + 3) - 8",
+"expected": "UNRELATED Finite{53} witness=53"
+},
+{
+"previous": "2(x + 6) = -5(x - 8) + 4",
+"line": "x = 5",
+"expected": "UNRELATED Finite{32/7} witness=32/7"
+},
+{
+"previous": "5(x + 4) = 1(x + 1) + 5",
+"line": "(5(x + 4)) * -3 = (1(x + 1) + 5) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 6) = -1(x + 3) + 3",
+"line": "1(x - 6) + -1 = -1(x + 3) + 3 + -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 7) = 6(x + 9) - 9",
+"line": "x = 8",
+"expected": "UNRELATED Finite{-31/8} witness=-31/8"
+},
+{
+"previous": "1(x + 4) = -3(x - 6) + 3",
+"line": "4(x + 5) = -2(x + 8) - 3",
+"expected": "UNRELATED Finite{17/4} witness=17/4"
+},
+{
+"previous": "1(x + 4) = 5(x - 9) + 0",
+"line": "(1(x + 4)) * -1 = (5(x - 9) + 0) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x + 9) = 5(x + 3) + 2",
+"line": "5(x + 3) + 2 = -5(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x + 9) = 1(x + 5) - 7",
+"line": "1(x + 5) - 7 = 1(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x - 6) = -5(x - 4) - 5",
+"line": "-5(x - 6) + 2 = -5(x - 4) - 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 7) = -5(x + 4) + 9",
+"line": "1(x - 7) + -4 = -5(x + 4) + 9",
+"expected": "UNRELATED Finite{-2/3} witness=-2/3"
+},
+{
+"previous": "-5(x - 2) = 4(x + 1) - 3",
+"line": "(-5(x - 2)) * 3 = (4(x + 1) - 3) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3(x + 1) = -1(x + 8) - 8",
+"line": "3(x + 1) + 4 = -1(x + 8) - 8",
+"expected": "UNRELATED Finite{-19/4} witness=-19/4"
+},
+{
+"previous": "1(x - 3) = 1(x - 2) - 3",
+"line": "(1(x - 3)) * -3 = (1(x - 2) - 3) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5(x - 6) = -4(x - 5) - 3",
+"line": "4(x + 4) = 3(x + 9) + 9",
+"expected": "UNRELATED Finite{47/9} witness=47/9"
+},
+{
+"previous": "6(x + 8) = 4(x + 8) + 8",
+"line": "(6(x + 8)) * -4 = (4(x + 8) + 8) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x + 9) = -4(x - 1) + 8",
+"line": "5(x - 9) = 2(x - 7) - 6",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "-1(x - 5) = 2(x + 7) - 8",
+"line": "(-1(x - 5)) * x = (2(x + 7) - 8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "1(x + 4) = -5(x - 2) - 5",
+"line": "2(x - 6) = -3(x + 1) + 7",
+"expected": "UNRELATED Finite{1/6} witness=1/6"
+},
+{
+"previous": "-3(x + 4) = 6(x - 6) - 8",
+"line": "(-3(x + 4)) * x = (6(x - 6) - 8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6(x - 4) = 6(x + 9) + 0",
+"line": "6(x - 4) + 1 = 6(x + 9) + 0 + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2(x - 9) = -1(x - 1) + 5",
+"line": "-2(x - 9) + -6 = -1(x - 1) + 5 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x + 0) = 5(x + 5) - 5",
+"line": "-3(x + 0) + 2 = 5(x + 5) - 5",
+"expected": "UNRELATED Finite{-5/2} witness=-5/2"
+},
+{
+"previous": "5(x + 8) = 4(x - 9) + 4",
+"line": "(5(x + 8)) * -1 = (4(x - 9) + 4) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2(x - 8) = 1(x - 1) - 5",
+"line": "1(x - 5) = -4(x + 9) - 1",
+"expected": "UNRELATED Finite{10} witness=10"
+},
+{
+"previous": "-3(x - 5) = -4(x + 8) + 1",
+"line": "-3(x - 5) + -6 = -4(x + 8) + 1 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x + 6) = 3(x - 5) + 8",
+"line": "(1(x + 6))^2 = (3(x - 5) + 8)^2",
+"expected": "GAINS Finite{1/4} witness=1/4"
+},
+{
+"previous": "-2(x - 9) = -4(x + 8) - 5",
+"line": "-2(x - 9) + -4 = -4(x + 8) - 5",
+"expected": "UNRELATED Finite{-55/2} witness=-55/2"
+},
+{
+"previous": "-4(x + 3) = 1(x + 5) - 6",
+"line": "(-4(x + 3)) * -2 = (1(x + 5) - 6) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3(x + 8) = 4(x + 4) + 3",
+"line": "(-3(x + 8)) * 5 = (4(x + 4) + 3) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x + 5) = 5(x + 5) + 9",
+"line": "-5(x + 5) + -5 = 5(x + 5) + 9 + -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x + 9) = 5(x + 6) - 8",
+"line": "-1(x + 9) + -4 = 5(x + 6) - 8 + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x - 9) = -3(x - 6) - 8",
+"line": "(1(x - 9)) * -2 = (-3(x - 6) - 8) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1(x - 6) = 4(x - 8) - 2",
+"line": "4(x - 8) - 2 = -1(x - 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x + 2) = -4(x + 0) - 7",
+"line": "4(x - 6) = 4(x + 0) - 7",
+"expected": "LOSES Finite{-9/5} witness=-9/5"
+},
+{
+"previous": "3(x - 8) = 4(x + 7) - 6",
+"line": "3(x - 8) + 5 = 4(x + 7) - 6",
+"expected": "UNRELATED Finite{-46} witness=-46"
+},
+{
+"previous": "5(x + 0) = -4(x - 1) - 1",
+"line": "5(x + 0) + 2 = -4(x - 1) - 1 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x - 8) = 5(x + 0) + 8",
+"line": "-5(x - 8) + 2 = 5(x + 0) + 8 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1(x + 5) = -3(x + 6) + 5",
+"line": "5(x + 7) = -1(x + 8) - 5",
+"expected": "UNRELATED Finite{-9/2} witness=-9/2"
+},
+{
+"previous": "-5(x - 2) = -1(x - 6) + 7",
+"line": "x = 7/3",
+"expected": "UNRELATED Finite{-3/4} witness=-3/4"
+},
+{
+"previous": "2(x + 6) = -3(x - 4) - 7",
+"line": "-3(x - 4) - 7 = 2(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5(x + 4) = -3(x - 5) - 6",
+"line": "(-5(x + 4)) * x = (-3(x - 5) - 6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/5 + x/2 = 9",
+"line": "(x/5 + x/2) * 3 = (9) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/2 = 8",
+"line": "(x/8 + x/2) * x = (8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/3 + x/3 = 6",
+"line": "(x/3 + x/3)^2 = (6)^2",
+"expected": "GAINS Finite{-9} witness=-9"
+},
+{
+"previous": "x/9 + x/2 = 3",
+"line": "x/9 + x/2 + 6 = 3",
+"expected": "UNRELATED Finite{54/11} witness=54/11"
+},
+{
+"previous": "x/7 + x/5 = 0",
+"line": "(x/7 + x/5)^2 = (0)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/2 = 7",
+"line": "x/8 + x/5 = -3",
+"expected": "UNRELATED Finite{126/11} witness=126/11"
+},
+{
+"previous": "x/6 + x/8 = 5",
+"line": "5 = x/6 + x/8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/9 = -6",
+"line": "x/8 + x/9 + 4 = -6 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/9 = -5",
+"line": "(x/7 + x/9) * 4 = (-5) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/5 = -4",
+"line": "(x/3 + x/5)^2 = (-4)^2",
+"expected": "GAINS Finite{15/2} witness=15/2"
+},
+{
+"previous": "x/9 + x/3 = 9",
+"line": "x/9 + x/3 + 5 = 9 + 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/4 = 5",
+"line": "(x/2 + x/4) * x = (5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/9 + x/8 = -9",
+"line": "(x/9 + x/8) * x = (-9) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/2 + x/8 = -3",
+"line": "-3 = x/2 + x/8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/3 = 0",
+"line": "0 = x/9 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/8 = 3",
+"line": "x/4 + x/2 = 1",
+"expected": "UNRELATED Finite{120/13} witness=120/13"
+},
+{
+"previous": "x/3 + x/7 = -5",
+"line": "-5 = x/3 + x/7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/6 = 4",
+"line": "(x/3 + x/6) * 4 = (4) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/9 = -5",
+"line": "(x/6 + x/9) * 4 = (-5) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/3 = -7",
+"line": "x/9 + x/4 = -1",
+"expected": "UNRELATED Finite{-63/4} witness=-63/4"
+},
+{
+"previous": "x/7 + x/2 = 1",
+"line": "(x/7 + x/2)^2 = (1)^2",
+"expected": "GAINS Finite{-14/9} witness=-14/9"
+},
+{
+"previous": "x/3 + x/3 = -1",
+"line": "(x/3 + x/3)^2 = (-1)^2",
+"expected": "GAINS Finite{3/2} witness=3/2"
+},
+{
+"previous": "x/3 + x/8 = -8",
+"line": "-8 = x/3 + x/8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/5 = -8",
+"line": "-8 = x/9 + x/5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/4 = -3",
+"line": "(x/4 + x/4) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/4 + x/6 = 5",
+"line": "x/4 + x/6 + -2 = 5",
+"expected": "UNRELATED Finite{12} witness=12"
+},
+{
+"previous": "x/5 + x/9 = 8",
+"line": "8 = x/5 + x/9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/3 = 7",
+"line": "7 = x/9 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/9 = 8",
+"line": "x/7 + x/6 = -9",
+"expected": "UNRELATED Finite{180/7} witness=180/7"
+},
+{
+"previous": "x/3 + x/4 = 1",
+"line": "x/3 + x/4 + -1 = 1 + -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/4 = -6",
+"line": "-6 = x/3 + x/4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/6 = -1",
+"line": "(x/3 + x/6) * -3 = (-1) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/2 = 0",
+"line": "0 = x/5 + x/2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/7 = 3",
+"line": "x = -6",
+"expected": "UNRELATED Finite{126/13} witness=126/13"
+},
+{
+"previous": "x/3 + x/7 = -3",
+"line": "(x/3 + x/7) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/7 + x/2 = -4",
+"line": "-4 = x/7 + x/2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/6 = 1",
+"line": "1 = x/9 + x/6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/3 = -3",
+"line": "(x/3 + x/3)^2 = (-3)^2",
+"expected": "GAINS Finite{9/2} witness=9/2"
+},
+{
+"previous": "x/8 + x/6 = 3",
+"line": "(x/8 + x/6) * 3 = (3) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/4 = -2",
+"line": "(x/6 + x/4) * -4 = (-2) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/6 = -6",
+"line": "(x/4 + x/6) * 3 = (-6) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/5 = 6",
+"line": "(x/5 + x/5) * x = (6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/7 + x/4 = -3",
+"line": "x/7 + x/4 + -4 = -3",
+"expected": "UNRELATED Finite{-84/11} witness=-84/11"
+},
+{
+"previous": "x/2 + x/9 = -8",
+"line": "(x/2 + x/9) * 3 = (-8) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/7 = 8",
+"line": "8 = x/2 + x/7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/7 = -2",
+"line": "x/7 + x/7 + -2 = -2 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/2 = -3",
+"line": "-3 = x/7 + x/2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/4 = -1",
+"line": "(x/8 + x/4) * x = (-1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/9 + x/3 = 8",
+"line": "x/9 + x/3 + -4 = 8",
+"expected": "UNRELATED Finite{18} witness=18"
+},
+{
+"previous": "x/4 + x/3 = 4",
+"line": "4 = x/4 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/8 = 5",
+"line": "5 = x/8 + x/8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/4 = -8",
+"line": "(x/8 + x/4) * 2 = (-8) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/9 = 5",
+"line": "5 = x/2 + x/9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/4 = -9",
+"line": "-9 = x/9 + x/4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/2 = 2",
+"line": "x/7 + x/6 = 0",
+"expected": "UNRELATED Finite{12/5} witness=12/5"
+},
+{
+"previous": "x/2 + x/7 = -2",
+"line": "(x/2 + x/7) * 2 = (-2) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/6 = 1",
+"line": "(x/8 + x/6) * x = (1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/9 + x/7 = 2",
+"line": "x/9 + x/7 + -5 = 2",
+"expected": "UNRELATED Finite{63/8} witness=63/8"
+},
+{
+"previous": "x/5 + x/6 = 2",
+"line": "2 = x/5 + x/6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/2 = -3",
+"line": "-3 = x/6 + x/2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/7 = 6",
+"line": "x/5 + x/7 + -3 = 6",
+"expected": "UNRELATED Finite{35/2} witness=35/2"
+},
+{
+"previous": "x/6 + x/5 = 8",
+"line": "x/9 + x/6 = 3",
+"expected": "UNRELATED Finite{240/11} witness=240/11"
+},
+{
+"previous": "x/5 + x/5 = 5",
+"line": "5 = x/5 + x/5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/6 = 8",
+"line": "x = -3/2",
+"expected": "UNRELATED Finite{24} witness=24"
+},
+{
+"previous": "x/6 + x/5 = -2",
+"line": "(x/6 + x/5) * 6 = (-2) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/7 = -1",
+"line": "(x/9 + x/7) * x = (-1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/7 + x/7 = 1",
+"line": "x/7 + x/7 + 6 = 1",
+"expected": "UNRELATED Finite{7/2} witness=7/2"
+},
+{
+"previous": "x/3 + x/9 = 1",
+"line": "x = -3/2",
+"expected": "UNRELATED Finite{9/4} witness=9/4"
+},
+{
+"previous": "x/6 + x/3 = -1",
+"line": "-1 = x/6 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/7 = -4",
+"line": "(x/8 + x/7) * -5 = (-4) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/2 = 9",
+"line": "(x/5 + x/2)^2 = (9)^2",
+"expected": "GAINS Finite{-90/7} witness=-90/7"
+},
+{
+"previous": "x/2 + x/4 = -3",
+"line": "x/9 + x/9 = 7",
+"expected": "UNRELATED Finite{-4} witness=-4"
+},
+{
+"previous": "x/2 + x/4 = 1",
+"line": "(x/2 + x/4) * -3 = (1) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/9 = -3",
+"line": "-3 = x/5 + x/9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/7 = 1",
+"line": "(x/3 + x/7) * 1 = (1) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/9 = 2",
+"line": "(x/2 + x/9) * x = (2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/2 + x/5 = 6",
+"line": "6 = x/2 + x/5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/6 = 5",
+"line": "x/3 + x/7 = -4",
+"expected": "UNRELATED Finite{15} witness=15"
+},
+{
+"previous": "x/7 + x/7 = -1",
+"line": "(x/7 + x/7) * x = (-1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/2 + x/4 = 7",
+"line": "x = 9/2",
+"expected": "UNRELATED Finite{28/3} witness=28/3"
+},
+{
+"previous": "x/4 + x/2 = 7",
+"line": "(x/4 + x/2)^2 = (7)^2",
+"expected": "GAINS Finite{-28/3} witness=-28/3"
+},
+{
+"previous": "x/5 + x/9 = 1",
+"line": "x = 4",
+"expected": "UNRELATED Finite{45/14} witness=45/14"
+},
+{
+"previous": "x/7 + x/3 = -6",
+"line": "-6 = x/7 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/5 = 8",
+"line": "(x/9 + x/5) * 6 = (8) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/7 = 4",
+"line": "(x/7 + x/7) * 3 = (4) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/7 = 8",
+"line": "(x/8 + x/7) * 1 = (8) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/6 = 2",
+"line": "x/6 + x/9 = 5",
+"expected": "UNRELATED Finite{48/7} witness=48/7"
+},
+{
+"previous": "x/6 + x/3 = 0",
+"line": "x = 5/4",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "x/4 + x/4 = -8",
+"line": "(x/4 + x/4) * -2 = (-8) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/9 = 2",
+"line": "x/2 + x/5 = -7",
+"expected": "UNRELATED Finite{63/8} witness=63/8"
+},
+{
+"previous": "x/6 + x/8 = 0",
+"line": "(x/6 + x/8) * x = (0) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/3 = -4",
+"line": "(x/5 + x/3)^2 = (-4)^2",
+"expected": "GAINS Finite{15/2} witness=15/2"
+},
+{
+"previous": "x/4 + x/2 = -7",
+"line": "(x/4 + x/2) * x = (-7) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/8 + x/2 = 4",
+"line": "4 = x/8 + x/2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/9 = -2",
+"line": "x = 1",
+"expected": "UNRELATED Finite{-144/17} witness=-144/17"
+},
+{
+"previous": "x/6 + x/2 = -5",
+"line": "(x/6 + x/2) * -5 = (-5) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/7 = 1",
+"line": "x/5 + x/7 + 2 = 1 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/7 = 9",
+"line": "x = -1",
+"expected": "UNRELATED Finite{252/11} witness=252/11"
+},
+{
+"previous": "x/6 + x/6 = 5",
+"line": "(x/6 + x/6) * -2 = (5) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/3 = -8",
+"line": "x/3 + x/3 + 4 = -8",
+"expected": "UNRELATED Finite{-12} witness=-12"
+},
+{
+"previous": "x/7 + x/3 = -8",
+"line": "-8 = x/7 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/2 = 4",
+"line": "(x/5 + x/2)^2 = (4)^2",
+"expected": "GAINS Finite{-40/7} witness=-40/7"
+},
+{
+"previous": "x/7 + x/4 = 0",
+"line": "0 = x/7 + x/4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/5 = 7",
+"line": "(x/5 + x/5)^2 = (7)^2",
+"expected": "GAINS Finite{-35/2} witness=-35/2"
+},
+{
+"previous": "x/2 + x/7 = -5",
+"line": "(x/2 + x/7)^2 = (-5)^2",
+"expected": "GAINS Finite{70/9} witness=70/9"
+},
+{
+"previous": "x/9 + x/2 = 7",
+"line": "x = 7/2",
+"expected": "UNRELATED Finite{126/11} witness=126/11"
+},
+{
+"previous": "x/6 + x/2 = 2",
+"line": "x/5 + x/6 = -4",
+"expected": "UNRELATED Finite{3} witness=3"
+},
+{
+"previous": "x/6 + x/2 = -9",
+"line": "x/6 + x/7 = 1",
+"expected": "UNRELATED Finite{-27/2} witness=-27/2"
+},
+{
+"previous": "x/9 + x/5 = -6",
+"line": "x/9 + x/5 + -2 = -6 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/7 = 2",
+"line": "x = 2",
+"expected": "UNRELATED Finite{35/6} witness=35/6"
+},
+{
+"previous": "x/2 + x/5 = -5",
+"line": "x = -1",
+"expected": "UNRELATED Finite{-50/7} witness=-50/7"
+},
+{
+"previous": "x/5 + x/3 = -2",
+"line": "x = 7/3",
+"expected": "UNRELATED Finite{-15/4} witness=-15/4"
+},
+{
+"previous": "x/7 + x/5 = -3",
+"line": "(x/7 + x/5) * 1 = (-3) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/5 + x/6 = 5",
+"line": "(x/5 + x/6) * 4 = (5) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/3 = -7",
+"line": "-7 = x/2 + x/3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/3 = 1",
+"line": "x/6 + x/3 + -4 = 1",
+"expected": "UNRELATED Finite{2} witness=2"
+},
+{
+"previous": "x/6 + x/5 = -6",
+"line": "(x/6 + x/5) * x = (-6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/6 + x/9 = 8",
+"line": "x/6 + x/9 + 9 = 8 + 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/9 = -1",
+"line": "(x/6 + x/9) * 3 = (-1) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/2 = 3",
+"line": "x = 7",
+"expected": "UNRELATED Finite{3} witness=3"
+},
+{
+"previous": "x/6 + x/3 = -6",
+"line": "(x/6 + x/3) * 1 = (-6) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/6 = -2",
+"line": "x/4 + x/6 + -9 = -2 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/6 + x/9 = 5",
+"line": "x/6 + x/9 + -9 = 5 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/6 = -9",
+"line": "-9 = x/3 + x/6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/4 = -4",
+"line": "x = 3/4",
+"expected": "UNRELATED Finite{-48/7} witness=-48/7"
+},
+{
+"previous": "x/2 + x/9 = 5",
+"line": "x = -7/2",
+"expected": "UNRELATED Finite{90/11} witness=90/11"
+},
+{
+"previous": "x/2 + x/9 = -2",
+"line": "(x/2 + x/9) * -3 = (-2) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/7 = 9",
+"line": "9 = x/3 + x/7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/3 = 1",
+"line": "(x/7 + x/3) * -2 = (1) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/6 = -7",
+"line": "(x/9 + x/6) * 4 = (-7) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/2 + x/2 = -5",
+"line": "x/2 + x/2 + 8 = -5 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/3 + x/8 = -9",
+"line": "-9 = x/3 + x/8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/7 = -5",
+"line": "(x/7 + x/7) * -5 = (-5) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/6 = 1",
+"line": "x/8 + x/7 = -3",
+"expected": "UNRELATED Finite{12/5} witness=12/5"
+},
+{
+"previous": "x/5 + x/2 = 1",
+"line": "(x/5 + x/2) * -4 = (1) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/9 = -2",
+"line": "-2 = x/4 + x/9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/4 + x/4 = -2",
+"line": "x/2 + x/6 = -4",
+"expected": "UNRELATED Finite{-4} witness=-4"
+},
+{
+"previous": "x/9 + x/9 = -5",
+"line": "(x/9 + x/9)^2 = (-5)^2",
+"expected": "GAINS Finite{45/2} witness=45/2"
+},
+{
+"previous": "x/5 + x/7 = -7",
+"line": "(x/5 + x/7) * -4 = (-7) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/7 + x/3 = -3",
+"line": "(x/7 + x/3) * 6 = (-3) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/8 = 2",
+"line": "(x/8 + x/8)^2 = (2)^2",
+"expected": "GAINS Finite{-8} witness=-8"
+},
+{
+"previous": "x/3 + x/9 = 8",
+"line": "x = -1",
+"expected": "UNRELATED Finite{18} witness=18"
+},
+{
+"previous": "x/2 + x/5 = -3",
+"line": "(x/2 + x/5) * 3 = (-3) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/8 + x/5 = -2",
+"line": "x/2 + x/5 = 5",
+"expected": "UNRELATED Finite{-80/13} witness=-80/13"
+},
+{
+"previous": "x/3 + x/2 = 8",
+"line": "(x/3 + x/2) * x = (8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x/3 + x/4 = 6",
+"line": "x/3 + x/4 + -1 = 6",
+"expected": "UNRELATED Finite{72/7} witness=72/7"
+},
+{
+"previous": "x/6 + x/6 = -3",
+"line": "x/6 + x/6 + 8 = -3 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x/9 + x/4 = -1",
+"line": "x/9 + x/4 + 6 = -1",
+"expected": "UNRELATED Finite{-36/13} witness=-36/13"
+},
+{
+"previous": "x/6 + x/7 = -2",
+"line": "x/6 + x/7 + 4 = -2",
+"expected": "UNRELATED Finite{-84/13} witness=-84/13"
+},
+{
+"previous": "x/5 + x/9 = -9",
+"line": "(x/5 + x/9)^2 = (-9)^2",
+"expected": "GAINS Finite{405/14} witness=405/14"
+},
+{
+"previous": "5/(x - 2) = -5/(x + 7)",
+"line": "1/(x - 7) = 1/(x + 0)",
+"expected": "LOSES Finite{-5/2} witness=-5/2"
+},
+{
+"previous": "6/(x - 5) = -4/(x + 2)",
+"line": "(6/(x - 5)) * 1 = (-4/(x + 2)) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x + 6) = 6/(x - 4)",
+"line": "(-3/(x + 6))^2 = (6/(x - 4))^2",
+"expected": "GAINS Finite{-16} witness=-16"
+},
+{
+"previous": "4/(x - 1) = -3/(x + 2)",
+"line": "x = 3",
+"expected": "UNRELATED Finite{-5/7} witness=-5/7"
+},
+{
+"previous": "2/(x - 4) = 5/(x - 5)",
+"line": "(2/(x - 4)) * 1 = (5/(x - 5)) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x + 6) = -5/(x - 2)",
+"line": "(-4/(x + 6))^2 = (-5/(x - 2))^2",
+"expected": "GAINS Finite{-22/9} witness=-22/9"
+},
+{
+"previous": "4/(x - 4) = 3/(x - 6)",
+"line": "-4/(x - 5) = 1/(x - 6)",
+"expected": "UNRELATED Finite{12} witness=12"
+},
+{
+"previous": "3/(x - 2) = 5/(x + 4)",
+"line": "5/(x + 4) = 3/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x + 9) = 2/(x + 5)",
+"line": "(6/(x + 9)) * x = (2/(x + 5)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2/(x - 3) = 6/(x + 9)",
+"line": "(2/(x - 3)) * x = (6/(x + 9)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "1/(x + 2) = 5/(x + 8)",
+"line": "(1/(x + 2)) * x = (5/(x + 8)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-3/(x + 4) = -5/(x + 4)",
+"line": "3/(x + 4) = -4/(x - 5)",
+"expected": "GAINS Finite{-1/7} witness=-1/7"
+},
+{
+"previous": "-3/(x + 6) = -1/(x - 5)",
+"line": "-1/(x - 5) = -3/(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x - 5) = -3/(x + 0)",
+"line": "x = -8",
+"expected": "UNRELATED Finite{-15} witness=-15"
+},
+{
+"previous": "4/(x + 3) = -4/(x + 1)",
+"line": "4/(x - 3) = 6/(x - 6)",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "-2/(x - 4) = 1/(x - 5)",
+"line": "(-2/(x - 4)) * 1 = (1/(x - 5)) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x + 6) = 1/(x + 8)",
+"line": "-4/(x + 6) + 2 = 1/(x + 8)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2/(x - 1) = 1/(x - 7)",
+"line": "1/(x - 7) = -2/(x - 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4/(x - 3) = -5/(x + 8)",
+"line": "(4/(x - 3))^2 = (-5/(x + 8))^2",
+"expected": "GAINS Finite{47} witness=47"
+},
+{
+"previous": "5/(x - 5) = 4/(x + 0)",
+"line": "-4/(x + 6) = -1/(x + 2)",
+"expected": "UNRELATED Finite{-20} witness=-20"
+},
+{
+"previous": "-2/(x - 3) = -1/(x + 1)",
+"line": "(-2/(x - 3)) * x = (-1/(x + 1)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2/(x - 5) = -2/(x - 1)",
+"line": "6/(x - 1) = -1/(x + 1)",
+"expected": "UNRELATED Finite{3} witness=3"
+},
+{
+"previous": "-3/(x + 9) = -5/(x - 3)",
+"line": "(-3/(x + 9))^2 = (-5/(x - 3))^2",
+"expected": "GAINS Finite{-9/2} witness=-9/2"
+},
+{
+"previous": "-1/(x + 0) = 1/(x - 5)",
+"line": "(-1/(x + 0)) * x = (1/(x - 5)) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 7) = 1/(x - 8)",
+"line": "-5/(x + 7) + 1 = 1/(x - 8) + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x - 2) = 1/(x - 2)",
+"line": "(-4/(x - 2)) * x = (1/(x - 2)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4/(x - 7) = 2/(x - 4)",
+"line": "4/(x - 7) + 3 = 2/(x - 4)",
+"expected": "LOSES Finite{1} witness=1"
+},
+{
+"previous": "2/(x + 3) = 1/(x - 7)",
+"line": "-3/(x + 8) = -5/(x + 6)",
+"expected": "UNRELATED Finite{17} witness=17"
+},
+{
+"previous": "-3/(x + 7) = 6/(x - 1)",
+"line": "2/(x - 4) = 4/(x + 6)",
+"expected": "UNRELATED Finite{-13/3} witness=-13/3"
+},
+{
+"previous": "-3/(x + 2) = -4/(x - 6)",
+"line": "-3/(x + 2) + 2 = -4/(x - 6) + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x + 2) = 1/(x - 8)",
+"line": "x = -3",
+"expected": "UNRELATED Finite{10} witness=10"
+},
+{
+"previous": "3/(x + 9) = 1/(x - 4)",
+"line": "x = -5/2",
+"expected": "UNRELATED Finite{21/2} witness=21/2"
+},
+{
+"previous": "-5/(x - 7) = -5/(x + 5)",
+"line": "(-5/(x - 7)) * -4 = (-5/(x + 5)) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5/(x - 7) = 4/(x + 9)",
+"line": "(5/(x - 7))^2 = (4/(x + 9))^2",
+"expected": "GAINS Finite{-17/9} witness=-17/9"
+},
+{
+"previous": "6/(x - 8) = 1/(x - 5)",
+"line": "1/(x - 5) = 6/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 7) = 6/(x - 3)",
+"line": "3/(x - 6) = -2/(x - 3)",
+"expected": "UNRELATED Finite{39/5} witness=39/5"
+},
+{
+"previous": "5/(x + 5) = 3/(x + 3)",
+"line": "x = -3",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "3/(x - 2) = 6/(x + 6)",
+"line": "6/(x + 6) = 3/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2/(x - 6) = 4/(x - 6)",
+"line": "(-2/(x - 6)) * -3 = (4/(x - 6)) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1/(x - 4) = 6/(x + 7)",
+"line": "x = -2",
+"expected": "UNRELATED Finite{17/7} witness=17/7"
+},
+{
+"previous": "-1/(x + 6) = -5/(x - 5)",
+"line": "(-1/(x + 6))^2 = (-5/(x - 5))^2",
+"expected": "GAINS Finite{-25/6} witness=-25/6"
+},
+{
+"previous": "1/(x - 1) = 5/(x + 7)",
+"line": "1/(x - 1) + 5 = 5/(x + 7)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-3/(x + 9) = -2/(x + 7)",
+"line": "5/(x + 4) = 3/(x - 6)",
+"expected": "UNRELATED Finite{-3} witness=-3"
+},
+{
+"previous": "2/(x + 6) = -1/(x + 8)",
+"line": "2/(x + 6) + 1 = -1/(x + 8) + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2/(x + 5) = 4/(x + 9)",
+"line": "x = 3/2",
+"expected": "UNRELATED Finite{-19/3} witness=-19/3"
+},
+{
+"previous": "1/(x + 7) = 3/(x + 3)",
+"line": "(1/(x + 7)) * -1 = (3/(x + 3)) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x - 7) = -5/(x + 9)",
+"line": "(3/(x - 7))^2 = (-5/(x + 9))^2",
+"expected": "GAINS Finite{31} witness=31"
+},
+{
+"previous": "1/(x - 3) = 6/(x + 6)",
+"line": "6/(x + 6) = 1/(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x + 1) = 1/(x - 5)",
+"line": "1/(x - 5) = 6/(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 7) = -4/(x - 1)",
+"line": "-4/(x - 1) = 1/(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x - 2) = 4/(x + 7)",
+"line": "x = 5",
+"expected": "UNRELATED Finite{11} witness=11"
+},
+{
+"previous": "6/(x - 2) = -4/(x + 8)",
+"line": "(6/(x - 2)) * x = (-4/(x + 8)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2/(x + 2) = 4/(x + 7)",
+"line": "4/(x + 7) = 2/(x + 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x - 9) = -2/(x - 4)",
+"line": "3/(x - 9) + 6 = -2/(x - 4)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "2/(x + 1) = 5/(x + 8)",
+"line": "x = -8/3",
+"expected": "UNRELATED Finite{11/3} witness=11/3"
+},
+{
+"previous": "-1/(x + 1) = -5/(x - 5)",
+"line": "-1/(x + 1) + 2 = -5/(x - 5) + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 6) = 4/(x + 7)",
+"line": "(1/(x - 6)) * 2 = (4/(x + 7)) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 8) = 1/(x + 4)",
+"line": "1/(x + 4) = 1/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 1) = 3/(x + 9)",
+"line": "(-5/(x + 1))^2 = (3/(x + 9))^2",
+"expected": "GAINS Finite{-21} witness=-21"
+},
+{
+"previous": "-3/(x + 2) = 3/(x - 8)",
+"line": "(-3/(x + 2))^2 = (3/(x - 8))^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x - 9) = 3/(x - 6)",
+"line": "(-3/(x - 9)) * 5 = (3/(x - 6)) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2/(x - 2) = 5/(x + 2)",
+"line": "-2/(x - 2) + 1 = 5/(x + 2) + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1/(x - 4) = 6/(x - 4)",
+"line": "6/(x - 4) = -1/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1/(x + 1) = -4/(x + 7)",
+"line": "-1/(x + 1) + 1 = -4/(x + 7)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5/(x + 4) = 6/(x - 8)",
+"line": "6/(x - 8) = 5/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x - 8) = -3/(x + 8)",
+"line": "(2/(x - 8))^2 = (-3/(x + 8))^2",
+"expected": "GAINS Finite{40} witness=40"
+},
+{
+"previous": "4/(x - 2) = 2/(x + 1)",
+"line": "4/(x - 2) + -5 = 2/(x + 1)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2/(x + 0) = 1/(x - 7)",
+"line": "1/(x - 7) = -2/(x + 0)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x - 6) = 6/(x - 6)",
+"line": "(-5/(x - 6)) * -1 = (6/(x - 6)) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1/(x + 8) = -3/(x + 7)",
+"line": "x = -7/3",
+"expected": "UNRELATED Finite{-17/2} witness=-17/2"
+},
+{
+"previous": "-5/(x + 6) = -1/(x + 8)",
+"line": "-1/(x + 8) = -5/(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 1) = -3/(x + 0)",
+"line": "(1/(x - 1))^2 = (-3/(x + 0))^2",
+"expected": "GAINS Finite{3/2} witness=3/2"
+},
+{
+"previous": "-4/(x + 1) = -1/(x + 7)",
+"line": "-1/(x + 7) = -4/(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x - 3) = 3/(x - 1)",
+"line": "(-4/(x - 3)) * -1 = (3/(x - 1)) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x + 6) = 2/(x + 2)",
+"line": "1/(x + 6) + -2 = 2/(x + 2) + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x + 6) = 1/(x + 3)",
+"line": "1/(x + 3) = 6/(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 6) = 6/(x + 2)",
+"line": "-1/(x + 1) = -2/(x + 1)",
+"expected": "LOSES Finite{-46/11} witness=-46/11"
+},
+{
+"previous": "1/(x - 8) = 6/(x + 5)",
+"line": "(1/(x - 8))^2 = (6/(x + 5))^2",
+"expected": "GAINS Finite{43/7} witness=43/7"
+},
+{
+"previous": "5/(x - 9) = 5/(x + 6)",
+"line": "5/(x + 6) = 5/(x - 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x - 9) = 3/(x + 4)",
+"line": "-4/(x - 9) + -3 = 3/(x + 4) + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x - 2) = -3/(x + 7)",
+"line": "(2/(x - 2)) * 4 = (-3/(x + 7)) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 2) = 1/(x - 2)",
+"line": "1/(x - 2) = -5/(x + 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5/(x + 6) = -1/(x - 1)",
+"line": "(5/(x + 6))^2 = (-1/(x - 1))^2",
+"expected": "GAINS Finite{11/4} witness=11/4"
+},
+{
+"previous": "-4/(x + 0) = -3/(x - 1)",
+"line": "(-4/(x + 0)) * 2 = (-3/(x - 1)) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 1) = 5/(x + 5)",
+"line": "(1/(x - 1)) * x = (5/(x + 5)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-5/(x - 5) = -4/(x + 7)",
+"line": "-5/(x - 5) + -1 = -4/(x + 7)",
+"expected": "LOSES Finite{-55} witness=-55"
+},
+{
+"previous": "-5/(x - 7) = 4/(x - 6)",
+"line": "(-5/(x - 7)) * 3 = (4/(x - 6)) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 4) = 5/(x - 4)",
+"line": "5/(x - 4) = -5/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x + 0) = -4/(x - 4)",
+"line": "(-4/(x + 0))^2 = (-4/(x - 4))^2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "1/(x - 6) = 5/(x + 7)",
+"line": "(1/(x - 6))^2 = (5/(x + 7))^2",
+"expected": "GAINS Finite{23/6} witness=23/6"
+},
+{
+"previous": "-4/(x - 5) = 3/(x + 4)",
+"line": "(-4/(x - 5)) * 5 = (3/(x + 4)) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x - 9) = -4/(x - 4)",
+"line": "(6/(x - 9)) * -5 = (-4/(x - 4)) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x + 7) = 5/(x + 2)",
+"line": "(3/(x + 7)) * -2 = (5/(x + 2)) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 8) = -4/(x - 7)",
+"line": "1/(x - 8) + 3 = -4/(x - 7)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2/(x - 8) = 5/(x + 8)",
+"line": "1/(x + 0) = -5/(x - 3)",
+"expected": "UNRELATED Finite{24/7} witness=24/7"
+},
+{
+"previous": "-4/(x + 5) = -4/(x + 6)",
+"line": "x = 9",
+"expected": "GAINS Finite{9} witness=9"
+},
+{
+"previous": "-5/(x - 2) = -2/(x + 0)",
+"line": "-3/(x - 6) = -1/(x - 5)",
+"expected": "UNRELATED Finite{-4/3} witness=-4/3"
+},
+{
+"previous": "-5/(x + 8) = 1/(x + 5)",
+"line": "-5/(x + 8) + 2 = 1/(x + 5) + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x + 9) = 5/(x + 6)",
+"line": "x = 1",
+"expected": "UNRELATED Finite{-11} witness=-11"
+},
+{
+"previous": "2/(x - 6) = -3/(x + 8)",
+"line": "-3/(x + 8) = 2/(x - 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x + 0) = 5/(x - 7)",
+"line": "(-4/(x + 0)) * x = (5/(x - 7)) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x + 7) = -1/(x - 7)",
+"line": "(1/(x + 7)) * -1 = (-1/(x - 7)) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x + 8) = -3/(x + 3)",
+"line": "-3/(x + 3) = 3/(x + 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6/(x - 8) = 1/(x + 6)",
+"line": "1/(x + 6) = 6/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x - 8) = 5/(x + 4)",
+"line": "x = 4/3",
+"expected": "UNRELATED Finite{7/2} witness=7/2"
+},
+{
+"previous": "-1/(x - 8) = 5/(x + 4)",
+"line": "-1/(x - 8) + 6 = 5/(x + 4) + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1/(x - 2) = -1/(x + 6)",
+"line": "(-1/(x - 2)) * -4 = (-1/(x + 6)) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x - 5) = -5/(x + 5)",
+"line": "(-3/(x - 5)) * x = (-5/(x + 5)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "3/(x + 6) = 5/(x + 7)",
+"line": "5/(x + 7) = 3/(x + 6)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x - 2) = 5/(x - 5)",
+"line": "5/(x - 5) = -5/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x + 3) = 2/(x + 7)",
+"line": "2/(x + 3) + -3 = 2/(x + 7)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4/(x - 6) = 5/(x + 1)",
+"line": "(-4/(x - 6))^2 = (5/(x + 1))^2",
+"expected": "GAINS Finite{34} witness=34"
+},
+{
+"previous": "-5/(x - 4) = -5/(x - 5)",
+"line": "-5/(x - 5) = -5/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x + 2) = -1/(x + 5)",
+"line": "-4/(x + 2) + -4 = -1/(x + 5) + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4/(x - 2) = -4/(x - 1)",
+"line": "-3/(x - 4) = -4/(x + 2)",
+"expected": "UNRELATED Finite{3/2} witness=3/2"
+},
+{
+"previous": "-4/(x + 0) = 5/(x + 1)",
+"line": "-4/(x + 0) + -3 = 5/(x + 1)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2/(x - 2) = 5/(x - 8)",
+"line": "(-2/(x - 2)) * -3 = (5/(x - 8)) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x + 9) = -3/(x - 2)",
+"line": "(-3/(x + 9))^2 = (-3/(x - 2))^2",
+"expected": "GAINS Finite{-7/2} witness=-7/2"
+},
+{
+"previous": "-1/(x + 5) = 2/(x - 7)",
+"line": "2/(x - 7) = -1/(x + 5)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2/(x + 6) = 3/(x - 8)",
+"line": "-2/(x + 6) + 2 = 3/(x - 8) + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x + 7) = -5/(x + 6)",
+"line": "x = 9/2",
+"expected": "UNRELATED Finite{-53/8} witness=-53/8"
+},
+{
+"previous": "-4/(x + 0) = 5/(x + 6)",
+"line": "-4/(x + 0) + 4 = 5/(x + 6)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5/(x + 3) = -4/(x + 3)",
+"line": "-4/(x + 6) = 6/(x - 8)",
+"expected": "GAINS Finite{-2/5} witness=-2/5"
+},
+{
+"previous": "2/(x + 0) = -3/(x + 0)",
+"line": "x = -2",
+"expected": "GAINS Finite{-2} witness=-2"
+},
+{
+"previous": "1/(x + 6) = 4/(x + 0)",
+"line": "-2/(x + 2) = 3/(x + 4)",
+"expected": "UNRELATED Finite{-8} witness=-8"
+},
+{
+"previous": "6/(x + 8) = 6/(x - 3)",
+"line": "6/(x - 3) = 6/(x + 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x + 6) = -5/(x + 0)",
+"line": "2/(x + 6) + 8 = -5/(x + 0) + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4/(x - 5) = 1/(x - 8)",
+"line": "-4/(x - 5) + 4 = 1/(x - 8)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5/(x + 8) = 3/(x + 5)",
+"line": "(5/(x + 8)) * -2 = (3/(x + 5)) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x - 1) = -4/(x - 1)",
+"line": "(1/(x - 1)) * x = (-4/(x - 1)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-2/(x + 4) = -4/(x - 3)",
+"line": "(-2/(x + 4)) * 5 = (-4/(x - 3)) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3/(x - 9) = 2/(x - 2)",
+"line": "x = -5/2",
+"expected": "UNRELATED Finite{24/5} witness=24/5"
+},
+{
+"previous": "6/(x + 3) = 6/(x + 7)",
+"line": "(6/(x + 3)) * x = (6/(x + 7)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "3/(x - 5) = 4/(x + 1)",
+"line": "(3/(x - 5)) * -1 = (4/(x + 1)) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x + 8) = -2/(x + 4)",
+"line": "(2/(x + 8)) * 3 = (-2/(x + 4)) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2/(x + 1) = -5/(x - 6)",
+"line": "(2/(x + 1)) * 2 = (-5/(x - 6)) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1/(x + 5) = 1/(x + 7)",
+"line": "x = 3/2",
+"expected": "GAINS Finite{3/2} witness=3/2"
+},
+{
+"previous": "4/(x - 4) = -1/(x - 9)",
+"line": "4/(x - 4) + -5 = -1/(x - 9)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2/(x + 7) = 3/(x + 9)",
+"line": "-2/(x + 7) + 2 = 3/(x + 9) + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x + 8) = 5/(x + 1)",
+"line": "(3/(x + 8)) * x = (5/(x + 1)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6/(x - 3) = -3/(x + 4)",
+"line": "6/(x - 3) + 5 = -3/(x + 4)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5/(x + 2) = 5/(x + 2)",
+"line": "(5/(x + 2))^2 = (5/(x + 2))^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3/(x - 2) = -5/(x + 2)",
+"line": "-5/(x + 2) = 3/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5/(x + 8) = 1/(x - 6)",
+"line": "(5/(x + 8)) * x = (1/(x - 6)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "4/(x - 1) = -4/(x + 6)",
+"line": "(4/(x - 1)) * x = (-4/(x + 6)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-5/(x - 1) = 2/(x + 9)",
+"line": "4/(x - 6) = 3/(x + 9)",
+"expected": "UNRELATED Finite{-43/7} witness=-43/7"
+},
+{
+"previous": "-4/(x + 3) = -2/(x + 7)",
+"line": "(-4/(x + 3)) * -3 = (-2/(x + 7)) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5/(x + 0) = 2/(x + 1)",
+"line": "(-5/(x + 0)) * x = (2/(x + 1)) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5/(x + 7) = -3/(x + 3)",
+"line": "5/(x + 7) + 5 = -3/(x + 3)",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5/(x - 5) = 6/(x - 7)",
+"line": "(5/(x - 5)) * x = (6/(x - 7)) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 6)(x - 7)/(x - 6) = 5",
+"line": "((x - 6)(x - 7)/(x - 6)) * -3 = (5) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 1)(x - 5)/(x + 1) = -1",
+"line": "-1 = (x + 1)(x - 5)/(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 5)(x + 8)/(x + 5) = -1",
+"line": "((x + 5)(x + 8)/(x + 5)) * 3 = (-1) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x - 7)/(x - 9) = 2",
+"line": "((x - 9)(x - 7)/(x - 9))^2 = (2)^2",
+"expected": "GAINS Finite{5} witness=5"
+},
+{
+"previous": "(x + 0)(x + 0)/(x + 0) = 6",
+"line": "6 = (x + 0)(x + 0)/(x + 0)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 8)(x - 3)/(x + 8) = -4",
+"line": "(x - 3)(x - 6)/(x - 3) = -4",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "(x + 4)(x + 4)/(x + 4) = 3",
+"line": "x = 3",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "(x + 3)(x - 6)/(x + 3) = 5",
+"line": "(x + 8)(x - 8)/(x + 8) = 2",
+"expected": "UNRELATED Finite{11} witness=11"
+},
+{
+"previous": "(x - 9)(x + 7)/(x - 9) = -4",
+"line": "(x - 9)(x + 7)/(x - 9) + 3 = -4",
+"expected": "UNRELATED Finite{-11} witness=-11"
+},
+{
+"previous": "(x + 2)(x + 4)/(x + 2) = -2",
+"line": "x = -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 5)(x - 1)/(x - 5) = 2",
+"line": "x = 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 8)(x + 6)/(x + 8) = 4",
+"line": "((x + 8)(x + 6)/(x + 8)) * x = (4) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 8)(x - 2)/(x - 8) = -2",
+"line": "(x + 9)(x + 9)/(x + 9) = 4",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "(x - 2)(x + 3)/(x - 2) = 1",
+"line": "(x - 9)(x + 8)/(x - 9) = -1",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "(x - 2)(x + 1)/(x - 2) = 4",
+"line": "((x - 2)(x + 1)/(x - 2)) * -2 = (4) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 2)(x + 4)/(x + 2) = 5",
+"line": "((x + 2)(x + 4)/(x + 2)) * x = (5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 6)(x - 8)/(x - 6) = -5",
+"line": "(x - 6)(x - 8)/(x - 6) + -2 = -5 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 5)(x - 5)/(x + 5) = 3",
+"line": "((x + 5)(x - 5)/(x + 5)) * 2 = (3) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 1)/(x - 8) = 2",
+"line": "2 = (x - 8)(x - 1)/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 5)(x - 8)/(x + 5) = 3",
+"line": "(x + 8)(x + 4)/(x + 8) = -4",
+"expected": "LOSES Finite{11} witness=11"
+},
+{
+"previous": "(x + 4)(x + 2)/(x + 4) = 6",
+"line": "((x + 4)(x + 2)/(x + 4)) * 6 = (6) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 9)(x - 1)/(x + 9) = -1",
+"line": "-1 = (x + 9)(x - 1)/(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 1)(x + 3)/(x - 1) = 6",
+"line": "((x - 1)(x + 3)/(x - 1))^2 = (6)^2",
+"expected": "GAINS Finite{-9} witness=-9"
+},
+{
+"previous": "(x + 6)(x + 2)/(x + 6) = -3",
+"line": "(x + 6)(x + 2)/(x + 6) + 2 = -3",
+"expected": "UNRELATED Finite{-5} witness=-5"
+},
+{
+"previous": "(x - 4)(x + 7)/(x - 4) = 4",
+"line": "4 = (x - 4)(x + 7)/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 2)(x + 4)/(x + 2) = 1",
+"line": "(x + 2)(x + 4)/(x + 2) + -6 = 1 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 5)/(x - 4) = 6",
+"line": "(x - 4)(x - 5)/(x - 4) + -6 = 6 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x - 1)/(x - 7) = 5",
+"line": "((x - 7)(x - 1)/(x - 7))^2 = (5)^2",
+"expected": "GAINS Finite{-4} witness=-4"
+},
+{
+"previous": "(x - 9)(x + 1)/(x - 9) = 1",
+"line": "((x - 9)(x + 1)/(x - 9))^2 = (1)^2",
+"expected": "GAINS Finite{-2} witness=-2"
+},
+{
+"previous": "(x - 2)(x - 4)/(x - 2) = 3",
+"line": "3 = (x - 2)(x - 4)/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 2)(x + 7)/(x + 2) = 2",
+"line": "((x + 2)(x + 7)/(x + 2)) * x = (2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 5)(x + 2)/(x + 5) = -4",
+"line": "((x + 5)(x + 2)/(x + 5))^2 = (-4)^2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "(x + 4)(x + 8)/(x + 4) = 6",
+"line": "(x + 4)(x + 8)/(x + 4) + 4 = 6",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "(x + 4)(x + 1)/(x + 4) = 3",
+"line": "3 = (x + 4)(x + 1)/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 3)(x + 8)/(x + 3) = 1",
+"line": "(x + 3)(x + 8)/(x + 3) + 3 = 1 + 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x + 2)/(x - 8) = -2",
+"line": "x = 4",
+"expected": "UNRELATED Finite{-4} witness=-4"
+},
+{
+"previous": "(x - 4)(x - 1)/(x - 4) = -3",
+"line": "-3 = (x - 4)(x - 1)/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 0)(x + 6)/(x + 0) = -3",
+"line": "-3 = (x + 0)(x + 6)/(x + 0)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 3)(x - 9)/(x - 3) = 5",
+"line": "5 = (x - 3)(x - 9)/(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x + 2)/(x - 9) = 2",
+"line": "(x - 9)(x + 2)/(x - 9) + 5 = 2",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "(x - 4)(x + 8)/(x - 4) = -1",
+"line": "((x - 4)(x + 8)/(x - 4))^2 = (-1)^2",
+"expected": "GAINS Finite{-7} witness=-7"
+},
+{
+"previous": "(x - 5)(x + 7)/(x - 5) = 4",
+"line": "(x - 5)(x + 7)/(x - 5) + -9 = 4 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x - 5)/(x - 9) = 5",
+"line": "((x - 9)(x - 5)/(x - 9))^2 = (5)^2",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 7)(x - 4)/(x + 7) = 3",
+"line": "(x + 7)(x - 4)/(x + 7) + 6 = 3",
+"expected": "UNRELATED Finite{7} witness=7"
+},
+{
+"previous": "(x + 3)(x + 5)/(x + 3) = -3",
+"line": "((x + 3)(x + 5)/(x + 3)) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 3)(x + 9)/(x - 3) = -5",
+"line": "((x - 3)(x + 9)/(x - 3)) * x = (-5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 8)(x - 7)/(x + 8) = 1",
+"line": "((x + 8)(x - 7)/(x + 8))^2 = (1)^2",
+"expected": "GAINS Finite{6} witness=6"
+},
+{
+"previous": "(x + 6)(x + 2)/(x + 6) = 1",
+"line": "((x + 6)(x + 2)/(x + 6)) * x = (1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 9)(x + 2)/(x + 9) = 2",
+"line": "(x + 9)(x + 2)/(x + 9) + -4 = 2 + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 3)(x + 1)/(x + 3) = -1",
+"line": "(x - 7)(x - 8)/(x - 7) = 3",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "(x + 2)(x + 4)/(x + 2) = 5",
+"line": "(x + 2)(x + 4)/(x + 2) + 2 = 5",
+"expected": "UNRELATED Finite{1} witness=1"
+},
+{
+"previous": "(x - 3)(x - 3)/(x - 3) = -4",
+"line": "(x - 3)(x - 3)/(x - 3) + 1 = -4",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "(x + 8)(x + 2)/(x + 8) = -1",
+"line": "-1 = (x + 8)(x + 2)/(x + 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x - 2)/(x + 4) = -3",
+"line": "(x + 4)(x - 2)/(x + 4) + 0 = -3 + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x + 0)/(x - 4) = 5",
+"line": "(x - 4)(x + 0)/(x - 4) + 1 = 5",
+"expected": "LOSES Finite{5} witness=5"
+},
+{
+"previous": "(x - 9)(x - 4)/(x - 9) = -5",
+"line": "((x - 9)(x - 4)/(x - 9)) * -5 = (-5) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 2)/(x - 4) = 3",
+"line": "((x - 4)(x - 2)/(x - 4)) * -4 = (3) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 1)/(x - 8) = -1",
+"line": "x = -8",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "(x + 9)(x + 8)/(x + 9) = 6",
+"line": "((x + 9)(x + 8)/(x + 9)) * 4 = (6) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x + 9)/(x - 7) = -3",
+"line": "-3 = (x - 7)(x + 9)/(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 8)(x - 9)/(x + 8) = 1",
+"line": "(x + 3)(x - 6)/(x + 3) = 5",
+"expected": "UNRELATED Finite{10} witness=10"
+},
+{
+"previous": "(x - 4)(x + 6)/(x - 4) = 1",
+"line": "((x - 4)(x + 6)/(x - 4))^2 = (1)^2",
+"expected": "GAINS Finite{-7} witness=-7"
+},
+{
+"previous": "(x - 2)(x + 0)/(x - 2) = -4",
+"line": "(x - 2)(x + 0)/(x - 2) + 6 = -4 + 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 4)/(x - 4) = 3",
+"line": "((x - 4)(x - 4)/(x - 4)) * 2 = (3) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x - 6)/(x + 4) = 3",
+"line": "((x + 4)(x - 6)/(x + 4))^2 = (3)^2",
+"expected": "GAINS Finite{3} witness=3"
+},
+{
+"previous": "(x + 2)(x - 1)/(x + 2) = -5",
+"line": "((x + 2)(x - 1)/(x + 2))^2 = (-5)^2",
+"expected": "GAINS Finite{6} witness=6"
+},
+{
+"previous": "(x - 1)(x + 8)/(x - 1) = -2",
+"line": "(x - 1)(x + 8)/(x - 1) + 4 = -2 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 4)/(x - 8) = 2",
+"line": "((x - 8)(x - 4)/(x - 8)) * 5 = (2) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 6)(x + 3)/(x + 6) = 3",
+"line": "(x + 6)(x + 3)/(x + 6) + -8 = 3 + -8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x + 6)/(x - 9) = 4",
+"line": "((x - 9)(x + 6)/(x - 9))^2 = (4)^2",
+"expected": "GAINS Finite{-10} witness=-10"
+},
+{
+"previous": "(x + 8)(x - 2)/(x + 8) = -1",
+"line": "(x + 8)(x - 2)/(x + 8) + -7 = -1 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x + 8)/(x + 4) = -2",
+"line": "-2 = (x + 4)(x + 8)/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x + 2)/(x + 4) = -1",
+"line": "((x + 4)(x + 2)/(x + 4)) * x = (-1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 6)(x - 6)/(x + 6) = -5",
+"line": "(x + 6)(x - 6)/(x + 6) + -2 = -5",
+"expected": "UNRELATED Finite{1} witness=1"
+},
+{
+"previous": "(x + 3)(x + 6)/(x + 3) = 5",
+"line": "(x + 3)(x + 6)/(x + 3) + 4 = 5",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "(x + 2)(x + 4)/(x + 2) = 5",
+"line": "5 = (x + 2)(x + 4)/(x + 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 1)(x - 6)/(x + 1) = -3",
+"line": "(x + 1)(x - 6)/(x + 1) + 5 = -3",
+"expected": "UNRELATED Finite{3} witness=3"
+},
+{
+"previous": "(x - 4)(x - 5)/(x - 4) = -1",
+"line": "(x - 4)(x - 5)/(x - 4) + 4 = -1",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 8)(x + 3)/(x - 8) = -3",
+"line": "-3 = (x - 8)(x + 3)/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 4)/(x - 8) = 4",
+"line": "((x - 8)(x - 4)/(x - 8)) * 2 = (4) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 3)(x + 3)/(x - 3) = -4",
+"line": "-4 = (x - 3)(x + 3)/(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 2)(x - 6)/(x - 2) = 2",
+"line": "2 = (x - 2)(x - 6)/(x - 2)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x - 5)/(x - 7) = -1",
+"line": "((x - 7)(x - 5)/(x - 7))^2 = (-1)^2",
+"expected": "GAINS Finite{6} witness=6"
+},
+{
+"previous": "(x + 4)(x - 9)/(x + 4) = -3",
+"line": "-3 = (x + 4)(x - 9)/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 1)(x + 8)/(x + 1) = -5",
+"line": "-5 = (x + 1)(x + 8)/(x + 1)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 7)/(x - 8) = 2",
+"line": "2 = (x - 8)(x - 7)/(x - 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 3)(x + 3)/(x - 3) = 1",
+"line": "((x - 3)(x + 3)/(x - 3)) * -1 = (1) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x + 8)/(x - 7) = -1",
+"line": "(x + 2)(x - 3)/(x + 2) = 2",
+"expected": "UNRELATED Finite{-9} witness=-9"
+},
+{
+"previous": "(x + 8)(x - 9)/(x + 8) = -5",
+"line": "(x + 0)(x - 6)/(x + 0) = 6",
+"expected": "UNRELATED Finite{4} witness=4"
+},
+{
+"previous": "(x + 1)(x - 9)/(x + 1) = 3",
+"line": "(x + 1)(x - 9)/(x + 1) + 8 = 3 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x + 2)/(x - 9) = 1",
+"line": "(x - 9)(x + 2)/(x - 9) + 5 = 1",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "(x - 3)(x + 8)/(x - 3) = 2",
+"line": "(x - 3)(x + 8)/(x - 3) + 7 = 2 + 7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 3)(x + 9)/(x - 3) = -4",
+"line": "(x - 3)(x + 9)/(x - 3) + -2 = -4 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 5)(x - 5)/(x - 5) = 2",
+"line": "(x + 1)(x - 8)/(x + 1) = 2",
+"expected": "UNRELATED Finite{7} witness=7"
+},
+{
+"previous": "(x - 3)(x - 6)/(x - 3) = -4",
+"line": "-4 = (x - 3)(x - 6)/(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 5)(x - 6)/(x + 5) = -1",
+"line": "((x + 5)(x - 6)/(x + 5)) * -4 = (-1) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 6)(x - 3)/(x - 6) = -5",
+"line": "((x - 6)(x - 3)/(x - 6)) * x = (-5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 4)(x - 2)/(x - 4) = -4",
+"line": "-4 = (x - 4)(x - 2)/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 7)(x + 1)/(x + 7) = -1",
+"line": "-1 = (x + 7)(x + 1)/(x + 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x + 1)/(x - 7) = -3",
+"line": "((x - 7)(x + 1)/(x - 7))^2 = (-3)^2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "(x + 8)(x + 1)/(x + 8) = 5",
+"line": "(x + 8)(x + 1)/(x + 8) + 4 = 5 + 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x + 0)/(x + 4) = 1",
+"line": "1 = (x + 4)(x + 0)/(x + 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x + 3)/(x - 4) = 5",
+"line": "((x - 4)(x + 3)/(x - 4))^2 = (5)^2",
+"expected": "GAINS Finite{-8} witness=-8"
+},
+{
+"previous": "(x - 9)(x + 0)/(x - 9) = -4",
+"line": "(x - 2)(x + 0)/(x - 2) = -2",
+"expected": "UNRELATED Finite{-4} witness=-4"
+},
+{
+"previous": "(x - 5)(x + 4)/(x - 5) = -5",
+"line": "-5 = (x - 5)(x + 4)/(x - 5)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 2)(x - 7)/(x + 2) = -3",
+"line": "(x + 7)(x + 1)/(x + 7) = 3",
+"expected": "UNRELATED Finite{4} witness=4"
+},
+{
+"previous": "(x - 5)(x - 5)/(x - 5) = 1",
+"line": "((x - 5)(x - 5)/(x - 5)) * -3 = (1) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 1)(x - 6)/(x - 1) = -5",
+"line": "((x - 1)(x - 6)/(x - 1)) * -1 = (-5) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 1)(x - 3)/(x - 1) = -5",
+"line": "((x - 1)(x - 3)/(x - 1))^2 = (-5)^2",
+"expected": "GAINS Finite{8} witness=8"
+},
+{
+"previous": "(x + 0)(x + 1)/(x + 0) = -4",
+"line": "((x + 0)(x + 1)/(x + 0)) * 1 = (-4) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 4)/(x - 8) = 2",
+"line": "(x - 8)(x - 4)/(x - 8) + -2 = 2",
+"expected": "LOSES Finite{6} witness=6"
+},
+{
+"previous": "(x - 5)(x + 1)/(x - 5) = 1",
+"line": "1 = (x - 5)(x + 1)/(x - 5)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 1)/(x - 4) = 4",
+"line": "((x - 4)(x - 1)/(x - 4))^2 = (4)^2",
+"expected": "GAINS Finite{-3} witness=-3"
+},
+{
+"previous": "(x - 6)(x - 8)/(x - 6) = -3",
+"line": "((x - 6)(x - 8)/(x - 6)) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x + 3)(x + 8)/(x + 3) = -1",
+"line": "((x + 3)(x + 8)/(x + 3)) * 5 = (-1) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 5)/(x - 4) = 2",
+"line": "x = -3",
+"expected": "UNRELATED Finite{7} witness=7"
+},
+{
+"previous": "(x + 0)(x - 4)/(x + 0) = -1",
+"line": "((x + 0)(x - 4)/(x + 0)) * 3 = (-1) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 1)(x - 4)/(x + 1) = 1",
+"line": "((x + 1)(x - 4)/(x + 1))^2 = (1)^2",
+"expected": "GAINS Finite{3} witness=3"
+},
+{
+"previous": "(x + 5)(x - 8)/(x + 5) = -2",
+"line": "((x + 5)(x - 8)/(x + 5)) * x = (-2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 5)(x - 6)/(x - 5) = -1",
+"line": "((x - 5)(x - 6)/(x - 5))^2 = (-1)^2",
+"expected": "GAINS Finite{7} witness=7"
+},
+{
+"previous": "(x + 8)(x - 1)/(x + 8) = -3",
+"line": "(x + 8)(x - 1)/(x + 8) + -4 = -3",
+"expected": "UNRELATED Finite{-2} witness=-2"
+},
+{
+"previous": "(x + 2)(x + 2)/(x + 2) = 4",
+"line": "((x + 2)(x + 2)/(x + 2)) * 4 = (4) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 8)(x - 4)/(x + 8) = 2",
+"line": "((x + 8)(x - 4)/(x + 8))^2 = (2)^2",
+"expected": "GAINS Finite{2} witness=2"
+},
+{
+"previous": "(x + 2)(x - 3)/(x + 2) = -1",
+"line": "((x + 2)(x - 3)/(x + 2)) * 6 = (-1) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 7)(x - 7)/(x - 7) = 1",
+"line": "x = 1/4",
+"expected": "UNRELATED Finite{8} witness=8"
+},
+{
+"previous": "(x - 6)(x + 9)/(x - 6) = 6",
+"line": "((x - 6)(x + 9)/(x - 6)) * 6 = (6) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 2)(x - 2)/(x + 2) = -4",
+"line": "((x + 2)(x - 2)/(x + 2))^2 = (-4)^2",
+"expected": "GAINS Finite{6} witness=6"
+},
+{
+"previous": "(x - 5)(x + 5)/(x - 5) = 2",
+"line": "((x - 5)(x + 5)/(x - 5)) * 3 = (2) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 1)(x - 6)/(x + 1) = -2",
+"line": "((x + 1)(x - 6)/(x + 1)) * -4 = (-2) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 8)(x + 6)/(x + 8) = 6",
+"line": "6 = (x + 8)(x + 6)/(x + 8)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 4)(x - 4)/(x + 4) = 1",
+"line": "(x + 4)(x - 4)/(x + 4) + -4 = 1",
+"expected": "UNRELATED Finite{5} witness=5"
+},
+{
+"previous": "(x - 8)(x - 4)/(x - 8) = 3",
+"line": "((x - 8)(x - 4)/(x - 8))^2 = (3)^2",
+"expected": "GAINS Finite{1} witness=1"
+},
+{
+"previous": "(x - 4)(x + 1)/(x - 4) = 1",
+"line": "1 = (x - 4)(x + 1)/(x - 4)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 4)(x - 3)/(x - 4) = -2",
+"line": "(x - 4)(x - 3)/(x - 4) + -1 = -2 + -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 1)(x - 9)/(x - 1) = 3",
+"line": "((x - 1)(x - 9)/(x - 1)) * -3 = (3) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 5)(x + 4)/(x - 5) = -4",
+"line": "x = 3",
+"expected": "UNRELATED Finite{-8} witness=-8"
+},
+{
+"previous": "(x - 7)(x + 1)/(x - 7) = 3",
+"line": "((x - 7)(x + 1)/(x - 7)) * -3 = (3) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 3)(x + 6)/(x - 3) = -4",
+"line": "-4 = (x - 3)(x + 6)/(x - 3)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 9)(x + 7)/(x - 9) = -4",
+"line": "(x + 2)(x + 2)/(x + 2) = 5",
+"expected": "UNRELATED Finite{-11} witness=-11"
+},
+{
+"previous": "(x + 5)(x + 4)/(x + 5) = 3",
+"line": "((x + 5)(x + 4)/(x + 5)) * x = (3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "(x - 4)(x + 5)/(x - 4) = 2",
+"line": "x = 2",
+"expected": "UNRELATED Finite{-3} witness=-3"
+},
+{
+"previous": "(x + 4)(x + 0)/(x + 4) = 4",
+"line": "(x + 4)(x + 0)/(x + 4) + 1 = 4",
+"expected": "UNRELATED Finite{4} witness=4"
+},
+{
+"previous": "(x + 2)(x + 9)/(x + 2) = -5",
+"line": "(x + 9)(x + 7)/(x + 9) = -4",
+"expected": "UNRELATED Finite{-14} witness=-14"
+},
+{
+"previous": "(x - 7)(x - 2)/(x - 7) = 4",
+"line": "4 = (x - 7)(x - 2)/(x - 7)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 7)(x + 9)/(x + 7) = 1",
+"line": "(x + 7)(x + 9)/(x + 7) + 8 = 1 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 9)(x + 8)/(x + 9) = -4",
+"line": "-4 = (x + 9)(x + 8)/(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x + 9)(x - 4)/(x + 9) = 1",
+"line": "x = 5/4",
+"expected": "UNRELATED Finite{5} witness=5"
+},
+{
+"previous": "(x + 0)(x + 7)/(x + 0) = -1",
+"line": "((x + 0)(x + 7)/(x + 0))^2 = (-1)^2",
+"expected": "GAINS Finite{-6} witness=-6"
+},
+{
+"previous": "(x + 9)(x - 4)/(x + 9) = -3",
+"line": "-3 = (x + 9)(x - 4)/(x + 9)",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "(x - 8)(x - 1)/(x - 8) = -3",
+"line": "x = -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 - 4x = 0",
+"line": "-5x^2 - 4x + 5 = 0",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "2x^2 - 9x = -2",
+"line": "(2x^2 - 9x) * -1 = (-2) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 - 6x = -4",
+"line": "-4x^2 - 6x + 5 = -4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "4x^2 - 6x = 0",
+"line": "0 = 4x^2 - 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 7x = -7",
+"line": "-5x^2 + 7x + 5 = -7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 + 7x = -2",
+"line": "1x^2 + 7x = 7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 + 8x = -3",
+"line": "(5x^2 + 8x) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6x^2 + 9x = -8",
+"line": "(6x^2 + 9x)^2 = (-8)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 - 3x = 1",
+"line": "(6x^2 - 3x) * x = (1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "2x^2 - 2x = 9",
+"line": "2x^2 - 2x + -5 = 9",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 - 6x = 9",
+"line": "9 = -5x^2 - 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 + 2x = -9",
+"line": "(5x^2 + 2x) * x = (-9) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-5x^2 + 4x = 4",
+"line": "(-5x^2 + 4x)^2 = (4)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 - 1x = -2",
+"line": "-2 = -4x^2 - 1x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 - 3x = -7",
+"line": "x = 7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 + 2x = 4",
+"line": "(-5x^2 + 2x) * 4 = (4) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 - 9x = -1",
+"line": "-1x^2 + 5x = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 - 9x = 8",
+"line": "8 = -4x^2 - 9x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 + 3x = 1",
+"line": "1 = 3x^2 + 3x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 - 6x = 9",
+"line": "(-3x^2 - 6x) * -2 = (9) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 - 1x = 6",
+"line": "3x^2 - 1x + 2 = 6",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 + 1x = 9",
+"line": "(6x^2 + 1x)^2 = (9)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 + 6x = -8",
+"line": "(-4x^2 + 6x) * 5 = (-8) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 7x = 6",
+"line": "6 = 1x^2 + 7x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 + 0x = 6",
+"line": "x = 2/3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 + 7x = 1",
+"line": "-5x^2 + 6x = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "1x^2 + 1x = 0",
+"line": "0 = 1x^2 + 1x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 8x = -5",
+"line": "-5x^2 + 8x + 1 = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 + 9x = 0",
+"line": "0 = -4x^2 + 9x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 0x = 0",
+"line": "x = -4",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "-2x^2 + 0x = 0",
+"line": "(-2x^2 + 0x)^2 = (0)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 - 4x = 5",
+"line": "5 = -2x^2 - 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 - 1x = -5",
+"line": "-5 = 2x^2 - 1x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 + 6x = 6",
+"line": "(6x^2 + 6x) * -1 = (6) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 - 3x = -6",
+"line": "(-1x^2 - 3x) * x = (-6) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-1x^2 + 9x = -8",
+"line": "x = 5/2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 + 7x = 4",
+"line": "x = -1/2",
+"expected": "GAINS Finite{-1/2} witness=-1/2"
+},
+{
+"previous": "3x^2 - 7x = 4",
+"line": "(3x^2 - 7x) * -2 = (4) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 6x = 0",
+"line": "(1x^2 + 6x) * 5 = (0) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 9x = 7",
+"line": "-5x^2 - 2x = -2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 - 8x = -2",
+"line": "(-4x^2 - 8x) * 1 = (-2) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 - 7x = 3",
+"line": "3 = -5x^2 - 7x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 - 4x = 9",
+"line": "9 = -2x^2 - 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 4x = -5",
+"line": "(-5x^2 + 4x) * -2 = (-5) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 - 3x = 8",
+"line": "8 = -2x^2 - 3x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 - 6x = -9",
+"line": "-9 = -5x^2 - 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 - 3x = -5",
+"line": "1x^2 - 4x = 6",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2x^2 + 1x = -8",
+"line": "x = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2x^2 + 6x = -9",
+"line": "-9 = -2x^2 + 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 - 7x = 6",
+"line": "6 = 4x^2 - 7x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 - 3x = 2",
+"line": "-4x^2 - 7x = 9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 5x = 8",
+"line": "-5x^2 + 5x + 0 = 8 + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 - 1x = 8",
+"line": "(3x^2 - 1x) * -1 = (8) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 + 5x = -5",
+"line": "5x^2 + 5x + 2 = -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 + 8x = -8",
+"line": "3x^2 + 8x + -4 = -8 + -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 - 1x = 9",
+"line": "9 = 6x^2 - 1x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 + 8x = 9",
+"line": "(-1x^2 + 8x)^2 = (9)^2",
+"expected": "GAINS Finite{-1,9} witness=-1"
+},
+{
+"previous": "3x^2 - 4x = 8",
+"line": "x = 2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-1x^2 + 9x = -5",
+"line": "6x^2 + 2x = -2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 - 5x = -6",
+"line": "5x^2 - 5x + 2 = -6 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 2x = 1",
+"line": "1x^2 + 2x + -2 = 1",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 + 1x = 1",
+"line": "(-5x^2 + 1x) * -4 = (1) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 - 4x = -2",
+"line": "(3x^2 - 4x)^2 = (-2)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-3x^2 - 4x = -7",
+"line": "-7 = -3x^2 - 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 - 4x = 9",
+"line": "9 = 3x^2 - 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 + 1x = 0",
+"line": "(-1x^2 + 1x) * x = (0) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 - 2x = -5",
+"line": "(-5x^2 - 2x)^2 = (-5)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 - 8x = 7",
+"line": "(2x^2 - 8x)^2 = (7)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-3x^2 - 7x = -3",
+"line": "(-3x^2 - 7x) * x = (-3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-4x^2 + 8x = 0",
+"line": "-1x^2 - 7x = 8",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 + 2x = -8",
+"line": "5x^2 - 5x = 1",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 + 0x = -9",
+"line": "-9 = -4x^2 + 0x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 - 4x = -5",
+"line": "2x^2 - 4x + 3 = -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 + 5x = 5",
+"line": "5 = 2x^2 + 5x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 - 5x = 9",
+"line": "(1x^2 - 5x) * x = (9) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "6x^2 - 2x = 4",
+"line": "6x^2 - 2x + -1 = 4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "1x^2 + 5x = -1",
+"line": "x = -8/3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "3x^2 - 8x = 9",
+"line": "(3x^2 - 8x) * -3 = (9) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 - 7x = 2",
+"line": "-3x^2 - 7x + 2 = 2",
+"expected": "UNRELATED Finite{-2,-1/3} witness=-2"
+},
+{
+"previous": "6x^2 - 6x = 8",
+"line": "(6x^2 - 6x) * 2 = (8) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 + 3x = -4",
+"line": "x = -1/2",
+"expected": "GAINS Finite{-1/2} witness=-1/2"
+},
+{
+"previous": "-1x^2 - 4x = 2",
+"line": "(-1x^2 - 4x)^2 = (2)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "3x^2 - 8x = -9",
+"line": "(3x^2 - 8x) * 5 = (-9) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 0x = -3",
+"line": "(1x^2 + 0x) * -5 = (-3) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 + 3x = -4",
+"line": "(-4x^2 + 3x) * 3 = (-4) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 - 2x = 2",
+"line": "(-3x^2 - 2x) * -3 = (2) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 + 1x = -5",
+"line": "4x^2 + 5x = 7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 - 1x = -4",
+"line": "-4 = 5x^2 - 1x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 + 0x = -3",
+"line": "x = 3",
+"expected": "GAINS Finite{3} witness=3"
+},
+{
+"previous": "-2x^2 + 9x = -9",
+"line": "-2x^2 + 9x + -3 = -9 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "3x^2 + 3x = -6",
+"line": "-5x^2 - 6x = -1",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 + 2x = 9",
+"line": "(-4x^2 + 2x)^2 = (9)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "3x^2 - 6x = -6",
+"line": "-2x^2 + 4x = -9",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 + 5x = -7",
+"line": "5x^2 - 4x = 9",
+"expected": "GAINS Finite{-1,9/5} witness=-1"
+},
+{
+"previous": "-5x^2 + 8x = -1",
+"line": "(-5x^2 + 8x) * -1 = (-1) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 + 3x = 9",
+"line": "(-1x^2 + 3x) * 4 = (9) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 + 6x = 3",
+"line": "2x^2 + 6x = -4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "3x^2 - 6x = -3",
+"line": "-3 = 3x^2 - 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 - 2x = -8",
+"line": "(5x^2 - 2x) * -1 = (-8) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 + 6x = -3",
+"line": "(-4x^2 + 6x) * 5 = (-3) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 - 6x = -6",
+"line": "(5x^2 - 6x) * 2 = (-6) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 - 8x = -6",
+"line": "6x^2 - 8x + -5 = -6 + -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 - 6x = -2",
+"line": "(-4x^2 - 6x) * x = (-2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "5x^2 - 3x = 6",
+"line": "5x^2 - 3x + 1 = 6",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 + 7x = -7",
+"line": "x = -4",
+"expected": "GAINS Finite{-4} witness=-4"
+},
+{
+"previous": "-4x^2 + 1x = 1",
+"line": "x = 5/2",
+"expected": "GAINS Finite{5/2} witness=5/2"
+},
+{
+"previous": "-5x^2 - 7x = 0",
+"line": "-5x^2 - 7x + -7 = 0 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 + 4x = 2",
+"line": "-4x^2 + 5x = -1",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-5x^2 + 4x = 1",
+"line": "(-5x^2 + 4x)^2 = (1)^2",
+"expected": "GAINS Finite{-1/5,1} witness=-1/5"
+},
+{
+"previous": "4x^2 - 6x = 2",
+"line": "4x^2 - 6x + 8 = 2 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 + 2x = -6",
+"line": "-1x^2 + 2x + 0 = -6 + 0",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 + 7x = 5",
+"line": "5 = -2x^2 + 7x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 + 5x = -7",
+"line": "(4x^2 + 5x) * -1 = (-7) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 - 6x = 8",
+"line": "(-2x^2 - 6x)^2 = (8)^2",
+"expected": "GAINS Finite{-4,1} witness=-4"
+},
+{
+"previous": "-5x^2 + 9x = 5",
+"line": "5 = -5x^2 + 9x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-2x^2 - 9x = 8",
+"line": "(-2x^2 - 9x) * -5 = (8) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 - 4x = -2",
+"line": "5x^2 - 5x = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 + 9x = -6",
+"line": "5x^2 + 9x + -4 = -6",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-2x^2 - 8x = 9",
+"line": "3x^2 + 8x = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "1x^2 - 4x = 7",
+"line": "7 = 1x^2 - 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 + 9x = 0",
+"line": "(5x^2 + 9x) * 2 = (0) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-4x^2 + 2x = -1",
+"line": "(-4x^2 + 2x) * -1 = (-1) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "5x^2 - 6x = 5",
+"line": "(5x^2 - 6x)^2 = (5)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 + 9x = -5",
+"line": "(6x^2 + 9x)^2 = (-5)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 - 6x = 0",
+"line": "0 = -4x^2 - 6x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-5x^2 + 4x = 8",
+"line": "8 = -5x^2 + 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 - 5x = 8",
+"line": "8 = 2x^2 - 5x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 - 8x = -3",
+"line": "-1x^2 - 8x + 4 = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 - 8x = 7",
+"line": "-1x^2 + 5x = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-4x^2 - 1x = 2",
+"line": "-4x^2 - 1x + -4 = 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "4x^2 + 7x = 4",
+"line": "x = 7/3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "2x^2 - 3x = 3",
+"line": "3 = 2x^2 - 3x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 + 7x = 7",
+"line": "-3x^2 + 7x + 4 = 7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "6x^2 + 4x = -4",
+"line": "-4 = 6x^2 + 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 - 9x = -8",
+"line": "-8 = 6x^2 - 9x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 - 6x = 2",
+"line": "(6x^2 - 6x) * x = (2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "-4x^2 - 5x = 4",
+"line": "4 = -4x^2 - 5x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "6x^2 + 4x = 7",
+"line": "(6x^2 + 4x) * x = (7) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "5x^2 + 8x = 5",
+"line": "-1x^2 + 9x = -9",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "3x^2 + 7x = -3",
+"line": "3x^2 + 7x + 1 = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "-3x^2 + 4x = 4",
+"line": "4 = -3x^2 + 4x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 + 9x = 3",
+"line": "x = 3/4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "4x^2 + 7x = -3",
+"line": "4x^2 + 7x + -2 = -3 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-3x^2 + 3x = -3",
+"line": "x = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "5x^2 - 4x = -4",
+"line": "5x^2 - 4x + -3 = -4 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "1x^2 - 1x = -2",
+"line": "4x^2 - 7x = 3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "2x^2 + 2x = -8",
+"line": "(2x^2 + 2x) * x = (-8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "5x^2 - 2x = 7",
+"line": "(5x^2 - 2x)^2 = (7)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "-1x^2 - 1x = 7",
+"line": "-1x^2 - 1x + -5 = 7 + -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "2x^2 - 5x = -9",
+"line": "x = -7/2",
+"expected": "GAINS Finite{-7/2} witness=-7/2"
+},
+{
+"previous": "x^2 = 4",
+"line": "x^2 + -3 = 4 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 9",
+"line": "x^3 + 1 = 9 + 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -2",
+"line": "x = -6",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = -2",
+"line": "-2 = x^6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 4",
+"line": "(x^4)^2 = (4)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -4",
+"line": "x^4 = -8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -2",
+"line": "x^4 + -2 = -2",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^6 = -8",
+"line": "-8 = x^6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = -2",
+"line": "-2 = x^6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = 2",
+"line": "x^6 + -5 = 2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = -4",
+"line": "-4 = x^5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^2 = 5",
+"line": "5 = x^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 3",
+"line": "x = 0",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^4 = -4",
+"line": "(x^4) * x = (-4) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^4 = -3",
+"line": "-3 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 2",
+"line": "(x^4)^2 = (2)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 3",
+"line": "3 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -5",
+"line": "x = 4",
+"expected": "UNRELATED Finite{-5} witness=-5"
+},
+{
+"previous": "x^5 = -1",
+"line": "(x^5) * x = (-1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^6 = 8",
+"line": "x^6 + 2 = 8 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 0",
+"line": "x^1 + -5 = 0",
+"expected": "UNRELATED Finite{0} witness=0"
+},
+{
+"previous": "x^3 = 0",
+"line": "(x^3) * 4 = (0) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 4",
+"line": "(x^5)^2 = (4)^2",
+"expected": "OUT_OF_FRAGMENT degree_limit"
+},
+{
+"previous": "x^5 = 4",
+"line": "x^5 + -3 = 4 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 7",
+"line": "x^4 + 8 = 7 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = 3",
+"line": "(x^6) * x = (3) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^2 = 8",
+"line": "x^2 + 5 = 8 + 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 9",
+"line": "(x^4)^2 = (9)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -3",
+"line": "x^1 = 5",
+"expected": "GAINS Finite{5} witness=5"
+},
+{
+"previous": "x^6 = 7",
+"line": "7 = x^6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -9",
+"line": "x = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^3 = -5",
+"line": "x^3 + -3 = -5 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 3",
+"line": "x^5 + -2 = 3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^4 = 7",
+"line": "x^4 + 2 = 7 + 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -4",
+"line": "(x^1) * x = (-4) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^1 = -4",
+"line": "(x^1)^2 = (-4)^2",
+"expected": "GAINS Finite{4} witness=4"
+},
+{
+"previous": "x^4 = 9",
+"line": "(x^4) * -1 = (9) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -1",
+"line": "(x^5)^2 = (-1)^2",
+"expected": "OUT_OF_FRAGMENT degree_limit"
+},
+{
+"previous": "x^2 = 2",
+"line": "x^5 = 2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^1 = -5",
+"line": "(x^1) * -4 = (-5) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 1",
+"line": "(x^1) * -5 = (1) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 5",
+"line": "x^5 + -3 = 5 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -1",
+"line": "-1 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -1",
+"line": "-1 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 5",
+"line": "x^2 = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = -5",
+"line": "(x^6)^2 = (-5)^2",
+"expected": "OUT_OF_FRAGMENT degree_limit"
+},
+{
+"previous": "x^3 = 2",
+"line": "x^3 + -3 = 2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = -7",
+"line": "(x^6) * -1 = (-7) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 2",
+"line": "(x^3)^2 = (2)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^3 = -1",
+"line": "(x^3)^2 = (-1)^2",
+"expected": "GAINS Finite{1} witness=1"
+},
+{
+"previous": "x^1 = 9",
+"line": "(x^1) * x = (9) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^4 = 2",
+"line": "(x^4)^2 = (2)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 8",
+"line": "(x^5) * 4 = (8) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -5",
+"line": "(x^3) * -3 = (-5) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 3",
+"line": "3 = x^3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 3",
+"line": "x = -5/4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^1 = 7",
+"line": "x^1 + 6 = 7",
+"expected": "UNRELATED Finite{7} witness=7"
+},
+{
+"previous": "x^6 = 5",
+"line": "(x^6) * -2 = (5) * -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -4",
+"line": "-4 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -9",
+"line": "(x^4)^2 = (-9)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^1 = -4",
+"line": "-4 = x^1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 0",
+"line": "(x^3)^2 = (0)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -9",
+"line": "-9 = x^3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 9",
+"line": "x^1 + -5 = 9",
+"expected": "UNRELATED Finite{9} witness=9"
+},
+{
+"previous": "x^3 = 5",
+"line": "5 = x^3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -5",
+"line": "x = 1/2",
+"expected": "UNRELATED Finite{-5} witness=-5"
+},
+{
+"previous": "x^1 = 3",
+"line": "(x^1) * -1 = (3) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 4",
+"line": "(x^5) * 5 = (4) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -1",
+"line": "-1 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -2",
+"line": "(x^5) * 1 = (-2) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -7",
+"line": "x = -3",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = -5",
+"line": "x^5 + 2 = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = 9",
+"line": "x^2 + -3 = 9 + -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 4",
+"line": "(x^5) * 6 = (4) * 6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 1",
+"line": "(x^5) * x = (1) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^6 = 7",
+"line": "(x^6) * 1 = (7) * 1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^2 = 2",
+"line": "2 = x^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -4",
+"line": "(x^3)^2 = (-4)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = -5",
+"line": "-5 = x^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 0",
+"line": "0 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^2 = -3",
+"line": "x^2 + -4 = -3",
+"expected": "GAINS Finite{-1,1} witness=-1"
+},
+{
+"previous": "x^2 = 1",
+"line": "x^3 = 5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^1 = 7",
+"line": "x^1 + -3 = 7",
+"expected": "UNRELATED Finite{7} witness=7"
+},
+{
+"previous": "x^5 = -5",
+"line": "(x^5) * 3 = (-5) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 5",
+"line": "(x^1) * x = (5) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^4 = 7",
+"line": "(x^4)^2 = (7)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 4",
+"line": "x^5 + -1 = 4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = -9",
+"line": "x^5 = 2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = -5",
+"line": "(x^2) * 3 = (-5) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -2",
+"line": "-2 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -7",
+"line": "x^5 + -5 = -7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = -4",
+"line": "(x^2) * -3 = (-4) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = 4",
+"line": "(x^6) * -3 = (4) * -3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 7",
+"line": "7 = x^3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -7",
+"line": "(x^4) * 5 = (-7) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 6",
+"line": "x^3 + -7 = 6 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 6",
+"line": "6 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 0",
+"line": "0 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -8",
+"line": "(x^3) * 5 = (-8) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -6",
+"line": "x = 3/4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^3 = -5",
+"line": "x^3 + -5 = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^4 = -1",
+"line": "(x^4)^2 = (-1)^2",
+"expected": "GAINS Finite{-1,1} witness=-1"
+},
+{
+"previous": "x^3 = -7",
+"line": "(x^3) * 2 = (-7) * 2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 0",
+"line": "(x^1) * x = (0) * x",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -8",
+"line": "x^4 + -8 = -8 + -8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 3",
+"line": "3 = x^5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -1",
+"line": "x^3 = -7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = -1",
+"line": "x = -2",
+"expected": "UNRELATED Finite{-1} witness=-1"
+},
+{
+"previous": "x^4 = -9",
+"line": "x = 1",
+"expected": "GAINS Finite{1} witness=1"
+},
+{
+"previous": "x^5 = 4",
+"line": "x^5 = 0",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = 1",
+"line": "x^6 + -2 = 1 + -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = 9",
+"line": "x^6 + -9 = 9 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 9",
+"line": "(x^3) * 3 = (9) * 3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -1",
+"line": "(x^3) * -1 = (-1) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = -9",
+"line": "x^2 = 5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^2 = -1",
+"line": "(x^2)^2 = (-1)^2",
+"expected": "GAINS Finite{-1,1} witness=-1"
+},
+{
+"previous": "x^1 = -6",
+"line": "(x^1)^2 = (-6)^2",
+"expected": "GAINS Finite{6} witness=6"
+},
+{
+"previous": "x^5 = 0",
+"line": "(x^5)^2 = (0)^2",
+"expected": "OUT_OF_FRAGMENT degree_limit"
+},
+{
+"previous": "x^2 = 4",
+"line": "x^2 + -6 = 4 + -6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 6",
+"line": "x^3 + -9 = 6 + -9",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 2",
+"line": "(x^3) * x = (2) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^4 = 2",
+"line": "2 = x^4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 2",
+"line": "(x^3) * 5 = (2) * 5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 6",
+"line": "x^5 + -1 = 6 + -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 9",
+"line": "9 = x^3",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = -8",
+"line": "(x^6)^2 = (-8)^2",
+"expected": "OUT_OF_FRAGMENT degree_limit"
+},
+{
+"previous": "x^2 = 8",
+"line": "(x^2)^2 = (8)^2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -5",
+"line": "x^3 = 0",
+"expected": "UNRELATED Finite{-5} witness=-5"
+},
+{
+"previous": "x^2 = -8",
+"line": "(x^2) * x = (-8) * x",
+"expected": "GAINS Finite{0} witness=0"
+},
+{
+"previous": "x^6 = -8",
+"line": "-8 = x^6",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^6 = -7",
+"line": "x^1 = 7",
+"expected": "GAINS Finite{7} witness=7"
+},
+{
+"previous": "x^1 = 3",
+"line": "(x^1) * -4 = (3) * -4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -6",
+"line": "-6 = x^1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = 0",
+"line": "x^5 = -5",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = 9",
+"line": "(x^6) * -1 = (9) * -1",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -6",
+"line": "-6 = x^5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 6",
+"line": "x^4 + 8 = 6 + 8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = 4",
+"line": "x^2 = 8",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = 3",
+"line": "x^1 = 4",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^6 = -2",
+"line": "x^6 + -1 = -2",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^2 = 6",
+"line": "(x^2) * -5 = (6) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = 7",
+"line": "x^4 + 4 = 7",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = -4",
+"line": "(x^5) * 4 = (-4) * 4",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^3 = -5",
+"line": "x = -1",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^4 = 4",
+"line": "x^4 + -8 = 4 + -8",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = -9",
+"line": "-9 = x^5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^4 = -5",
+"line": "(x^4)^2 = (-5)^2",
+"expected": "OUT_OF_FRAGMENT irrational_root"
+},
+{
+"previous": "x^5 = 0",
+"line": "(x^5) * -5 = (0) * -5",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^5 = 9",
+"line": "x^5 + -7 = 9 + -7",
+"expected": "EQUIVALENT"
+},
+{
+"previous": "x^1 = -8",
+"line": "x = 3/2",
+"expected": "UNRELATED Finite{-8} witness=-8"
+},
+{
+"previous": "+x^3*-)x*x(0",
+"line": "(+x^3*-)x*x(0)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")3y-120(+-x",
+"line": "x = 1",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "yx2.5(*x+y0",
+"line": " = yx2.5(*x+y0",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " +",
+"line": " = +",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".5",
+"line": ".5 + -9 =  + -9",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "y)-)*)/y(",
+"line": "x = -1/2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "3y*0*3x)",
+"line": " = 3y*0*3x)",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "++y1=/*/02x",
+"line": "/*/02x = ++y1",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "=",
+"line": "() * -4 = () * -4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-02/",
+"line": "-02/ + 1 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "2.5^/0=",
+"line": " = 2.5^/0",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "0-y y-(2(=*3",
+"line": "0-y y-(2( + 6 = *3 + 6",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "x03*yx= ",
+"line": "x03*yx + -2 = ",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " 012=y/0 )",
+"line": "012 + 2 = y/0 )",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " .5/)+2= -",
+"line": ".5/)+2 + 3 = -",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")3",
+"line": "()3) * -5 = () * -5",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+x",
+"line": " = +x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/)",
+"line": "(/))^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+y.5",
+"line": "(+y.5)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " y(",
+"line": "(y()^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": ".5^0^",
+"line": ".5^0^ + 5 = ",
+"expected": "OUT_OF_FRAGMENT exponent_range"
+},
+{
+"previous": "x=3---1x/",
+"line": " **^-+^^",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+.5.5).5y+",
+"line": "(+.5.5).5y+)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " 2",
+"line": "(2) * 2 = () * 2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-",
+"line": " = -",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1+-^-=",
+"line": " = 1+-^-",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")",
+"line": " = )",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/x-+=)",
+"line": ") = /x-+",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "y/.5)+ *",
+"line": "1++(0^3",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "^- 0 =).53",
+"line": "y-x1+3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".503-0y 0^+.5",
+"line": "(.503-0y 0^+.5)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "1+^-x",
+"line": "(1+^-x) * 5 = () * 5",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x^=y)",
+"line": "y) = x^",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "y*1(",
+"line": "y*1( + -3 = ",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": ".5 +=",
+"line": "(.5 +) * 1 = () * 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1^-2( yy-/y",
+"line": "x = 1",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "=*-0*",
+"line": "x = 5/3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*0=x)",
+"line": "x) = *0",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".50x+12*.51(*",
+"line": " = .50x+12*.51(*",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "==22",
+"line": "()^2 = (=22)^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "^/",
+"line": " = ^/",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x1.5*-32/)y-+",
+"line": "x1.5*-32/)y-+ + -3 = ",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "0^",
+"line": "- /^ .50-x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1*-/) ))/^-x",
+"line": " = 1*-/) ))/^-x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*23x  =",
+"line": " = *23x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "13yx-(20/ ^",
+"line": "x = -1/2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "1/y)3^=x)",
+"line": "(1/y)3^) * -3 = (x)) * -3",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "02/",
+"line": "(02/) * 4 = () * 4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*.5=",
+"line": "(*.5) * 2 = () * 2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/+1^y/",
+"line": "(/+1^y/) * -1 = () * -1",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "+",
+"line": "(+) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "y 2*yyx0*+",
+"line": "(y 2*yyx0*+)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "-",
+"line": "(-) * -2 = () * -2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "  /=yx(.5.5).5",
+"line": "(/) * x = (yx(.5.5).5) * x",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "()*01*",
+"line": "()*01* + 9 =  + 9",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ").53*y2 /(",
+"line": " = ).53*y2 /(",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "0(-*.53)0=)y3",
+"line": "0(-*.53)0 + -5 = )y3 + -5",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "^.5 =)33",
+"line": "x = -7/2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-300xy21*(*y",
+"line": "(-300xy21*(*y) * -4 = () * -4",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "/.5 01",
+"line": "x = 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "02(x11/",
+"line": "x = -2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")3/",
+"line": " = )3/",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "yy**1)",
+"line": "yy**1) + 5 =  + 5",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "3",
+"line": "(3) * -1 = () * -1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x+3-30",
+"line": "(x+3-30) * 3 = () * 3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "2^/33-",
+"line": "(2^/33-) * -4 = () * -4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/(.5*.5",
+"line": "/(.5*.5 + -5 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x.5^ ^)00--*0",
+"line": "(x.5^ ^)00--*0)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "=^)",
+"line": "x = -5/2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1^+-0",
+"line": " -0 *1.50-",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".52023",
+"line": "(.52023) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "y )*x*",
+"line": "(y )*x*)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "(/-1",
+"line": "((/-1) * 1 = () * 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".50 )",
+"line": "x = 7/3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".5= -",
+"line": "(.5) * x = (-) * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*3x-^0xx(",
+"line": "*3x-^0xx( + -3 =  + -3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+=+03)3-2-(",
+"line": "x = 6",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1=0)/",
+"line": "(1) * 1 = (0)/) * 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x((",
+"line": "x(( + 0 =  + 0",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "=",
+"line": " = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "00x)+-",
+"line": "00x)+- + 2 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+y0 /*()x.5",
+"line": "+y0 /*()x.5 + 3 =  + 3",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "x).5^)0",
+"line": "(x).5^)0)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "x ",
+"line": "(x) * -4 = () * -4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-/1^+1 /x2.5",
+"line": "(-/1^+1 /x2.5)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "=",
+"line": "x = -3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "3)x *(0^)",
+"line": "x = -7/3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " y^y+x(y",
+"line": " = y^y+x(y",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "* 3)+/0^-3",
+"line": " = * 3)+/0^-3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "(0/",
+"line": " = (0/",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "0-)y^/)1",
+"line": "(0-)y^/)1) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "0*3* .5+*",
+"line": "0*3* .5+* + 5 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".5x.5",
+"line": "x = -3/4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".5*",
+"line": "(.5*) * 4 = () * 4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "0)+^x1/.5",
+"line": " = 0)+^x1/.5",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*-.5==/",
+"line": "(*-.5) * -2 = (=/) * -2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-/xyy",
+"line": " = -/xyy",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "2^ 0+=/^y3/^",
+"line": "/^y3/^ = 2^ 0+",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "=.5.5*(",
+"line": "()^2 = (.5.5*()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "0.5+y(0=",
+"line": " = 0.5+y(0",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "2)=1-/1y",
+"line": "1-/1y = 2)",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "y32=^3^",
+"line": "*x(+(",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " 2",
+"line": "*y--(/",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "=*0)2=)^*",
+"line": "*0)2=)^* = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "-^)-+/x(x=",
+"line": " = -^)-+/x(x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " +",
+"line": " = +",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "3 ",
+"line": "(3) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "3+)",
+"line": "(3+)) * -3 = () * -3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "303*x0=.5( 0",
+"line": "x = -2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/-=22(^ +/1",
+"line": " .5(*-)",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "^ =/yy(/ .50",
+"line": "/yy(/ .50 = ^",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "2^++ .5301)y",
+"line": " = 2^++ .5301)y",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": ")",
+"line": " ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/1^y+0",
+"line": "/1^y+0 + -2 =  + -2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "3",
+"line": "3 + -7 =  + -7",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "( 3)-.53+/",
+"line": "(( 3)-.53+/) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " 0(x",
+"line": "(0(x) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/",
+"line": "x = 9/4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "^-*.5y",
+"line": "(^-*.5y) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "x--=)1.52",
+"line": ")1.52 = x--",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+0+",
+"line": "(+0+)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "(/.5",
+"line": "((/.5) * 1 = () * 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")",
+"line": ") + -4 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")3^/x(^-23",
+"line": "1y0^-=y=.5y",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "^)*.50",
+"line": " = ^)*.50",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+",
+"line": "(+) * 1 = () * 1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+ 3*y 3/",
+"line": " = + 3*y 3/",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "(11+/ 0*.51",
+"line": "x = 0",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "/(x2*== /1",
+"line": "x = 3/2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "2//+",
+"line": "(2//+) * -1 = () * -1",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " ^(3^/)x(",
+"line": " = ^(3^/)x(",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "y",
+"line": "(y) * x = () * x",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "0=^==",
+"line": "(0)^2 = (^==)^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": " ",
+"line": "() * -4 = () * -4",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "+0 ",
+"line": "(+0)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ")* 3y= ",
+"line": "x = 1/2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": " *(.5*1",
+"line": "*(.5*1 + 1 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".500",
+"line": "x = 2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "=-^",
+"line": "() * -5 = (-^) * -5",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "** )++00*",
+"line": "(** )++00*) * -3 = () * -3",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*-^y3",
+"line": "(*-^y3)^2 = ()^2",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "y ^+^=3(x3",
+"line": "3(x3 = y ^+^",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": ")*(/2",
+"line": " = )*(/2",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": ".53",
+"line": ".53 + -2 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "(+(",
+"line": "(+( + 3 = ",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "0(",
+"line": " = 0(",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "*+) ",
+"line": "*+) + -8 =  + -8",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1",
+"line": "(1) * 6 = () * 6",
+"expected": "OUT_OF_FRAGMENT unparsed"
+},
+{
+"previous": "1=1 y+=0",
+"line": "1 + 3 = 1 y+=0",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+},
+{
+"previous": "*2y2*",
+"line": "*2+^",
+"expected": "OUT_OF_FRAGMENT unknown_symbol"
+}
+]

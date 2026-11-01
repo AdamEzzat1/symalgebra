@@ -63,13 +63,14 @@ Outside the fragment the answer is `OUT_OF_FRAGMENT` with a reason, never a gues
 | `too_deep` | Brackets nested more than 16 deep |
 | `empty_domain` | A denominator identically zero. Otherwise `1/0 → 2/0` would pass vacuously |
 | `irrational_root` | Any member of a difference set is irrational, so no rational witness exists |
+| `limit` | A number passes 4096 bits, or the fixed work budget runs out. Lisp only: the oracle has no such limit |
 
 An irrational root that both lines share is fine: `x^2 = 2 → x^4 = 4` is `EQUIVALENT`.
 
 Multi-variable input is out of the fragment for now. Section 2 of ARCHITECTURE.md allows EQUIVALENT
 or UNRELATED for multi-variable expressions, but nothing in the current scope needs them. The limits
-are judgement until M3 measures them. The 4096-bit precheck before multiplication belongs to the Lisp
-core: the oracle has no time limit to protect.
+are judgement. The 4096-bit precheck before multiplication belongs to the Lisp core, because the
+oracle has no time limit to protect. Lisp counts `degree_limit` on the numerator in lowest terms.
 
 ## Using a verdict
 

@@ -1,0 +1,1 @@
+{"rule": "planted", "class": "equivalence", "before": "(= (+ (* 2 x) 5) 17)", "after": "(= x 7)"}

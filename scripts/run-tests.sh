@@ -10,3 +10,4 @@ swipl --version | grep -q "version $SWIPL_VERSION " \
 sbcl --script engine/tests/smoke.lisp
 swipl knowledge/tests/smoke.pl
 sbcl --script scaffold/m1/tests/run.lisp
+sbcl --script engine/tests/run.lisp
