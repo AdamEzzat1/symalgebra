@@ -8,4 +8,4 @@ oracle-sabotage ran=6 passed=6
 rules ran=280 passed=280
 corpus ran=568 passed=568
 lean-statements ran=1 passed=1
-lean ran=4 passed=4
+lean ran=5 passed=5
