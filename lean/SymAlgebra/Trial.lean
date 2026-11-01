@@ -1,4 +1,3 @@
-import Mathlib.Tactic.LinearCombination
 import SymAlgebra.Rules
 
 /-! M4 five-rule trial. Statements come from `Rules.lean`, generated from the rule file. -/
@@ -104,6 +103,6 @@ theorem proof_cross_multiply : rule_cross_multiply := by
   · simp only [hb, hc, pmul]
     rw [e1, e2]
     congr 1
-    ring
+    exact mul_right_comm v w' w
 
 end SymAlgebra
