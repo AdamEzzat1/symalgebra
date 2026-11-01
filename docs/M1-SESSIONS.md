@@ -5,8 +5,9 @@ and the reasons for them are in `docs/ARCHITECTURE.md`, section 6.
 
 ## Stage A: three people, observed
 
-1. Start Docker, then run `sh scripts/serve-m1.sh` from the repository root. The first start needs
-   the image, which `docker build -t symalgebra-ci .` creates in about 13 minutes.
+1. Start Docker, then run `sh scripts/serve-m1.sh` from the repository root. PowerShell has no `sh`,
+   so there use `& "C:\Program Files\Git\bin\sh.exe" scripts/serve-m1.sh`. The first start needs the
+   image, which `docker build -t symalgebra-ci .` creates in about 13 minutes.
 2. Open `http://localhost:8080` on your machine. For the test phone, use this machine's LAN
    address on port 8080, on the same network.
 3. Pick a random code for the person. Keep no list linking codes to names.
