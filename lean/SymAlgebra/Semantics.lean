@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Basic.Real.Basic
 
 /-! School-algebra semantics. A zero divisor has no value, unlike Mathlib's `x / 0 = 0`. -/
 

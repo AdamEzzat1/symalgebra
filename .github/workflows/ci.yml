@@ -107,12 +107,12 @@ jobs:
       - name: Fetch selected Mathlib cache
         run: |
           lake --version
-          time lake exe cache get Mathlib.Data.Real.Basic Mathlib.Tactic.LinearCombination
+          time lake exe cache get Mathlib.Basic.Real.Basic Mathlib.Tactic.LinearCombination
           git diff --exit-code lake-manifest.json
       - name: Build
         run: |
           df -h /
-          time lake build --no-build Mathlib.Data.Real.Basic Mathlib.Tactic.LinearCombination
+          time lake build --no-build Mathlib.Basic.Real.Basic Mathlib.Tactic.LinearCombination
           time lake build 2>&1 | tee build.log
       - id: audit
         name: Axiom audit and sabotage fixtures

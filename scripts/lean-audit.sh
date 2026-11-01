@@ -34,7 +34,7 @@ ran=$((ran + 1))
 audit Audit.lean && passed=$((passed + 1))
 expect_rejected sabotage/UsesSorry.lean "FORBIDDEN AXIOM: sorryAx"
 expect_rejected sabotage/CustomAxiom.lean "FORBIDDEN AXIOM: everything_zero"
-expect_rejected sabotage/BadCertificate.lean "linear_combination"
+expect_rejected sabotage/BadCertificate.lean "ring failed"
 
 echo "COUNT lean ran=$ran passed=$passed"
 [ "$ran" = "$passed" ]

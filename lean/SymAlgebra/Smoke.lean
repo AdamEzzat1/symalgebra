@@ -1,5 +1,5 @@
 import Mathlib.Tactic.LinearCombination
-import Mathlib.Data.Real.Basic
+import Mathlib.Basic.Real.Basic
 
 /-! M0 smoke theorem. Proves only that the pinned toolchain and tactics work. -/
 
