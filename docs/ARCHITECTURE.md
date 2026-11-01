@@ -130,8 +130,8 @@ uses only `propext`, `Classical.choice` and `Quot.sound`. A false distribution r
 tactic script with `unsolved goals`.
 
 The Lean job took 1 min 49 s *measured* with the cached Mathlib subset: 82 s to fetch it, 10 s to
-build, 12 s to audit, and about 4 GB of disk. Three of the four runs needed to reach green failed on
-one line each, from an import that `ring` and the cast lemmas need. No statement changed.
+build, 12 s to audit, and about 4 GB of disk. The first two of the three runs to reach green failed
+on one line each, because `ring` and a cast lemma were not in scope. No statement changed.
 
 What the trial does not show:
 - 23 of the 40 rules can be stated today. The other 17 need `sub` (10), `eval` (5), `neg` (1) and an
