@@ -22,8 +22,10 @@ expect_failure no-guard "RULE UNSOUND: mul-zero-unguarded" python oracle/check_r
 expect_failure open-guard "is not on the closed list" python oracle/check_rules.py sabotage/m2-open-guard.sexp
 expect_failure decorative-guard "GUARD NOT NEEDED: transpose-add-overguarded" python oracle/check_rules.py sabotage/m2-decorative-guard.sexp
 expect_failure bad-verdict "CORPUS MISMATCH: wrong root called equivalent" python oracle/check_corpus.py rules/rules.sexp corpus/solutions.json sabotage/m2-bad-verdict.json
+expect_failure stale-lean "LEAN STATEMENTS STALE" python oracle/gen_lean.py sabotage/m4-changed-rule.sexp lean/SymAlgebra/Rules.lean --check
 
 echo "COUNT oracle-sabotage ran=$ran passed=$passed"
 [ "$ran" = "$passed" ] || exit 1
 python oracle/check_rules.py rules/rules.sexp
 python oracle/check_corpus.py rules/rules.sexp corpus/solutions.json corpus/verdicts.json
+python oracle/gen_lean.py rules/rules.sexp lean/SymAlgebra/Rules.lean --check

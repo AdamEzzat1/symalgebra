@@ -36,6 +36,10 @@ def ev : E → ℝ → Option ℝ
 def Sol (l r : E) : Set ℝ :=
   {x | ∃ v, ev l x = some v ∧ ev r x = some v}
 
+/-- The meaning of the `total` guard: `a` has a value at every x. -/
+def Total (a : E) : Prop :=
+  ∀ x, ∃ v, ev a x = some v
+
 /-- `1/x` has no value at 0, so `1/x = 0` cannot have root 0. -/
 theorem ev_one_div_var_zero : ev (.div (.lit 1) .var) 0 = none := by
   simp [ev, pdiv]
