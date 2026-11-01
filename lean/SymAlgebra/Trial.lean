@@ -1,3 +1,4 @@
+import Mathlib.Tactic.LinearCombination
 import SymAlgebra.Rules
 
 /-! M4 five-rule trial. Statements come from `Rules.lean`, generated from the rule file. -/
