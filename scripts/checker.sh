@@ -3,12 +3,12 @@
 # A deliberately wrong fixture file must fail first, so a checker that passes everything cannot.
 set -eu
 . ./tools.lock
-tar -c scaffold/m1 sabotage \
+tar -c scaffold/m1 sabotage oracle \
     | docker run --rm -i "python@$PYTHON_IMAGE_DIGEST" sh -c '
 set -eu
 tar -x
 pip install -q --no-cache-dir --disable-pip-version-check --root-user-action=ignore \
-    --require-hashes -r scaffold/m1/requirements.lock
+    --require-hashes -r oracle/requirements.lock
 if python -I scaffold/m1/tests/check_problems.py scaffold/m1/problems.json sabotage/bad-fixtures.json > bad.out; then
     echo "SABOTAGE NOT CAUGHT: bad-fixtures"; exit 1
 fi

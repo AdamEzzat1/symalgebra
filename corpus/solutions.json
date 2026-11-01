@@ -1,0 +1,125 @@
+[
+ {"id":"lin-a","area":"linear","start":"2x + 5 = 17","answer":"6","steps":[
+  {"line":"2x = 17 - 5","rules":["transpose-add"]},{"line":"2x = 12","rules":["sub-literals"]},
+  {"line":"x = 12/2","rules":["isolate-by-division"]},{"line":"x = 6","rules":["div-literals"]}]},
+ {"id":"lin-b","area":"linear","start":"3x - 4 = 11","answer":"5","steps":[
+  {"line":"3x = 11 + 4","rules":["transpose-sub"]},{"line":"3x = 15","rules":["add-literals"]},
+  {"line":"x = 15/3","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"lin-c","area":"linear","start":"5x - 2 = 3x + 8","answer":"5","steps":[
+  {"line":"5x - 2 - 3x = 3x + 8 - 3x","rules":["sub-both"]},{"line":"2x - 2 = 8","rules":["add-comm","combine-like-sub","sub-self"]},
+  {"line":"2x = 8 + 2","rules":["transpose-sub"]},{"line":"2x = 10","rules":["add-literals"]},
+  {"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"lin-d","area":"linear","start":"10 - 3x = 1","answer":"3","steps":[
+  {"line":"10 - 3x - 10 = 1 - 10","rules":["sub-both"]},{"line":"-3x = -9","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"x = -9/-3","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
+ {"id":"lin-e","area":"linear","start":"x/2 = 3","answer":"6","steps":[
+  {"line":"x/2 * 2 = 3 * 2","rules":["mul-both"]},{"line":"x = 6","rules":["mul-comm","mul-by-fraction","cancel-literal","mul-literals"]}]},
+ {"id":"lin-f","area":"linear","start":"0.5x + 1 = 4","answer":"6","steps":[
+  {"line":"0.5x = 4 - 1","rules":["transpose-add"]},{"line":"0.5x = 3","rules":["sub-literals"]},
+  {"line":"x = 3/0.5","rules":["isolate-by-division"]},{"line":"x = 6","rules":["div-literals"]}]},
+ {"id":"lin-g","area":"linear","start":"4 = 2x - 6","answer":"5","steps":[
+  {"line":"2x - 6 = 4","rules":["swap-sides"]},{"line":"2x = 4 + 6","rules":["transpose-sub"]},
+  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"lin-h","area":"linear","start":"-x + 7 = 2","answer":"5","steps":[
+  {"line":"-x = 2 - 7","rules":["transpose-add"]},{"line":"-x = -5","rules":["sub-literals"]},
+  {"line":"-x * -1 = -5 * -1","rules":["mul-both"]},{"line":"x = 5","rules":["mul-literals"]}]},
+ {"id":"lin-i","area":"linear","start":"3x + 2 = 3x + 5","answer":"none","steps":[
+  {"line":"3x + 2 - 3x = 3x + 5 - 3x","rules":["sub-both"]},{"line":"2 = 5","rules":["add-comm","sub-self"]}]},
+ {"id":"lin-j","area":"linear","start":"2x + 6 = 2x + 6","answer":"all","steps":[
+  {"line":"2x + 6 - 2x = 2x + 6 - 2x","rules":["sub-both"]},{"line":"6 = 6","rules":["add-comm","sub-self"]}]},
+ {"id":"lin-k","area":"linear","start":"7 - x = 3","answer":"4","steps":[
+  {"line":"7 - x - 7 = 3 - 7","rules":["sub-both"]},{"line":"-x = -4","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"-x * -1 = -4 * -1","rules":["mul-both"]},{"line":"x = 4","rules":["mul-literals"]}]},
+ {"id":"lin-l","area":"linear","start":"1.5x = 6","answer":"4","steps":[
+  {"line":"x = 6/1.5","rules":["isolate-by-division"]},{"line":"x = 4","rules":["div-literals"]}]},
+
+ {"id":"dist-a","area":"distribution","start":"2(x + 3) = 10","answer":"2","steps":[
+  {"line":"2x + 2 * 3 = 10","rules":["distribute"]},{"line":"2x + 6 = 10","rules":["mul-literals"]},
+  {"line":"2x = 10 - 6","rules":["transpose-add"]},{"line":"2x = 4","rules":["sub-literals"]},
+  {"line":"x = 4/2","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+ {"id":"dist-b","area":"distribution","start":"3(x - 2) = 9","answer":"5","steps":[
+  {"line":"3x - 3 * 2 = 9","rules":["distribute-sub"]},{"line":"3x - 6 = 9","rules":["mul-literals"]},
+  {"line":"3x = 9 + 6","rules":["transpose-sub"]},{"line":"3x = 15","rules":["add-literals"]},
+  {"line":"x = 15/3","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"dist-c","area":"distribution","start":"3x + 2x = 15","answer":"3","steps":[
+  {"line":"5x = 15","rules":["combine-like"]},{"line":"x = 15/5","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
+ {"id":"dist-d","area":"distribution","start":"3x + 2 + x = 14","answer":"3","steps":[
+  {"line":"3x + x + 2 = 14","rules":["add-comm"]},{"line":"4x + 2 = 14","rules":["add-comm","combine-implicit"]},
+  {"line":"4x = 14 - 2","rules":["transpose-add"]},{"line":"4x = 12","rules":["sub-literals"]},
+  {"line":"x = 12/4","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
+ {"id":"dist-e","area":"distribution","start":"5 - (x + 2) = 1","answer":"2","steps":[
+  {"line":"5 - x - 2 = 1","rules":["sub-bracket"]},{"line":"3 - x = 1","rules":["add-comm","sub-literals"]},
+  {"line":"3 - x - 3 = 1 - 3","rules":["sub-both"]},{"line":"-x = -2","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"-x * -1 = -2 * -1","rules":["mul-both"]},{"line":"x = 2","rules":["mul-literals"]}]},
+ {"id":"dist-f","area":"distribution","start":"5 - (x - 2) = 1","answer":"6","steps":[
+  {"line":"5 - x + 2 = 1","rules":["sub-bracket-sub"]},{"line":"7 - x = 1","rules":["add-comm","add-literals"]},
+  {"line":"7 - x - 7 = 1 - 7","rules":["sub-both"]},{"line":"-x = -6","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"-x * -1 = -6 * -1","rules":["mul-both"]},{"line":"x = 6","rules":["mul-literals"]}]},
+ {"id":"dist-g","area":"distribution","start":"-(x + 3) = 2","answer":"-5","steps":[
+  {"line":"-x - 3 = 2","rules":["negate-sum"]},{"line":"-x = 2 + 3","rules":["transpose-sub"]},{"line":"-x = 5","rules":["add-literals"]},
+  {"line":"-x * -1 = 5 * -1","rules":["mul-both"]},{"line":"x = -5","rules":["mul-literals"]}]},
+ {"id":"dist-h","area":"distribution","start":"2(x + 1) + 3(x - 1) = 9","answer":"2","steps":[
+  {"line":"2x + 2 * 1 + 3x - 3 * 1 = 9","rules":["distribute","distribute-sub"]},{"line":"5x - 1 = 9","rules":["add-comm","combine-like","mul-literals","sub-literals"]},
+  {"line":"5x = 9 + 1","rules":["transpose-sub"]},{"line":"5x = 10","rules":["add-literals"]},
+  {"line":"x = 10/5","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+ {"id":"dist-i","area":"distribution","start":"4(x - 1) = 2(x + 3)","answer":"5","steps":[
+  {"line":"4x - 4 = 2x + 6","rules":["distribute-sub","distribute","mul-literals"]},{"line":"4x - 4 - 2x = 2x + 6 - 2x","rules":["sub-both"]},
+  {"line":"2x - 4 = 6","rules":["add-comm","combine-like-sub","sub-self"]},{"line":"2x = 6 + 4","rules":["transpose-sub"]},
+  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"dist-j","area":"distribution","start":"x + x + x = 9","answer":"3","steps":[
+  {"line":"2x + x = 9","rules":["combine-unit"]},{"line":"3x = 9","rules":["add-comm","combine-implicit"]},
+  {"line":"x = 9/3","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
+ {"id":"dist-k","area":"distribution","start":"6x - 2x + 1 = 9","answer":"2","steps":[
+  {"line":"4x + 1 = 9","rules":["combine-like-sub"]},{"line":"4x = 9 - 1","rules":["transpose-add"]},
+  {"line":"4x = 8","rules":["sub-literals"]},{"line":"x = 8/4","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+ {"id":"dist-l","area":"distribution","start":"2(x + 1) = 2x + 2","answer":"all","steps":[
+  {"line":"2x + 2 * 1 = 2x + 2","rules":["distribute"]},{"line":"2x + 2 = 2x + 2","rules":["mul-literals"]},
+  {"line":"2x + 2 - 2x = 2x + 2 - 2x","rules":["sub-both"]},{"line":"2 = 2","rules":["add-comm","sub-self"]}]},
+ {"id":"dist-m","area":"distribution","start":"3(x + 1) = 3x + 5","answer":"none","steps":[
+  {"line":"3x + 3 * 1 = 3x + 5","rules":["distribute"]},{"line":"3x + 3 = 3x + 5","rules":["mul-literals"]},
+  {"line":"3x + 3 - 3x = 3x + 5 - 3x","rules":["sub-both"]},{"line":"3 = 5","rules":["add-comm","sub-self"]}]},
+
+ {"id":"frac-a","area":"fractions","start":"x/3 + 2/3 = 1","answer":"1","steps":[
+  {"line":"(x + 2)/3 = 1","rules":["add-same-denom"]},{"line":"(x + 2)/3 * 3 = 1 * 3","rules":["mul-both"]},
+  {"line":"x + 2 = 3","rules":["cancel-literal","mul-literals"]},{"line":"x = 3 - 2","rules":["transpose-add"]},{"line":"x = 1","rules":["sub-literals"]}]},
+ {"id":"frac-b","area":"fractions","start":"x/2 + x/3 = 5","answer":"6","steps":[
+  {"line":"(x * 3 + x * 2)/(2 * 3) = 5","rules":["add-cross"]},{"line":"5x/6 = 5","rules":["mul-comm","combine-like","mul-literals"]},
+  {"line":"5x/6 * 6 = 5 * 6","rules":["mul-both"]},{"line":"5x = 30","rules":["cancel-literal","mul-literals"]},
+  {"line":"x = 30/5","rules":["isolate-by-division"]},{"line":"x = 6","rules":["div-literals"]}]},
+ {"id":"frac-c","area":"fractions","start":"(x + 1)/2 = 3","answer":"5","steps":[
+  {"line":"(x + 1)/2 * 2 = 3 * 2","rules":["mul-both"]},{"line":"x + 1 = 6","rules":["cancel-literal","mul-literals"]},
+  {"line":"x = 6 - 1","rules":["transpose-add"]},{"line":"x = 5","rules":["sub-literals"]}]},
+ {"id":"frac-d","area":"fractions","start":"x/2 = 3/4","answer":"3/2","steps":[
+  {"line":"x * 4 = 3 * 2","rules":["cross-multiply"]},{"line":"4x = 6","rules":["mul-comm","mul-literals"]},
+  {"line":"x = 6/4","rules":["isolate-by-division"]},{"line":"x = 3/2","rules":["cancel-literal"]}]},
+ {"id":"frac-e","area":"fractions","start":"1/x = 2","answer":"1/2","steps":[
+  {"line":"1/x * x = 2 * x","rules":["clear-denominators"]},{"line":"1 = 2x","rules":["cancel-variable"]},
+  {"line":"2x = 1","rules":["swap-sides"]},{"line":"x = 1/2","rules":["isolate-by-division"]}]},
+ {"id":"frac-f","area":"fractions","start":"x/(x - 1) = 1/(x - 1)","answer":"none","steps":[
+  {"line":"x/(x - 1) * (x - 1) = 1/(x - 1) * (x - 1)","rules":["clear-denominators"]},
+  {"line":"x = 1","verdict":"GAINS","rules":["cancel-variable"]}]},
+ {"id":"frac-g","area":"fractions","start":"2/(x + 1) = 1","answer":"1","steps":[
+  {"line":"2/(x + 1) * (x + 1) = 1 * (x + 1)","rules":["clear-denominators"]},{"line":"2 = x + 1","rules":["cancel-variable","mul-one"]},
+  {"line":"x + 1 = 2","rules":["swap-sides"]},{"line":"x = 2 - 1","rules":["transpose-add"]},{"line":"x = 1","rules":["sub-literals"]}]},
+ {"id":"frac-h","area":"fractions","start":"3/x + 1/x = 2","answer":"2","steps":[
+  {"line":"(3 + 1)/x = 2","rules":["add-same-denom"]},{"line":"4/x = 2","rules":["add-literals"]},
+  {"line":"4/x * x = 2 * x","rules":["clear-denominators"]},{"line":"4 = 2x","rules":["cancel-variable"]},
+  {"line":"2x = 4","rules":["swap-sides"]},{"line":"x = 4/2","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+ {"id":"frac-i","area":"fractions","start":"(x/2) * (3/5) = 3","answer":"10","steps":[
+  {"line":"(x * 3)/(2 * 5) = 3","rules":["mul-fractions"]},{"line":"3x/10 = 3","rules":["mul-comm","mul-literals"]},
+  {"line":"3x/10 * 10 = 3 * 10","rules":["mul-both"]},{"line":"3x = 30","rules":["cancel-literal","mul-literals"]},
+  {"line":"x = 30/3","rules":["isolate-by-division"]},{"line":"x = 10","rules":["div-literals"]}]},
+ {"id":"frac-j","area":"fractions","start":"x/(2/3) = 6","answer":"4","steps":[
+  {"line":"(x * 3)/2 = 6","rules":["div-by-fraction"]},{"line":"3x/2 = 6","rules":["mul-comm"]},
+  {"line":"3x/2 * 2 = 6 * 2","rules":["mul-both"]},{"line":"3x = 12","rules":["cancel-literal","mul-literals"]},
+  {"line":"x = 12/3","rules":["isolate-by-division"]},{"line":"x = 4","rules":["div-literals"]}]},
+ {"id":"frac-k","area":"fractions","start":"(x * 3)/(2 * 3) = 5","answer":"10","steps":[
+  {"line":"x/2 = 5","rules":["cancel-literal"]},{"line":"x/2 * 2 = 5 * 2","rules":["mul-both"]},{"line":"x = 10","rules":["cancel-literal","mul-literals"]}]},
+ {"id":"frac-l","area":"fractions","start":"(x * (x - 1))/(2 * (x - 1)) = 1/2","answer":"none","steps":[
+  {"line":"x/2 = 1/2","verdict":"GAINS","rules":["cancel-variable"]}]},
+ {"id":"frac-m","area":"fractions","start":"x/2 + x/2 = x","answer":"all","steps":[
+  {"line":"(x + x)/2 = x","rules":["add-same-denom"]},{"line":"2x/2 = x","rules":["combine-unit"]},{"line":"x = x","rules":["cancel-literal"]}]},
+ {"id":"frac-n","area":"fractions","start":"x/3 = x/6 + 1","answer":"6","steps":[
+  {"line":"x/3 * 6 = (x/6 + 1) * 6","rules":["mul-both"]},{"line":"2x = x + 6","rules":["distribute","cancel-literal","mul-literals"]},
+  {"line":"2x - x = x + 6 - x","rules":["sub-both"]},{"line":"x = 6","rules":["add-comm","sub-self","combine-like-sub"]}]}
+]

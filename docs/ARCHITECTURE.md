@@ -1,8 +1,8 @@
 # SymAlgebra: Architecture
 
-Status 2026-10-31: design only. No engine code exists and nothing here has been built,
-compiled or run as a system. Numbers marked *measured* come from throwaway probes on the
-development Windows machine. Everything else is a plan or a judgement.
+Status 2026-11-01: M0 is complete. M1a is built and M1b, the adult sessions, is not yet run. M2 is
+complete. No engine exists yet, and M3 waits for the M1 gate. Numbers marked *measured* come from
+throwaway probes on the development Windows machine.
 
 Students type their own algebra steps. The system checks each step by its meaning, says
 what rule was used where it can, and explains itself.
@@ -76,6 +76,18 @@ recommendations, `r1-*` and `r2-*` the critique rounds, `r3-*` the final review.
   silently. That is a documented limit.
 - **Rule classes.** Equivalence and implication. Rule parameters come from a closed list of
   sources (term, coefficient, LCD).
+
+**M2 delivered, 2026-11-01.** The full definitions are in [SEMANTICS.md](SEMANTICS.md) and
+[RULE-FORMAT.md](RULE-FORMAT.md). [rules/rules.sexp](../rules/rules.sexp) holds 40 sound rules and no
+mal-rules. [corpus/](../corpus) holds 39 solutions across the three scope areas and 43 verdict
+cases. [oracle/](../oracle) checks both with exhaustive strict evaluation, SymPy on schemas, and
+exact solution sets, and five planted faults must each fail first. The owner chose to run M2 before
+the M1 gate because it mostly survives an input redesign. M3 does not start until that gate passes.
+
+Open at M2 exit: the corpus's rule labels only name rules that exist. Whether each label describes
+its step needs the AC matcher, so M3 checks that. No generator exists yet. Nothing here is proved.
+M2 found that `transpose-add` and `transpose-sub` need no `total` guard, because the term stays on
+both sides, so the guard-necessity check removed it.
 
 ## 3. Lisp and Prolog (M3, M5)
 

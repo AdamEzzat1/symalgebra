@@ -102,6 +102,24 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
+  oracle:
+    needs: config
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    outputs:
+      counts: ${{ steps.check.outputs.counts }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: check
+        name: Rule file and corpus against the oracle
+        run: |
+          sh scripts/oracle.sh | tee oracle.out
+          {
+            echo 'counts<<EOF'
+            grep '^COUNT' oracle.out
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
   lean:
     needs: config
     if: needs.config.outputs.lean_required == 'true' || inputs.run_lean
@@ -145,7 +163,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   gate:
-    needs: [config, build-test, sabotage, checker, lean]
+    needs: [config, build-test, sabotage, checker, oracle, lean]
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 2
@@ -157,15 +175,17 @@ jobs:
           BUILD: ${{ needs.build-test.result }}
           SABOTAGE: ${{ needs.sabotage.result }}
           CHECKER: ${{ needs.checker.result }}
+          ORACLE: ${{ needs.oracle.result }}
           LEAN: ${{ needs.lean.result }}
           REQUIRED: ${{ needs.config.outputs.lean_required }}
           COUNTS: |
             ${{ needs.build-test.outputs.counts }}
             ${{ needs.sabotage.outputs.counts }}
             ${{ needs.checker.outputs.counts }}
+            ${{ needs.oracle.outputs.counts }}
             ${{ needs.lean.outputs.counts }}
         run: |
-          [ "$CONFIG" = success ] && [ "$BUILD" = success ] && [ "$SABOTAGE" = success ] && [ "$CHECKER" = success ]
+          [ "$CONFIG" = success ] && [ "$BUILD" = success ] && [ "$SABOTAGE" = success ] && [ "$CHECKER" = success ] && [ "$ORACLE" = success ]
           if [ "$REQUIRED" = true ]; then
             [ "$LEAN" = success ]
           else
