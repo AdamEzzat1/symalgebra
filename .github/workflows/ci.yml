@@ -107,7 +107,7 @@ jobs:
       - name: Fetch selected Mathlib cache
         run: |
           lake --version
-          time lake exe cache get Mathlib/Data/Real/Basic.lean Mathlib/Tactic/LinearCombination.lean
+          time lake exe cache get Mathlib.Data.Real.Basic Mathlib.Tactic.LinearCombination
           git diff --exit-code lake-manifest.json
       - name: Build
         run: |
