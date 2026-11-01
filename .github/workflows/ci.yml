@@ -28,7 +28,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: flag
         run: |
-          echo "lean_required=$(cat ci/lean_required)" >> "$GITHUB_OUTPUT"
+          # A bare assignment, so a missing file stops here under `bash -e`.
+          required=$(cat ci/lean_required)
+          echo "lean_required=$required" >> "$GITHUB_OUTPUT"
           echo "image_key=image-$(sha256sum Dockerfile | cut -c1-32)" >> "$GITHUB_OUTPUT"
 
   build-test:
