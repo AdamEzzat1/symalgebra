@@ -143,6 +143,14 @@ M1 adds one job, `checker`, on the `python:3.11.3-slim` digest with hash-locked 
 **M0 exit gate.** A fresh clone passes all jobs on a pushed commit, versions print and match
 `tools.lock`, and a sabotage branch turns each job red with the expected message.
 
+**M0 exit, met on 2026-11-01.** Run 41263001966 passed every job with Lean required. Each job
+then went red on a throwaway branch with the expected message: `config` on a missing flag file
+(41263874029), `build-test` and `checker` on one wrong authored line (41263787090), `sabotage` on
+a fixture that stopped failing (41263815325), `lean` on `sorry` in `cancel_factor` (41263820476),
+and `gate` on a manifest wanting one more test (41263846349). `cancel_factor` and both guard
+witnesses are proved, using only `propext`, `Classical.choice` and `Quot.sound`. `lean_required` is
+now false, so Lean runs only through `workflow_dispatch` until M4.
+
 **M0 stop.** Three working days without a pinned SBCL. Two working days on Lean, or a cached
 Lean run above 15 minutes: pause Lean, tell the owner, continue M1 only if the owner so rules.
 
