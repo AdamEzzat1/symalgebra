@@ -64,9 +64,30 @@
 ("search" "append (list -1 (second item))" "collect item")
 ("search" "unless rest collect found))" "collect found))")
 ("search" "(when (equal start goal)
-      (return-from attribute (list :state :ok :rules nil)))" "")
+      (return-from attribute (list :state :ok :rules nil :uses nil)))" "")
 
 ;;; The flat view
 ("rules" "(mapcar #'cdr (sort (mapcar (lambda (term) (cons (term-key term) term)) terms)
                       #'string< :key #'car))" "terms")
 ("rules" ":order (equal pattern replacement)" ":order nil")
+
+;;; Quadratics
+("parse" "(push (parse-equation) equations))" "(setf equations (list (parse-equation))))")
+("meaning" "((eq (car a) :finite) (cons :allexcept (pquo q (pgcd p q))))" "((eq (car a) :finite) (cons :allexcept q))")
+("meaning" "((eq (car b) :finite) (cons :allexcept (pquo p (pgcd p q))))" "((eq (car b) :finite) (cons :allexcept p))")
+("meaning" "(t (cons :allexcept (pgcd p q))))))" "(t (cons :allexcept p)))))")
+("meaning" "(some (lambda (equation) (holds equation x)) (rest line))" "(every (lambda (equation) (holds equation x)) (rest line))")
+("step" "(every #'solved-form-p (rest line))" "t")
+("search" "(= (* bound (first more)) (third more))" "t")
+("search" "(square-of (unless (= (* bound bound) (first more)) (setf state :failed)))" "(square-of nil)")
+("rules" "(remove-duplicates (mapcan (lambda (arg) (items-of 'or arg)) (rest tree))
+                                         :test #'equal)" "(mapcan (lambda (arg) (items-of 'or arg)) (rest tree))")
+
+;;; Practice replies
+("tutor" "(if (holds before x)
+        (format nil \"~a = ~a solves the line before." "(if (not (holds before x))
+        (format nil \"~a = ~a solves the line before.")
+("tutor" "(reply \"status\" \"accepted\" \"solved\" (solved-flag result)" "(reply \"status\" \"accepted\" \"solved\" :true")
+("tutor" "(reply \"status\" \"caution\" \"solved\" :false" "(reply \"status\" \"caution\" \"solved\" :true")
+("tutor" "(unless (and (stringp value) (<= (length value) 256)) (error 'bad-practice))" "")
+("show" "(write-string (if found (show (cdr found) var) \"it\") out)" "(write-string \"it\" out)")

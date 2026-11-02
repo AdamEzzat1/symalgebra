@@ -1,6 +1,6 @@
 ;;;; The ordered tree of exactly what was typed. Nothing is simplified, so x/x stays x/x.
 ;;;; Numbers are exact rationals, the variable is :x, and heads match rules/rules.sexp:
-;;;; (+ a b) (- a b) (* a b) (/ a b) (neg a) (^ a n) (= left right).
+;;;; (+ a b) (- a b) (* a b) (/ a b) (neg a) (^ a n) (= left right) (or equation equation ...).
 
 (in-package :symalgebra.engine)
 
@@ -44,6 +44,9 @@
                               do (incf j))
                         (push (read-literal (subseq text i j)) tokens)
                         (setf i j)))
+                     ((and (char= c #\o) (char/= var #\o) (< (1+ i) n) (char= (char text (1+ i)) #\r))
+                      (push :or tokens)
+                      (incf i 2))
                      ((char= c var) (push :var tokens) (incf i))
                      ((find c "+-*/=()^") (push c tokens) (incf i))
                      ((alpha-char-p c) (refuse "unknown_symbol"))
@@ -123,18 +126,26 @@
              inner))
           (t (refuse "unparsed")))))
 
-(defun parse-line (text &optional (var #\x))
-  "An (= left right) tree exactly as typed."
-  (let* ((*tokens* (tokenize text var))
-         (*at* 0)
-         (left (parse-expression 0)))
+(defun parse-equation ()
+  (let ((left (parse-expression 0)))
     (unless (eql (kind) #\=)
       (refuse "unparsed"))
     (take)
-    (let ((right (parse-expression 0)))
-      (when (kind)
-        (refuse (if (eql (kind) #\=) "chain" "unparsed")))
-      (list '= left right))))
+    (list '= left (parse-expression 0))))
+
+(defun parse-line (text &optional (var #\x))
+  "An (= left right) tree exactly as typed, or (or equation ...) for alternatives."
+  (let* ((*tokens* (tokenize text var))
+         (*at* 0)
+         (equations (list (parse-equation))))
+    (loop while (eq (kind) :or)
+          do (take)
+             (push (parse-equation) equations))
+    (when (kind)
+      (refuse (if (eql (kind) #\=) "chain" "unparsed")))
+    (if (rest equations)
+        (cons 'or (reverse equations))
+        (first equations))))
 
 (defun tree-text (tree)
   "Fully bracketed text that parses back to TREE, for integer literals."
@@ -143,6 +154,7 @@
         (t (destructuring-bind (head &rest args) tree
              (case head
                (= (format nil "~a = ~a" (tree-text (first args)) (tree-text (second args))))
+               (or (format nil "~{~a~^ or ~}" (mapcar #'tree-text args)))
                (neg (format nil "(-~a)" (tree-text (first args))))
                (^ (format nil "(~a^~a)" (tree-text (first args)) (second args)))
                (t (format nil "(~a ~a ~a)" (tree-text (first args)) head (tree-text (second args)))))))))

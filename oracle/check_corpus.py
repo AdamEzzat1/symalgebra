@@ -36,6 +36,8 @@ def is_literal(tree):
 
 
 def solved_form(line):
+    if line[0] == "or":
+        return all(solved_form(item) for item in line[1:])
     left, right = line[1], line[2]
     return (left[0] == "var" and is_literal(right)) or (is_literal(left) and right[0] == "var")
 
@@ -57,10 +59,11 @@ def check_solution(solution, rule_ids, counter):
     elif answer == "all":
         counter.check(f"{name}: all allowed values", shape == "allexcept")
     else:
-        root = Fraction(answer)
-        counter.check(f"{name}: answer holds", holds(trees[0], root))
-        counter.check(f"{name}: only answer", shape == "finite" and len(values) == 1)
-        counter.check(f"{name}: ends solved", solved_form(trees[-1]) and holds(trees[-1], root))
+        roots = [Fraction(text) for text in answer.split(",")]
+        counter.check(f"{name}: answer holds", all(holds(trees[0], root) for root in roots))
+        counter.check(f"{name}: only answer", shape == "finite" and len(values) == len(roots))
+        counter.check(f"{name}: ends solved",
+                      solved_form(trees[-1]) and all(holds(trees[-1], root) for root in roots))
 
 
 def check_case(case, counter):

@@ -1,5 +1,6 @@
 ;;;; M1 scaffold server: sbcl --script scaffold/m1/server.lisp
 ;;;; Stateless. It keeps nothing between requests and logs only that it started.
+;;;; Run from the repository root: the engine reads rules/ and corpus/ relative to it.
 
 (require :sb-bsd-sockets)
 
@@ -9,9 +10,13 @@
 (load (from-here "json.lisp"))
 (load (from-here "reducer.lisp"))
 (load (from-here "api.lisp"))
+(handler-bind ((warning #'muffle-warning))
+  (load "engine/src/load.lisp"))
 
 (defpackage :symalgebra.m1.server
-  (:use :cl :sb-bsd-sockets :symalgebra.m1.json :symalgebra.m1.api))
+  (:use :cl :sb-bsd-sockets :symalgebra.m1.json :symalgebra.m1.api)
+  (:import-from :symalgebra.engine #:load-practice #:practice-list #:practice-check #:practice-hint
+                #:bad-practice))
 
 (in-package :symalgebra.m1.server)
 
@@ -33,9 +38,12 @@
 (defparameter *static*
   (list (list "/" "text/html; charset=utf-8" (file-octets "static/index.html"))
         (list "/app.js" "text/javascript; charset=utf-8" (file-octets "static/app.js"))
-        (list "/style.css" "text/css; charset=utf-8" (file-octets "static/style.css"))))
+        (list "/style.css" "text/css; charset=utf-8" (file-octets "static/style.css"))
+        (list "/practice" "text/html; charset=utf-8" (file-octets "static/practice.html"))
+        (list "/practice.js" "text/javascript; charset=utf-8" (file-octets "static/practice.js"))))
 
 (defparameter *problems* (load-problems (cl-user::from-here "problems.json")))
+(defparameter *practice* (load-practice))
 
 (defun utf8 (string) (sb-ext:string-to-octets string :external-format :utf-8))
 
@@ -82,15 +90,15 @@
     (when (= (read-sequence body stream) length)
       (sb-ext:octets-to-string body :external-format '(:utf-8 :replacement #\?)))))
 
-(defun handle-post (stream head handler)
+(defun handle-post (stream head handler &optional (problems *problems*))
   (let ((length (content-length head)))
     (if (or (null length) (minusp length) (> length +body-limit+))
         (refuse stream 413)
         (let ((body (read-body stream length)))
           (if body
               (handler-case
-                  (respond-json stream 200 (funcall handler *problems* (parse-json body)))
-                ((or bad-request json-failure) () (refuse stream 400)))
+                  (respond-json stream 200 (funcall handler problems (parse-json body)))
+                ((or bad-request bad-practice json-failure) () (refuse stream 400)))
               (refuse stream 400))))))
 
 (defun handle-connection (stream)
@@ -105,10 +113,16 @@
                (respond stream 200 (second file) (third file)))
               ((and (string= method "GET") (string= path "/api/problems"))
                (respond-json stream 200 (problem-list *problems*)))
+              ((and (string= method "GET") (string= path "/api/practice/problems"))
+               (respond-json stream 200 (practice-list *practice*)))
               ((and (string= method "POST") (string= path "/api/check"))
                (handle-post stream head #'handle-check))
               ((and (string= method "POST") (string= path "/api/hint"))
                (handle-post stream head #'handle-hint))
+              ((and (string= method "POST") (string= path "/api/practice/check"))
+               (handle-post stream head #'practice-check *practice*))
+              ((and (string= method "POST") (string= path "/api/practice/hint"))
+               (handle-post stream head #'practice-hint *practice*))
               (t (refuse stream 404)))))))
 
 (defun serve-connection (client)

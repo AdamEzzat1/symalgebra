@@ -108,6 +108,10 @@
          (eq (getf (check-step "1/x = 2" "1/x = 2" "0 = 0") :status) :rejected))
   (check "a finite gain without variable denominators is rejected"
          (eq (getf (check-step "x = 1" "x = 1" "x^2 = 1") :status) :rejected))
+  (check "alternatives are solved only when each one is an answer"
+         (not (getf (check-step "(x - 1)(x - 2) = 0" "x - 1 = 0 or x - 2 = 0" "x = 1 or x + 1 = 3") :solved)))
+  (check "a lost alternative is rejected"
+         (eq (getf (check-step "x^2 = 9" "x^2 = 9" "x = 3") :status) :rejected))
   (check "decimals are exact" (string= (verdict-text (check-lines "0.25x = 1" "x = 4")) "EQUIVALENT"))
   (check "decimals and fractions agree" (string= (verdict-text (check-lines "x = 1.5" "x = 3/2")) "EQUIVALENT"))
   (check "x/x keeps its hole"
@@ -235,7 +239,7 @@
 
 (tier "rule-examples"
   (mapc #'check-rule-examples *rules*)
-  (check "forty rules" (= (length *rules*) 40))
+  (check "fifty rules" (= (length *rules*) 50))
   (check "no mal-rules yet" (notany (lambda (r) (rule-field r :mal)) *rules*)))
 
 ;;; M2 left this open: does each corpus label really describe its step?
@@ -253,6 +257,8 @@
 
 (tier "corpus-labels"
   (map nil #'check-labels *solutions*))
+
+(load "engine/tests/tutor.lisp")
 
 (unless (sb-ext:posix-getenv "ENGINE_FAST")
   (load "engine/tests/graph.lisp"))

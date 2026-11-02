@@ -63,7 +63,7 @@ recommendations, `r1-*` and `r2-*` the critique rounds, `r3-*` the final review.
   before every multiply and `expt`, because `(((9^6)^6)^6)^6` otherwise passes the other caps.
   Multi-variable polynomial expressions are EQUIVALENT or UNRELATED only. All limits are
   judgement until measured.
-- **OUT_OF_FRAGMENT with a reason code.** `x^0`, radicals, abs, inequalities, chains, `or`,
+- **OUT_OF_FRAGMENT with a reason code.** `x^0`, radicals, abs, inequalities, chains,
   parameters, multi-variable equations, identically zero denominators (`empty_domain`, else
   `1/0 → 2/0` passes vacuously), `limit`, unknown symbols, and `irrational_root` when any member
   of a difference or `AllExcept` set is irrational. `1/2x` and `x/2x` return a parse query.
@@ -82,8 +82,8 @@ recommendations, `r1-*` and `r2-*` the critique rounds, `r3-*` the final review.
   sources (term, coefficient, LCD).
 
 **M2 delivered, 2026-11-01.** The full definitions are in [SEMANTICS.md](SEMANTICS.md) and
-[RULE-FORMAT.md](RULE-FORMAT.md). [rules/rules.sexp](../rules/rules.sexp) holds 40 sound rules and no
-mal-rules. [corpus/](../corpus) holds 39 solutions across the three scope areas and 43 verdict
+[RULE-FORMAT.md](RULE-FORMAT.md). [rules/rules.sexp](../rules/rules.sexp) held 40 sound rules and no
+mal-rules at M2. [corpus/](../corpus) held 39 solutions across the three scope areas and 43 verdict
 cases. [oracle/](../oracle) checks both with exhaustive strict evaluation, SymPy on schemas, and
 exact solution sets, and five planted faults must each fail first. The owner chose to run M2 before
 the M1 gate because it mostly survives an input redesign. The M3 hold was later lifted by the owner.
@@ -130,9 +130,20 @@ Latency over the 171 corpus steps, *measured* in the pinned image on the develop
 server: verdict p50 58 µs, p95 127 µs, max 5 ms. Explanation at depth 2: p95 0.9 ms, max 37 ms, naming a
 rule for 169 of 171. The slowest refusal tried took 77 ms. That is one hand-picked line, not a proven worst case.
 
+**Practice page, 2026-11-01.** On the owner's ruling, `/practice` serves the 27 distribution, like-terms
+and fraction problems from `corpus/solutions.json` through the engine, while `/` still runs the stage A
+test unchanged. A rejected step shows its witness in words. An accepted step shows the rule that names
+it, when one does. Nothing is counted or kept. The replies are in `engine/src/tutor.lisp`.
+
+**Quadratics, 2026-11-01.** On the owner's ruling, the engine goes past fractions to quadratics with
+rational roots: `or` lines, ten new rules, and 12 solved problems in the corpus. Factoring with a
+leading number and pulling out a number are accepted but unnamed. Radical answers, completing the
+square and the quadratic formula are not built, because a line cannot write a radical and the sets are
+polynomials over the rationals. Quadratics are not on the website. None of the ten new rules has a
+Lean proof, and Lean's language has no `or` line yet.
+
 **M3 is not exited.** The p95 gate is defined on the hosted server and no host exists, so that gate has
-not been run. The step rules are a library: nothing serves them yet, and the M1 scaffold still runs
-stage A unchanged. Expression tasks such as `(x²-1)/(x-1) → x+1` are not built, because a line here is
+not been run. Expression tasks such as `(x²-1)/(x-1) → x+1` are not built, because a line here is
 an equation. Mal-rules and failed-guard edges reach Prolog at M5, so only the Lisp side exists. Lisp and
 SymPy can disagree on `degree_limit` when a line's numerator cancels near degree 8; no fixture case
 does. Tier D's reference shares a brief with this code, so agreement is strong evidence, not proof.

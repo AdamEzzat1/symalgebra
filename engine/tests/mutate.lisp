@@ -1,7 +1,7 @@
 ;;;; Tier F mutation score: sbcl --script engine/tests/mutate.lisp, inside the image.
 ;;;; Each mutant is one fault in a copy of the source. A mutant survives if every test still passes.
 
-(defparameter *names* '("exact" "json" "load" "parse" "poly" "meaning" "rules" "search" "step"))
+(defparameter *names* '("exact" "json" "load" "parse" "poly" "meaning" "rules" "search" "step" "show" "tutor"))
 (defparameter *copy* "mutant-src/")
 (defparameter *time-limit* "120")
 

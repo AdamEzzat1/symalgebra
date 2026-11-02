@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algebra Practice</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Algebra practice</h1>
+
+  <section id="choose">
+    <p>Solve each equation one line at a time. Every line is checked by what it means, so any valid route is fine.</p>
+    <p class="note">For adults aged 18 or over. What you type goes to the server to be checked and is not saved there. The hosting service can see your IP address and your steps.</p>
+    <div id="areas"></div>
+  </section>
+
+  <section id="work" hidden>
+    <p id="progress" class="note"></p>
+    <ol id="lines"></ol>
+
+    <form id="entry" autocomplete="off">
+      <label for="line">Next line</label>
+      <div class="row">
+        <input id="line" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="256">
+        <button id="check" type="submit">Check</button>
+      </div>
+    </form>
+    <div id="keys" class="keys" aria-label="Symbols"></div>
+
+    <div id="reply" aria-live="polite">
+      <p id="message"></p>
+      <ul id="explanations" class="note"></ul>
+      <button id="show-why" type="button" class="quiet" hidden>Show why</button>
+      <p id="why" hidden></p>
+    </div>
+
+    <div class="row wrap">
+      <button id="claim-none" type="button" class="quiet">No solution</button>
+      <button id="claim-all" type="button" class="quiet">All real numbers</button>
+      <button id="hint" type="button" class="quiet">Hint</button>
+    </div>
+    <p id="hint-text" class="panel" hidden></p>
+
+    <div class="row wrap">
+      <button id="next" type="button" hidden>Next problem</button>
+      <button id="back" type="button" class="quiet">Choose a topic</button>
+    </div>
+  </section>
+</main>
+<script src="/practice.js"></script>
+</body>
+</html>

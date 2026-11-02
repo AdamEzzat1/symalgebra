@@ -23,11 +23,11 @@ FIELDS = (":level", ":class", ":pattern", ":replacement", ":guards", ":params", 
           ":skills", ":mal", ":positive", ":negative")
 LEVELS = ("expr", "equation")
 CLASSES = ("equivalence", "implication")
-GUARDS = ("literal", "nonzero-literal", "total")
-PARAM_SOURCES = ("term", "coefficient", "lcd")
+GUARDS = ("literal", "nonzero-literal", "total", "factors", "square-of")
+PARAM_SOURCES = ("term", "coefficient", "lcd", "pair")
 SKILLS = ("arithmetic", "identities", "ordering", "distribution", "like-terms", "fractions",
-          "balance", "domains")
-MAX_RULES = 40
+          "balance", "domains", "quadratics")
+MAX_RULES = 50
 MIN_RULES = 30
 SAMPLE_SEED = 20261101
 EQUATION_SAMPLES = 40
@@ -99,8 +99,9 @@ def format_problems(rule):
     if not metas(replacement) <= metas(pattern) | params:
         problems.append("replacement uses an unbound metavariable")
     for guard in rule[":guards"]:
-        if guard[1] not in metas(pattern) | params:
-            problems.append(f"guard on unbound {guard[1]}")
+        for target in guard[1:]:
+            if target not in metas(pattern) | params:
+                problems.append(f"guard on unbound {target}")
     for name in re.findall(r"\{(\?\w+)\}", rule[":explanation"]):
         if name not in metas(pattern) | params:
             problems.append(f"explanation uses unbound {name}")
@@ -129,12 +130,19 @@ def compute(tree, env):
     return (head, *children)
 
 
-def passes(guard, tree):
-    if guard == "literal":
-        return tree[0] == "num"
-    if guard == "nonzero-literal":
-        return tree[0] == "num" and tree[1] != 0
-    return is_total(tree)
+def passes(guard, env):
+    name, *targets = guard
+    trees = [env[target] for target in targets]
+    if name == "literal":
+        return trees[0][0] == "num"
+    if name == "nonzero-literal":
+        return trees[0][0] == "num" and trees[0][1] != 0
+    if name == "factors":
+        m, n, s, p = (tree[1] for tree in trees)
+        return m + n == s and m * n == p
+    if name == "square-of":
+        return trees[0][1] ** 2 == trees[1][1]
+    return is_total(trees[0])
 
 
 def has_variable(tree):
@@ -152,7 +160,7 @@ def is_total(tree):
 
 
 def guards_hold(guards, env):
-    return all(passes(name, env[target]) for name, target in guards)
+    return all(passes(guard, env) for guard in guards)
 
 
 def match(pattern, tree, env):
@@ -165,11 +173,14 @@ def match(pattern, tree, env):
         return bound == tree
     if head == "eval":
         return compute(pattern, env) == tree
-    if head != tree[0]:
+    if head == "neg" and tree[0] == "num":
+        return match(pattern[1], ("num", -tree[1]), env)
+    if head != tree[0] or len(pattern) != len(tree):
         return False
     if head == "num":
         return pattern[1] == tree[1]
-    return all(match(p, t, env) for p, t in zip(pattern[1:], tree[1:]))
+    return all(match(p, t, env) if isinstance(p, tuple) else p == t
+               for p, t in zip(pattern[1:], tree[1:]))
 
 
 def applies_here(rule, guards, before, after):
@@ -185,7 +196,7 @@ def applies(rule, guards, before, after):
         return True
     if before[0] != after[0] or len(before) != len(after) or before[0] in ("num", "var"):
         return False
-    changed = [(b, a) for b, a in zip(before[1:], after[1:]) if b != a]
+    changed = [(b, a) for b, a in zip(before[1:], after[1:]) if b != a and isinstance(b, tuple)]
     return len(changed) == 1 and isinstance(changed[0][0], tuple) and applies(rule, guards, *changed[0])
 
 
@@ -204,7 +215,7 @@ def instances(rule, guards):
     pattern = pattern_tree(rule[":pattern"])
     replacement = pattern_tree(rule[":replacement"])
     names = sorted(metas(pattern) | metas(replacement))
-    literal_only = {target for name, target in rule[":guards"] if name in ("literal", "nonzero-literal")}
+    literal_only = {guard[1] for guard in rule[":guards"] if guard[0] in ("literal", "nonzero-literal")}
     pool = EXPRESSION_POOL if len(names) <= 3 else SMALL_POOL
     choices = [LITERAL_POOL if name in literal_only else pool for name in names]
     for combination in itertools.product(*choices):
@@ -223,16 +234,31 @@ def counterexample(rule, guards):
     return None
 
 
+def difference_of(line, bindings):
+    """An expression that is zero exactly where the line holds, ignoring domains."""
+    if line[0] == "or":
+        return sympy.Mul(*[difference_of(item, bindings) for item in line[1:]])
+    return to_sympy(line[1], bindings) - to_sympy(line[2], bindings)
+
+
 def schema_holds(rule):
     """The rule with its metavariables left symbolic. Blind to domains, which is why it is second."""
     pattern = pattern_tree(rule[":pattern"])
     replacement = pattern_tree(rule[":replacement"])
     names = sorted(metas(pattern) | metas(replacement))
     bindings = {name: sympy.Symbol(name[1:], real=True) for name in names}
+    # A guard that ties literals together is what makes these rules true, so the schema assumes it.
+    for guard in rule[":guards"]:
+        if guard[0] == "factors":
+            m, n, s, p = guard[1:]
+            bindings[s] = bindings[m] + bindings[n]
+            bindings[p] = bindings[m] * bindings[n]
+        elif guard[0] == "square-of":
+            bindings[guard[2]] = bindings[guard[1]] ** 2
     if rule[":level"] == "expr":
         return sympy.simplify(to_sympy(pattern, bindings) - to_sympy(replacement, bindings)) == 0
     old = to_sympy(pattern[1], bindings) - to_sympy(pattern[2], bindings)
-    new = to_sympy(replacement[1], bindings) - to_sympy(replacement[2], bindings)
+    new = difference_of(replacement, bindings)
     unknown = sorted(old.free_symbols, key=str)[0]
     return all(sympy.simplify(new.subs(unknown, root)) == 0 for root in sympy.solve(old, unknown))
 

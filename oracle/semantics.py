@@ -43,6 +43,8 @@ def value(tree, x):
 
 
 def holds(equation, x):
+    if equation[0] == "or":
+        return any(holds(item, x) for item in equation[1:])
     left = value(equation[1], x)
     right = value(equation[2], x)
     return left is not None and right is not None and left == right
@@ -104,7 +106,30 @@ def domain_zeros(equation):
     return zeros
 
 
-def solution_set(equation):
+def join(a, b):
+    """a or b, for sets of either shape."""
+    a_shape, a_set = a
+    b_shape, b_set = b
+    if a_shape == "finite" and b_shape == "finite":
+        return ("finite", a_set | b_set)
+    if a_shape == "finite":
+        return ("allexcept", b_set - a_set)
+    if b_shape == "finite":
+        return ("allexcept", a_set - b_set)
+    return ("allexcept", a_set & b_set)
+
+
+def solution_set(line):
+    """The set of an equation, or of alternatives taken together."""
+    if line[0] == "or":
+        out = equation_set(line[1])
+        for item in line[2:]:
+            out = join(out, equation_set(item))
+        return out
+    return equation_set(line)
+
+
+def equation_set(equation):
     """("finite", F) or ("allexcept", F). Sets only: multiplicity is not counted."""
     zeros = domain_zeros(equation)
     difference = to_sympy(equation[1]) - to_sympy(equation[2])

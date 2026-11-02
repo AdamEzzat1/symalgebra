@@ -5,6 +5,7 @@
 
 (defconstant +search-budget+ 400)
 (defconstant +subset-limit+ 8)
+(defconstant +divisor-limit+ 1000)
 
 (defun meta-p (x)
   (and (symbolp x) (not (keywordp x)) x (char= (char (symbol-name x) 0) #\?)))
@@ -30,8 +31,13 @@
                      (some (lambda (item) (and (numberp item) (minusp item))) (rest subject)))
                 (match (second pattern) (negated subject) b))))
         ((and (eq (first pattern) '*) (not (and (consp subject) (eq (first subject) '*))))
-         ;; A term on its own counts as one of itself: x matches (* ?n ?a) with ?n = 1.
-         (match pattern (list '* 1 subject) b))
+         ;; A term on its own counts as one of itself: x matches (* ?n ?a) with ?n = 1, -x with
+         ;; ?n = -1, and a square as the product it stands for.
+         (append (if (and (consp subject) (eq (first subject) 'neg))
+                     (match pattern (list '* -1 (second subject)) b)
+                     (match pattern (list '* 1 subject) b))
+                 (when (and (consp subject) (eq (first subject) '^) (eql (third subject) 2))
+                   (match pattern (list '* (second subject) (second subject)) b))))
         ((atom subject) nil)
         ((not (eq (first pattern) (first subject))) nil)
         ((member (first pattern) '(+ *))
@@ -126,12 +132,17 @@
   ":ok, :type when a type guard fails, so no edge exists, or :failed for a semantic guard."
   (let ((state :ok))
     (dolist (guard (rule-field rule :guards) state)
-      (destructuring-bind (name target) guard
-        (let ((bound (cdr (binding target b))))
+      (destructuring-bind (name target &rest others) guard
+        (let ((bound (cdr (binding target b)))
+              (more (mapcar (lambda (other) (cdr (binding other b))) others)))
           (ecase name
             (literal (unless (numberp bound) (return :type)))
             (nonzero-literal (when (eql (if (numberp bound) bound 0) 0) (setf state :failed)))
-            (total (unless (total-p bound) (setf state :failed)))))))))
+            (total (unless (total-p bound) (setf state :failed)))
+            (factors (unless (and (= (+ bound (first more)) (second more))
+                                  (= (* bound (first more)) (third more)))
+                       (setf state :failed)))
+            (square-of (unless (= (* bound bound) (first more)) (setf state :failed)))))))))
 
 ;;; Building the result of a match.
 
@@ -173,6 +184,12 @@
                   (t term)))
           (if (and (consp side) (eq (first side) '+)) (rest side) (list side))))
 
+(defun divisors-of (n)
+  "Each integer dividing N, with both signs, for the small N a line can hold."
+  (when (and (integerp n) (< 0 (abs n) +divisor-limit+))
+    (loop for d from 1 to (abs n)
+          when (zerop (mod n d)) append (list d (- d)))))
+
 (defun source-values (line target)
   "The closed parameter sources, read from the line and, when explaining a step, its target."
   (let* ((numbers (remove-duplicates (mapcar #'abs (remove-if-not #'numberp (subterms line)))))
@@ -182,6 +199,7 @@
     (list 'term (remove-duplicates (append (side-terms (second line)) (side-terms (third line)) extra)
                                    :test #'equal)
           'coefficient (remove-duplicates (append numbers extra) :test #'equal)
+          'pair (remove-duplicates (mapcan #'divisors-of (copy-list numbers)))
           'lcd (remove-duplicates
                 (append (and integers (list (reduce #'lcm (mapcar #'abs (remove 0 integers)) :initial-value 1)))
                         (remove-if #'numberp denominators)
@@ -252,7 +270,7 @@
           (t (mapcar #'list (match pattern subject nil))))))
 
 (defun results-at (rule subject sources failed-guards)
-  "Each (new-subject . state) the rule gives when applied at SUBJECT."
+  "Each (new-subject state bindings) the rule gives when applied at SUBJECT."
   (let ((head (first (rule-pattern rule))))
     (loop for view in (subject-views rule subject)
           append (loop for (found . rest) in (matches-at rule view)
@@ -261,7 +279,7 @@
                                     when (or (eq state :ok) (and failed-guards (eq state :failed)))
                                       append (catch 'no-edge
                                                (let ((built (tidy (instantiate (rule-replacement rule) b))))
-                                                 (list (cons (placed head built rest) state)))))))))
+                                                 (list (list (placed head built rest) state b)))))))))
 
 (defun results-within (rule subject sources failed-guards)
   "RESULTS-AT for SUBJECT and every position inside it."
@@ -270,25 +288,35 @@
             (loop for tail on (rest subject)
                   for index from 1
                   when (consp (car tail))
-                    append (loop for (inner . state) in (results-within rule (car tail) sources failed-guards)
+                    append (loop for (inner state b) in (results-within rule (car tail) sources failed-guards)
                                  collect (let ((copy (copy-list subject)))
                                            (setf (nth index copy) inner)
-                                           (cons copy state)))))))
+                                           (list copy state b)))))))
+
+(defun alternative-edges (line rules target failed-guards)
+  "Each edge of one alternative, with the other alternatives kept beside it."
+  (loop for item in (rest line)
+        for others = (remove item (rest line) :test #'equal)
+        append (loop for (rule new state b) in (edges item rules :target target
+                                                                 :failed-guards failed-guards)
+                     collect (list rule (flat (list* 'or new others)) state b))))
 
 (defun edges (line rules &key target failed-guards)
-  "Every (rule new-line state) from the flat LINE, without rules that leave it unmoved."
+  "Every (rule new-line state bindings) from the flat LINE, without rules that leave it unmoved."
+  (when (eq (first line) 'or)
+    (return-from edges (alternative-edges line rules target failed-guards)))
   (let ((sources (source-values line target))
         (seen (make-hash-table :test #'equal))
         (out '()))
     (dolist (rule rules (nreverse out))
       (unless (getf rule :order)
-        (loop for (built . state) in (if (eq (rule-field rule :level) 'equation)
+        (loop for (built state b) in (if (eq (rule-field rule :level) 'equation)
                                          (results-at rule line sources failed-guards)
                                          (results-within rule line sources failed-guards))
               do (let* ((new (flat built)) (key (cons (rule-id rule) new)))
                    (unless (or (equal new line) (gethash key seen))
                      (setf (gethash key seen) t)
-                     (push (list rule new state) out))))))))
+                     (push (list rule new state b) out))))))))
 
 (defun rule-reaches-p (rule before after &key failed-guards (var #\x))
   (let ((start (flat (parse-line before var))) (goal (flat (parse-line after var))))
@@ -302,13 +330,14 @@
 
 (defun attribute (before after &key (depth 2) (rules *rules*) (budget +search-budget+))
   "Breadth-first search from the tree BEFORE to the tree AFTER.
-Returns (:state :ok :rules ids), (:state :none) or (:state :unavailable)."
+Returns (:state :ok :rules ids :uses ((rule . bindings) ...)), (:state :none) or
+(:state :unavailable)."
   (let* ((start (flat before)) (goal (flat after))
          (seen (make-hash-table :test #'equal))
          (frontier (list (cons start nil)))
          (expanded 0))
     (when (equal start goal)
-      (return-from attribute (list :state :ok :rules nil)))
+      (return-from attribute (list :state :ok :rules nil :uses nil)))
     (setf (gethash start seen) t)
     (handler-case
         (with-fuel
@@ -319,11 +348,14 @@ Returns (:state :ok :rules ids), (:state :none) or (:state :unavailable)."
                   (return-from attribute (list :state :unavailable)))
                 (incf expanded)
                 (dolist (edge (edges (car entry) rules :target goal))
-                  (destructuring-bind (rule new state) edge
+                  (destructuring-bind (rule new state b) edge
                     (declare (ignore state))
-                    (let ((path (cons (rule-id rule) (cdr entry))))
+                    (let ((path (cons (cons rule b) (cdr entry))))
                       (when (equal new goal)
-                        (return-from attribute (list :state :ok :rules (reverse path))))
+                        (let ((uses (reverse path)))
+                          (return-from attribute
+                            (list :state :ok :rules (mapcar (lambda (use) (rule-id (car use))) uses)
+                                  :uses uses))))
                       (unless (gethash new seen)
                         (setf (gethash new seen) t)
                         (push (cons new path) next))))))
@@ -369,8 +401,8 @@ Returns (:state :ok :rules ids), (:state :none) or (:state :unavailable)."
                          (setf (gethash key memo)
                                (let ((*fuel* +verdict-fuel+) (total 0))
                                  (dolist (edge (edges state rules) total)
-                                   (destructuring-bind (rule new kind) edge
-                                     (declare (ignore kind))
+                                   (destructuring-bind (rule new kind b) edge
+                                     (declare (ignore kind b))
                                      (setf (gethash (list (rule-id rule) state new) edge-list) rule)
                                      (incf total (walk new (1- remaining))))))))))))
       (let* ((paths (walk (flat line) depth))

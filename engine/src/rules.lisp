@@ -47,6 +47,9 @@
         (/ (list '/ (flat (second tree)) (flat (third tree))))
         (^ (list '^ (flat (second tree)) (third tree)))
         (= (list '= (flat (second tree)) (flat (third tree))))
+        ;; Alternatives are a set, so a repeated one is the same line.
+        (or (node 'or (remove-duplicates (mapcan (lambda (arg) (items-of 'or arg)) (rest tree))
+                                         :test #'equal)))
         (eval tree)
         (t (error "unknown head ~a" (first tree))))))
 

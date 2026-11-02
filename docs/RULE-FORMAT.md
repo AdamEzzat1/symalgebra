@@ -16,7 +16,7 @@ The file is S-expressions because the Lisp reader can load it unchanged.
 | `:guards` | Conditions from the closed list below |
 | `:params` | Metavariables that appear only in the replacement, each with a closed source |
 | `:explanation` | Template. `{?a}` shows that metavariable's matched text |
-| `:skills` | Tags from a closed list: arithmetic, identities, ordering, distribution, like-terms, fractions, balance, domains |
+| `:skills` | Tags from a closed list: arithmetic, identities, ordering, distribution, like-terms, fractions, balance, domains, quadratics |
 | `:mal` | `nil` for every rule here. A mal-rule needs published evidence or real observation (M5) |
 | `:positive` | `(before after)` line pairs where one use of the rule gives exactly `after` |
 | `:negative` | Line pairs the rule must not produce. Adding `guard` means only the guard stops it, and the step really is bad |
@@ -43,21 +43,28 @@ from meaning, and a gained root is handled as [SEMANTICS.md](SEMANTICS.md) descr
 | `(literal ?m)` | `?m` is a number |
 | `(nonzero-literal ?n)` | `?n` is a number other than 0 |
 | `(total ?a)` | `?a` has a value everywhere: every denominator in it is a nonzero number |
+| `(factors ?m ?n ?s ?p)` | The literals `?m` and `?n` add to `?s` and multiply to `?p` |
+| `(square-of ?m ?p)` | The literal `?m` squared is `?p` |
 
-`literal` is a type guard. `nonzero-literal` and `total` are semantic, and the checker requires each
-to be necessary: with it removed, it must find a real counterexample. Parameter sources are `term`,
-`coefficient` and `lcd`. Adding to any closed list is a design change, not a data change.
+`literal` is a type guard. The others are semantic, and the checker requires each to be necessary:
+with it removed, it must find a real counterexample. Parameter sources are `term`, `coefficient`,
+`lcd` and `pair`, the divisors of a line's integers with both signs. Adding to any closed list is a
+design change, not a data change.
 
 ## How the matcher reads a line
 
 Rules match the `flat` view: sums and products are n-ary and sorted, a difference is a sum with a
 negated term, and `-3x` and `-1x` are written one way. Division stays, so no denominator is lost. On
-top of that, a matched line may read `x` as `1 * x`, `-a` in a product as `-1 * a`, and, for the two
+top of that, a matched line may read `x` as `1 * x`, `-x` as `-1 * x`, `a^2` as `a * a`, `-a` in a
+product as `-1 * a`, and, for the two
 cancelling rules only, `(x/3) * 6` as `(x * 6)/3` and `6/4` as `(3 * 2)/(2 * 2)`. A result drops a `0`
 from a sum or a `1` from a product, and writes `1x` as `x` and `a/1` as `a`. These are readings of the
-same rule, so they add no rules. Every edge they produce is checked by meaning.
+same rule, so they add no rules. Every edge they produce is checked by meaning. Alternatives are a
+sorted set, a repeated one counts once, and rules apply inside each alternative.
 
 ## Rules left out
 
-The brief caps the set at 40. Left out, all valid: `a - 0 → a`, `a / 1 → a`, `-(-a) → a`, and factoring
-`ab + ac → a(b + c)`. A student using one is accepted as "valid, method unnamed", never marked wrong.
+The brief capped the set at 40, and the owner's quadratics ruling of 2026-11-01 raised that to 50.
+Left out, all valid: `a - 0 → a`, `a / 1 → a`, `-(-a) → a`, factoring with a leading number such as
+`2x^2 + 7x + 3 → (2x + 1)(x + 3)`, and pulling a number out as in `2x + 4 → 2(x + 2)`. A student using
+one is accepted as "valid, method unnamed", never marked wrong.

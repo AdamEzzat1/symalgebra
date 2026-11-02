@@ -335,3 +335,88 @@
   :skills (fractions balance domains) :mal nil
   :positive (("x/2 = 3/4" "x * 4 = 3 * 2"))
   :negative (("x/2 = 3/4" "x + 4 = 3 + 2")))
+
+;;; Quadratics: expanding, factoring and splitting a product that is zero
+
+(rule expand-product :level expr :class equivalence
+  :pattern (* (+ ?a ?b) (+ ?c ?d)) :replacement (+ (+ (+ (* ?a ?c) (* ?a ?d)) (* ?b ?c)) (* ?b ?d))
+  :guards () :params ()
+  :explanation "Multiply each term in the first bracket by each term in the second."
+  :skills (quadratics distribution) :mal nil
+  :positive (("(x + 2)(x + 3) = 0" "x * x + x * 3 + 2 * x + 2 * 3 = 0"))
+  :negative (("(x + 2)(x + 3) = 0" "x * x + 2 * 3 = 0")))
+
+(rule square-as-product :level expr :class equivalence
+  :pattern (^ ?a 2) :replacement (* ?a ?a)
+  :guards () :params ()
+  :explanation "A square is {?a} multiplied by itself."
+  :skills (quadratics) :mal nil
+  :positive (("(x + 1)^2 = 4" "(x + 1)(x + 1) = 4"))
+  :negative (("(x + 1)^2 = 4" "x^2 + 1 = 4")))
+
+(rule product-as-square :level expr :class equivalence
+  :pattern (* ?a ?a) :replacement (^ ?a 2)
+  :guards () :params ()
+  :explanation "{?a} multiplied by itself is its square."
+  :skills (quadratics) :mal nil
+  :positive (("x * x = 4" "x^2 = 4"))
+  :negative (("x * 2 = 4" "x^2 = 4")))
+
+(rule square-sum :level expr :class equivalence
+  :pattern (^ (+ ?a ?b) 2) :replacement (+ (+ (^ ?a 2) (* (* 2 ?a) ?b)) (^ ?b 2))
+  :guards () :params ()
+  :explanation "Squaring a sum gives the first squared, twice the product, and the second squared."
+  :skills (quadratics) :mal nil
+  :positive (("(x + 3)^2 = 1" "x^2 + 2 * x * 3 + 3^2 = 1"))
+  :negative (("(x + 3)^2 = 1" "x^2 + 3^2 = 1")))
+
+(rule square-literal :level expr :class equivalence
+  :pattern (^ ?m 2) :replacement (eval (* ?m ?m))
+  :guards ((literal ?m)) :params ()
+  :explanation "Work out {?m} squared."
+  :skills (arithmetic quadratics) :mal nil
+  :positive (("x = 3^2" "x = 9"))
+  :negative (("x = 3^2" "x = 6")))
+
+(rule factor-common :level expr :class equivalence
+  :pattern (+ (* ?a ?b) (* ?a ?c)) :replacement (* ?a (+ ?b ?c))
+  :guards () :params ()
+  :explanation "Both terms share {?a}, so take it outside a bracket."
+  :skills (quadratics distribution) :mal nil
+  :positive (("x * x + x * 3 = 0" "x(x + 3) = 0"))
+  :negative (("x * x + x * 3 = 0" "x(x * 3) = 0")))
+
+(rule factor-trinomial :level expr :class equivalence
+  :pattern (+ (+ (^ ?a 2) (* ?s ?a)) ?p) :replacement (* (+ ?a ?m) (+ ?a ?n))
+  :guards ((literal ?s) (literal ?p) (literal ?m) (literal ?n) (factors ?m ?n ?s ?p))
+  :params ((?m pair) (?n pair))
+  :explanation "{?m} and {?n} add to {?s} and multiply to {?p}, so these are the two brackets."
+  :skills (quadratics) :mal nil
+  :positive (("x^2 + 5x + 6 = 0" "(x + 2)(x + 3) = 0"))
+  :negative (("x^2 + 5x + 6 = 0" "(x + 1)(x + 6) = 0" guard)))
+
+(rule factor-squares :level expr :class equivalence
+  :pattern (- (^ ?a 2) ?p) :replacement (* (- ?a ?m) (+ ?a ?m))
+  :guards ((literal ?p) (literal ?m) (square-of ?m ?p))
+  :params ((?m pair))
+  :explanation "This is a difference of two squares, because {?p} is {?m} squared."
+  :skills (quadratics) :mal nil
+  :positive (("x^2 - 9 = 0" "(x - 3)(x + 3) = 0"))
+  :negative (("x^2 - 9 = 0" "(x - 9)(x + 9) = 0" guard)))
+
+(rule zero-product :level equation :class equivalence
+  :pattern (= (* ?a ?b) 0) :replacement (or (= ?a 0) (= ?b 0))
+  :guards ((total ?a) (total ?b)) :params ()
+  :explanation "A product is zero only when one of its factors is zero."
+  :skills (quadratics) :mal nil
+  :positive (("(x + 2)(x + 3) = 0" "x + 2 = 0 or x + 3 = 0"))
+  :negative (("x * (1/x) = 0" "x = 0 or 1/x = 0" guard)))
+
+(rule square-root :level equation :class equivalence
+  :pattern (= (^ ?a 2) ?p) :replacement (or (= ?a ?m) (= ?a (neg ?m)))
+  :guards ((literal ?p) (literal ?m) (square-of ?m ?p))
+  :params ((?m pair))
+  :explanation "Two numbers square to {?p}: {?m} and its negative."
+  :skills (quadratics) :mal nil
+  :positive (("x^2 = 9" "x = 3 or x = -3"))
+  :negative (("x^2 = 9" "x = 9 or x = -9" guard)))

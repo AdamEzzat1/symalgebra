@@ -3,13 +3,16 @@
 What a line means and what the verdict on a step is. M3's Lisp core must agree with this document,
 and the executable reference is [oracle/semantics.py](../oracle/semantics.py).
 
-Scope is linear equations, distribution and like terms, and fractions. Powers exist in the
-fragment only so that steps like `x = 1 → (x - 1)^2 = 0` get an honest verdict. No rule teaches them.
+Scope is linear equations, distribution and like terms, fractions, and quadratics with rational
+roots, on the owner's ruling of 2026-11-01. Answers with radicals are not in scope: see `irrational_root`.
 
 ## Lines
 
 A line is `left = right` in one variable, kept as an ordered tree of what was typed. Nothing is
 simplified on parsing, so `x/x` stays `x/x`.
+
+A line can also be alternatives, `x = 2 or x = 3`, each a whole equation. `or` is read as a word unless
+the problem's variable is `o`.
 
 Numbers are exact. Decimals are read as exact rationals, and floats appear nowhere. Products can be
 written with `*` or by juxtaposition, `*` and `/` read left to right, and unary minus on a number
@@ -20,7 +23,8 @@ gives a negative literal.
 `D(line)` is every real number, minus the zeros of every denominator **in the typed tree**. Domains
 never come from a simplified form, so `x/x = 1` excludes 0 even though it simplifies to `1 = 1`.
 
-`S(line) = {x ∈ D(line) : left(x) = right(x)}`, over the reals.
+`S(line) = {x ∈ D(line) : left(x) = right(x)}`, over the reals. Alternatives have the union of their
+sets, each with its own domain, so `x/x = 1 or x = 0` holds at 0 through its second alternative.
 
 **Multiplicity is not counted.** Solution sets are sets. `x = 1` and `(x - 1)^2 = 0` have the same
 set and no pointwise counterexample, and rejecting a step requires one. Every `S` is finite or
@@ -62,7 +66,7 @@ Outside the fragment the answer is `OUT_OF_FRAGMENT` with a reason, never a gues
 | `too_many_tokens` | More than 64 tokens |
 | `too_deep` | Brackets nested more than 16 deep |
 | `empty_domain` | A denominator identically zero. Otherwise `1/0 → 2/0` would pass vacuously |
-| `irrational_root` | Any member of a difference set is irrational, so no rational witness exists |
+| `irrational_root` | Any member of a difference set is irrational, so no rational witness exists. A line cannot write a radical, so `x^2 = 2` has steps but no solved form yet |
 | `limit` | A number passes 4096 bits, or the fixed work budget runs out. Lisp only: the oracle has no such limit |
 
 An irrational root that both lines share is fine: `x^2 = 2 → x^4 = 4` is `EQUIVALENT`.
@@ -81,8 +85,9 @@ the verdicts they rely on.
 - **Caution.** A `Finite` `GAINS` with variable denominators present commits with a caution and stays
   unsolved, so `x/(x - 1) = 1/(x - 1) → x = 1 → no solution` stays reachable.
 - **Reject** every other `GAINS`, including every `AllExcept` gain such as `2x = 6 → 0 = 0`.
-- **Solved.** The line is `EQUIVALENT` to line 0 and is `x = literal`, `literal = x`, or the choice
-  `no solution` or `all real numbers`. A literal here may be a fraction of two numbers.
+- **Solved.** The line is `EQUIVALENT` to line 0 and is `x = literal`, `literal = x`, alternatives that
+  are all of those, or the choice `no solution` or `all real numbers`. A literal here may be a
+  fraction of two numbers.
 - **Ties.** "Valid, method unnamed" applies only under `EQUIVALENT`. A rule matching a `GAINS` step
   does not make it valid. Mal-rules never touch an `EQUIVALENT` step, so `2x = 4 → x = 4 - 2`
   passes silently: it lands on the right root by a wrong route. That is a documented limit.

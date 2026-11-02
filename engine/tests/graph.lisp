@@ -8,7 +8,9 @@
   '(("2x + 5 = 17" 2) ("3(x - 2) = 6" 2) ("x/2 + 1 = 4" 2) ("5x - 2 = 3x + 8" 2)
     ("2(x + 1) = 2x + 2" 2) ("x/3 = x/6 + 1" 2) ("1/x = 2" 2) ("x/(x - 1) = 1/(x - 1)" 2)
     ("x + 0 = 2" 2) ("(x/2) * (3/5) = 1" 2) ("x/(2/3) = 1" 2) ("(x + 1) * 0 = x" 2)
-    ("3x + x = 8" 3) ("x = 1" 3) ("x + 2 = 5" 3) ("2x = 6" 3)))
+    ("3x + x = 8" 3) ("x = 1" 3) ("x + 2 = 5" 3) ("2x = 6" 3)
+    ("x^2 + 5x + 6 = 0" 2) ("x^2 - 9 = 0" 2) ("x^2 + 3x = 0" 2) ("(x + 1)^2 = 4" 2)
+    ("x^2 = 9" 2) ("x - 2 = 0 or x + 3 = 0" 2)))
 
 (defun edge-allowed-p (rule before after)
   "The invariant: a sound edge keeps the solution set, or at most gains a root if an implication."

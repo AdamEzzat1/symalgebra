@@ -66,17 +66,35 @@ def power(r):
     return f"x^{r.randint(1, 6)} = {small(r)}"
 
 
+def factored(r):
+    a, b = small(r), small(r)
+    return f"(x {signed(a)})(x {signed(b)}) = 0"
+
+
+def alternatives(r):
+    a, b = Fraction(small(r), r.randint(1, 4)), Fraction(small(r), r.randint(1, 4))
+    return f"x = {a} or x = {b}"
+
+
 def garbled(r):
     return "".join(r.choice(GARBLE_ALPHABET) for _ in range(r.randint(1, 12)))
 
 
-FAMILIES = (linear, distribution, fraction, rational, cancelling, quadratic, power, garbled)
+FAMILIES = (linear, distribution, fraction, rational, cancelling, quadratic, power, garbled,
+            factored, alternatives)
 
 
 def partner(r, family, line):
     """A second line: often a real step from the first, sometimes something else."""
+    if " or " in line:
+        first, second = line.split(" or ")
+        return r.choice((f"{second} or {first}", first, second, f"{first} or x = {small(r)}"))
     left, _, right = line.partition("=")
     roll = r.random()
+    if family is factored:
+        if roll < 0.5:
+            return alternatives(r)
+        return line.replace(") = 0", ") = 0 or x = 1")
     if roll < 0.2:
         return f"{right.strip()} = {left.strip()}"
     if roll < 0.4:

@@ -1,8 +1,8 @@
 """Readers for typed lines and the rule file. Independent of the Lisp engine by design.
 
 Trees are tuples: ("num", Fraction), ("var",), ("add", a, b), ("sub", a, b), ("mul", a, b),
-("div", a, b), ("neg", a), ("pow", a, n), ("eq", left, right). Patterns add ("meta", name)
-and ("eval", tree).
+("div", a, b), ("neg", a), ("pow", a, n), ("eq", left, right), ("or", equation, ...). Patterns
+add ("meta", name) and ("eval", tree).
 """
 
 from fractions import Fraction
@@ -39,6 +39,9 @@ def tokenize(line, var):
                 raise Unreadable("literal_too_long")
             tokens.append(("num", Fraction(word)))
             i = j
+        elif var != "o" and line[i:i + 2] == "or":
+            tokens.append(("or",))
+            i += 2
         elif c == var:
             tokens.append(("var",))
             i += 1
@@ -133,22 +136,29 @@ class Parser:
         raise Unreadable("unparsed")
 
 
-def parse_line(line, var="x"):
-    """An ("eq", left, right) tree exactly as typed. Nothing is simplified."""
-    parser = Parser(tokenize(line, var))
+def parse_equation(parser):
     left = parser.expression(0)
     if parser.kind() != "=":
         raise Unreadable("unparsed")
     parser.take()
-    right = parser.expression(0)
+    return ("eq", left, parser.expression(0))
+
+
+def parse_line(line, var="x"):
+    """An ("eq", left, right) tree exactly as typed, or ("or", equation, ...). Nothing is simplified."""
+    parser = Parser(tokenize(line, var))
+    equations = [parse_equation(parser)]
+    while parser.kind() == "or":
+        parser.take()
+        equations.append(parse_equation(parser))
     if parser.kind() is not None:
         raise Unreadable("chain" if parser.kind() == "=" else "unparsed")
-    return ("eq", left, right)
+    return equations[0] if len(equations) == 1 else ("or", *equations)
 
 
 # The rule file is S-expressions, so the Lisp reader can load it unchanged at M3.
 
-OPERATORS = {"+": "add", "-": "sub", "*": "mul", "/": "div", "neg": "neg", "=": "eq"}
+OPERATORS = {"+": "add", "-": "sub", "*": "mul", "/": "div", "neg": "neg", "=": "eq", "or": "or"}
 
 
 def read_forms(text):
@@ -192,6 +202,8 @@ def pattern_tree(form):
     if isinstance(form, list):
         if form[0] == "eval":
             return ("eval", pattern_tree(form[1]))
+        if form[0] == "^":
+            return ("pow", pattern_tree(form[1]), int(form[2]))
         return (OPERATORS[form[0]], *[pattern_tree(item) for item in form[1:]])
     if form.startswith("?"):
         return ("meta", form)

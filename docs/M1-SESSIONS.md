@@ -43,7 +43,7 @@ test on the hosted image, and the service suspended outside slots. The page alre
 18+ statement and the notice that the host sees IP addresses and steps.
 
 The candidate host is Render's free web service, not yet tried. `deploy/site.Dockerfile` is the site
-image. To set it up, the owner creates the account and:
+image, and it also serves the practice page at `/practice`, which is not part of these sessions. To set it up, the owner creates the account and:
 
 1. Adds no payment method. Without one, going over an allowance suspends the service and cannot
    bill. If Render will not continue without a card, stop: that fails the no-card condition.

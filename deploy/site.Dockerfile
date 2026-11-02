@@ -1,4 +1,4 @@
-# The M1 site only: SBCL plus scaffold/m1, run as an unprivileged user. Build from the repository
+# The site only: SBCL, scaffold/m1 and the engine, run as an unprivileged user. Build from the repository
 # root. The SBCL stage matches ../Dockerfile, so both use the pins in tools.lock.
 FROM swipl:10.0.2@sha256:652375a3cbfd2ecbfa4f30b218d22b3c5fb3e60433996093125512fd023ad375 AS sbcl-build
 
@@ -19,9 +19,13 @@ FROM swipl:10.0.2@sha256:652375a3cbfd2ecbfa4f30b218d22b3c5fb3e60433996093125512f
 
 COPY --from=sbcl-build /usr/local/bin/sbcl /usr/local/bin/sbcl
 COPY --from=sbcl-build /usr/local/lib/sbcl /usr/local/lib/sbcl
-COPY scaffold/m1 /site
+WORKDIR /site
+COPY scaffold/m1 scaffold/m1
+COPY engine/src engine/src
+COPY rules/rules.sexp rules/rules.sexp
+COPY corpus/solutions.json corpus/solutions.json
 
 USER nobody
 ENV PORT=8080
 EXPOSE 8080
-CMD ["sbcl", "--script", "/site/server.lisp"]
+CMD ["sbcl", "--script", "scaffold/m1/server.lisp"]

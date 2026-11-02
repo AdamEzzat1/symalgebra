@@ -36,13 +36,26 @@
          (difference (rf- (meaning-of (second line)) (meaning-of (third line)))))
     (values difference *zeros*)))
 
-(defun solution-set (line)
+(defun equation-set (line)
   (multiple-value-bind (difference zeros) (line-parts line)
     (let ((top (car difference)))
       (cond ((null top) (cons :allexcept zeros))
             ((> (degree top) +max-degree+) (refuse "degree_limit"))
             (t (let ((square-free (psquarefree top)))
                  (cons :finite (pnormal (pquo square-free (pgcd square-free zeros))))))))))
+
+(defun join-sets (a b)
+  "A or B, for sets of either shape. An excluded value stays out only if neither set has it."
+  (let ((p (cdr a)) (q (cdr b)))
+    (cond ((and (eq (car a) :finite) (eq (car b) :finite)) (cons :finite (pnormal (plcm p q))))
+          ((eq (car a) :finite) (cons :allexcept (pquo q (pgcd p q))))
+          ((eq (car b) :finite) (cons :allexcept (pquo p (pgcd p q))))
+          (t (cons :allexcept (pgcd p q))))))
+
+(defun solution-set (line)
+  (if (eq (first line) 'or)
+      (reduce #'join-sets (mapcar #'equation-set (rest line)))
+      (equation-set line)))
 
 (defun canonical-line (line)
   "The canonical form: the line's numerator and the domain's removed-values polynomial."
@@ -139,8 +152,10 @@
                   (combine (first tree) values))))))
 
 (defun holds (line x)
-  (let ((left (value (second line) x)) (right (value (third line) x)))
-    (and left right (= left right))))
+  (if (eq (first line) 'or)
+      (some (lambda (equation) (holds equation x)) (rest line))
+      (let ((left (value (second line) x)) (right (value (third line) x)))
+        (and left right (= left right)))))
 
 (defun solution-members (line)
   (solution-set line))

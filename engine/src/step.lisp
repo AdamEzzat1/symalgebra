@@ -7,9 +7,11 @@
       (and (consp tree) (eq (first tree) '/) (numberp (second tree)) (numberp (third tree)))))
 
 (defun solved-form-p (line)
-  (destructuring-bind (left right) (rest line)
-    (or (and (eq left :x) (literal-p right))
-        (and (literal-p left) (eq right :x)))))
+  (if (eq (first line) 'or)
+      (every #'solved-form-p (rest line))
+      (destructuring-bind (left right) (rest line)
+        (or (and (eq left :x) (literal-p right))
+            (and (literal-p left) (eq right :x))))))
 
 (defun variable-denominator-p (tree)
   (and (consp tree)
@@ -17,11 +19,12 @@
            (some #'variable-denominator-p (rest tree)))))
 
 (defun claim-result (line0 text var)
-  (let* ((set (with-fuel (solution-set (parse-line line0 var))))
-         (right (if (string= text "no solution")
-                    (and (eq (car set) :finite) (empty-set-p set))
-                    (eq (car set) :allexcept))))
-    (list :status (if right :accepted :rejected) :solved right)))
+  (with-fuel
+    (let* ((set (solution-set (parse-line line0 var)))
+           (right (if (string= text "no solution")
+                      (and (eq (car set) :finite) (empty-set-p set))
+                      (eq (car set) :allexcept))))
+      (list :status (if right :accepted :rejected) :solved right))))
 
 (defun check-step (line0 previous text &key (var #\x))
   "Judge TEXT after PREVIOUS in a task that began at LINE0, as a plist with :status and :solved."

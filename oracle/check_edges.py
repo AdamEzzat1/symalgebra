@@ -28,6 +28,8 @@ def tree(form):
         for item in items[1:]:
             built = (HEADS[head], built, item)
         return built
+    if head == "or":
+        return ("or", *items)
     return (HEADS[head], *items)
 
 
