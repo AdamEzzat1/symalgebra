@@ -87,7 +87,7 @@ jobs:
   mutation:
     needs: [config, build-test]
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 40
     outputs:
       counts: ${{ steps.mutants.outputs.counts }}
     steps:

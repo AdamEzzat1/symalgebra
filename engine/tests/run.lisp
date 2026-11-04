@@ -11,17 +11,20 @@
 (defvar *ran* 0)
 (defvar *passed* 0)
 (defvar *quiet* (sb-ext:posix-getenv "ENGINE_QUIET"))
+;; Mutation testing needs only to know that some check fails, so it stops at the first.
+(defvar *stop* (sb-ext:posix-getenv "ENGINE_STOP"))
 
 (defun check (name ok &optional detail)
   (incf *ran*)
-  (if ok
-      (incf *passed*)
-      (unless *quiet* (format t "FAIL ~a~@[ ~a~]~%" name detail))))
+  (cond (ok (incf *passed*))
+        (*stop* (sb-ext:exit :code 1 :abort t))
+        ((not *quiet*) (format t "FAIL ~a~@[ ~a~]~%" name detail))))
 
 (defmacro tier (name &body body)
   `(let ((*ran* 0) (*passed* 0))
      (handler-case (progn ,@body)
        (error (e)
+         (when *stop* (sb-ext:exit :code 1 :abort t))
          (incf *ran*)
          (unless *quiet* (format t "ERROR in ~a: ~a~%" ,name e))))
      (format t "COUNT ~a ran=~d passed=~d~%" ,name *ran* *passed*)

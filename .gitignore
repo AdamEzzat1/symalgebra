@@ -2,4 +2,4 @@
 *.fasl
 /results/
 image.tar.gz
-/mutant-src/
+/mutant-src-*/

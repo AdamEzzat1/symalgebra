@@ -270,7 +270,7 @@ theorem proof_take_root : rule_take_root := by
 theorem proof_complete_square : rule_complete_square := by
   unfold rule_complete_square
   intro a c s
-  exact proof_add_both _ _ _ (fun x => ⟨_, by simp only [ev]⟩)
+  exact proof_add_both _ _ _ (fun x => ⟨((s / 2 * (s / 2) : ℚ) : ℝ), by simp only [ev]⟩)
 
 theorem proof_quadratic_formula : rule_quadratic_formula := by
   unfold rule_quadratic_formula
