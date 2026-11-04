@@ -17,7 +17,9 @@
         ((and (consp flat-term) (eq (first flat-term) 'neg)) (second flat-term))
         ;; -(3x) and -3x are one term, written two ways.
         ((and (consp flat-term) (eq (first flat-term) '*) (find-if #'numberp (rest flat-term)))
-         (let ((factor (find-if #'numberp (rest flat-term))))
+         ;; The largest number takes the sign, so a product reads one way however it was written.
+         (let ((factor (reduce (lambda (a b) (if (> (abs b) (abs a)) b a))
+                               (remove-if-not #'numberp (rest flat-term)))))
            (node '* (cons (- factor) (remove factor (rest flat-term) :count 1)))))
         (t (list 'neg flat-term))))
 
@@ -46,7 +48,13 @@
         (neg (negated (flat (second tree))))
         (/ (list '/ (flat (second tree)) (flat (third tree))))
         (^ (list '^ (flat (second tree)) (third tree)))
-        (= (list '= (flat (second tree)) (flat (third tree))))
+        (sqrt (list 'sqrt (flat (second tree))))
+        (abs (list 'abs (flat (second tree))))
+        ((= < <= rel) (list (first tree) (flat (second tree)) (flat (third tree))))
+        ;; a > b says the same as b < a, so a flipped sign is the two sides swapped.
+        (> (list '< (flat (third tree)) (flat (second tree))))
+        (>= (list '<= (flat (third tree)) (flat (second tree))))
+        (and (cons 'and (sorted-terms (mapcar #'flat (rest tree)))))
         ;; Alternatives are a set, so a repeated one is the same line.
         (or (node 'or (remove-duplicates (mapcan (lambda (arg) (items-of 'or arg)) (rest tree))
                                          :test #'equal)))

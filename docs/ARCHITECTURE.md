@@ -56,7 +56,7 @@ recommendations, `r1-*` and `r2-*` the critique rounds, `r3-*` the final review.
 - **Domain.** `D(e)` removes the zeros of every denominator in the as-typed tree.
   `S(l=r) = {x ∈ D : l(x) = r(x)}` over ℝ. Sets, no multiplicity: `x=1` and `(x-1)²=0` have no
   pointwise counterexample, so rejecting one would break the counterexample requirement.
-- **Payload.** `Finite(F) | AllExcept(F)` plus one rational witness. `x=1 → 0=0` is
+- **Payload.** `Finite(F) | AllExcept(F)` plus one exact witness. `x=1 → 0=0` is
   `GAINS AllExcept{1}`.
 - **Fragment.** One variable; `+ - * /`, parentheses, literal exponents 1..6, degree at most 8
   for a line's combined numerator; 8-digit literals, 64 tokens, depth 16; a 4096-bit precheck
@@ -130,21 +130,42 @@ Latency over the 171 corpus steps, *measured* in the pinned image on the develop
 server: verdict p50 58 µs, p95 127 µs, max 5 ms. Explanation at depth 2: p95 0.9 ms, max 37 ms, naming a
 rule for 169 of 171. The slowest refusal tried took 77 ms. That is one hand-picked line, not a proven worst case.
 
-**Practice page, 2026-11-01.** On the owner's ruling, `/practice` serves the 27 distribution, like-terms
-and fraction problems from `corpus/solutions.json` through the engine, while `/` still runs the stage A
-test unchanged. A rejected step shows its witness in words. An accepted step shows the rule that names
+**Practice page, 2026-11-01.** On the owner's ruling, `/practice` serves the problems in
+`corpus/solutions.json` through the engine, while `/` still runs the stage A test unchanged. A rejected step shows its witness in words. An accepted step shows the rule that names
 it, when one does. Nothing is counted or kept. The replies are in `engine/src/tutor.lisp`.
 
-**Quadratics, 2026-11-01.** On the owner's ruling, the engine goes past fractions to quadratics with
-rational roots: `or` lines, ten new rules, and 12 solved problems in the corpus. Factoring with a
-leading number and pulling out a number are accepted but unnamed. Radical answers, completing the
-square and the quadratic formula are not built, because a line cannot write a radical and the sets are
-polynomials over the rationals. Quadratics are not on the website. None of the ten new rules has a
-Lean proof, and Lean's language has no `or` line yet.
+**Quadratics, 2026-11-01.** On the owner's rulings, the engine goes past fractions to quadratics: `or`
+lines, 21 new rules and 22 solved problems in the corpus. The practice page now serves all 61 solved
+problems, with hints and the whole worked solution on request.
+Polynomial coefficients may be surds, `a + b*sqrt(d)`, so a line can hold a square root of a number, and
+every set operation is unchanged. A witness can be a surd too, so `x^2 = 2 → x = sqrt(2)` is rejected
+with `x = -sqrt(2)`. Completing the square and the quadratic formula are rules, and `±` is read as two
+alternatives. `sqrt(x)`, roots of roots and two different radicals in one step are refused, and a cubic
+or higher difference with no exact witness stays `irrational_root`.
+
+**Inequalities and absolute value, 2026-11-01.** A line may be an inequality, a range or hold bars. Such
+lines are read through a sign chart, so a set can be pieces of the line and a witness still comes out
+exact. 20 new rules and 30 new solved problems make 91, in six practice topics. A range step that mixes
+moves, and a quadratic inequality such as `x^2 - 5x + 6 < 0`, is judged but not named.
+
+**Radical equations, 2026-11-01.** The variable may sit under a root. Squaring away every root gives
+the places the sides could meet, and each is then tested in the line as typed, so a false answer never
+needs special handling. Signs come from rational bounds, so no float enters. A correct squaring step is
+a caution, not an error, and the line stays open until the false answer is dropped. 4 new rules and 14
+new problems make 85 rules and 105 problems, in seven topics. `1/sqrt(x)`, roots of roots, and more
+than three different roots are refused.
+
+**The rest of school algebra, 2026-11-02.** On the owner's ruling, nine more areas: expression tasks
+(higher polynomials and rational expressions), systems of up to three linear equations, complex
+numbers, exponents, logarithms, and functions with graphs. Each has its own module in `engine/src`
+(`expressions`, `systems`, `complex`, `logs`), tests, a Tier D family against an independent oracle,
+mutants, and problems on the practice page: 88 rules, 209 problems in 14 topics. Systems, complex
+numbers and logs name a step by the words written in the corpus, not by a rewrite rule, so a step a
+student writes there is judged but not named. A graph is a list of points worked out on the server;
+the page only draws them. See SEMANTICS.md for what each kind refuses.
 
 **M3 is not exited.** The p95 gate is defined on the hosted server and no host exists, so that gate has
-not been run. Expression tasks such as `(x²-1)/(x-1) → x+1` are not built, because a line here is
-an equation. Mal-rules and failed-guard edges reach Prolog at M5, so only the Lisp side exists. Lisp and
+not been run. Mal-rules and failed-guard edges reach Prolog at M5, so only the Lisp side exists. Lisp and
 SymPy can disagree on `degree_limit` when a line's numerator cancels near degree 8; no fixture case
 does. Tier D's reference shares a brief with this code, so agreement is strong evidence, not proof.
 

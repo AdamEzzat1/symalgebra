@@ -27,4 +27,67 @@ def rule_add_both_needs_total : Prop :=
 def rule_cross_multiply : Prop :=
   ∀ (a b c d : E), Sol (.div a b) (.div c d) ⊆ Sol (.mul a d) (.mul c b)
 
+def rule_expand_product : Prop :=
+  ∀ (a b c d : E) (x : ℝ), ev (.mul (.add a b) (.add c d)) x = ev (.add (.add (.add (.mul a c) (.mul a d)) (.mul b c)) (.mul b d)) x
+
+def rule_square_as_product : Prop :=
+  ∀ (a : E) (x : ℝ), ev (.pow a 2) x = ev (.mul a a) x
+
+def rule_product_as_square : Prop :=
+  ∀ (a : E) (x : ℝ), ev (.mul a a) x = ev (.pow a 2) x
+
+def rule_square_sum : Prop :=
+  ∀ (a b : E) (x : ℝ), ev (.pow (.add a b) 2) x = ev (.add (.add (.pow a 2) (.mul (.mul (.lit 2) a) b)) (.pow b 2)) x
+
+def rule_square_literal : Prop :=
+  ∀ (m : ℚ) (x : ℝ), ev (.pow (.lit m) 2) x = ev (.lit (m * m)) x
+
+def rule_factor_common : Prop :=
+  ∀ (a b c : E) (x : ℝ), ev (.add (.mul a b) (.mul a c)) x = ev (.mul a (.add b c)) x
+
+def rule_factor_trinomial : Prop :=
+  ∀ (a : E) (m n p s : ℚ) (x : ℝ), m + n = s → m * n = p → ev (.add (.add (.pow a 2) (.mul (.lit s) a)) (.lit p)) x = ev (.mul (.add a (.lit m)) (.add a (.lit n))) x
+
+def rule_factor_squares : Prop :=
+  ∀ (a : E) (m p : ℚ) (x : ℝ), m * m = p → ev (.sub (.pow a 2) (.lit p)) x = ev (.mul (.sub a (.lit m)) (.add a (.lit m))) x
+
+def rule_zero_product : Prop :=
+  ∀ (a b : E), Total a → Total b → Sol (.mul a b) (.lit 0) = Sol a (.lit 0) ∪ Sol b (.lit 0)
+
+def rule_square_root : Prop :=
+  ∀ (a : E) (m p : ℚ), m * m = p → Sol (.pow a 2) (.lit p) = Sol a (.lit m) ∪ Sol a (.neg (.lit m))
+
+def rule_take_root : Prop :=
+  ∀ (a : E) (p : ℚ), 0 < p → Sol (.pow a 2) (.lit p) = Sol a (.sqrt (.lit p)) ∪ Sol a (.neg (.sqrt (.lit p)))
+
+def rule_simplify_root : Prop :=
+  ∀ (k m p : ℚ) (x : ℝ), 0 < m → 1 < k → m * m * k = p → ev (.sqrt (.lit p)) x = ev (.mul (.lit m) (.sqrt (.lit k))) x
+
+def rule_root_of_square : Prop :=
+  ∀ (m p : ℚ) (x : ℝ), 0 < m → m * m = p → ev (.sqrt (.lit p)) x = ev (.lit m) x
+
+def rule_divide_terms : Prop :=
+  ∀ (r : E) (k m n : ℚ) (x : ℝ), n ≠ 0 → ev (.div (.add (.lit m) (.mul (.lit k) r)) (.lit n)) x = ev (.add (.lit (m / n)) (.mul (.lit (k / n)) r)) x
+
+def rule_complete_square : Prop :=
+  ∀ (a c : E) (s : ℚ), Sol (.add (.pow a 2) (.mul (.lit s) a)) c = Sol (.add (.add (.pow a 2) (.mul (.lit s) a)) (.lit ((s / 2) * (s / 2)))) (.add c (.lit ((s / 2) * (s / 2))))
+
+def rule_factor_perfect_square : Prop :=
+  ∀ (a : E) (p s : ℚ) (x : ℝ), (s / 2) * (s / 2) = p → ev (.add (.add (.pow a 2) (.mul (.lit s) a)) (.lit p)) x = ev (.pow (.add a (.lit (s / 2))) 2) x
+
+def rule_quadratic_formula : Prop :=
+  ∀ (v : E) (a b c : ℚ), a ≠ 0 → 0 ≤ b * b - 4 * a * c → Sol (.add (.add (.mul (.lit a) (.pow v 2)) (.mul (.lit b) v)) (.lit c)) (.lit 0) = Sol v (.div (.add (.lit (-b)) (.sqrt (.lit ((b * b) - ((4 * a) * c))))) (.lit (2 * a))) ∪ Sol v (.div (.sub (.lit (-b)) (.sqrt (.lit ((b * b) - ((4 * a) * c))))) (.lit (2 * a)))
+
+def rule_quadratic_substitute : Prop :=
+  ∀ (v : E) (a b c : ℚ), a ≠ 0 → 0 ≤ b * b - 4 * a * c → Sol (.add (.add (.mul (.lit a) (.pow v 2)) (.mul (.lit b) v)) (.lit c)) (.lit 0) = Sol v (.div (.add (.neg (.lit b)) (.sqrt (.sub (.pow (.lit b) 2) (.mul (.mul (.lit 4) (.lit a)) (.lit c))))) (.mul (.lit 2) (.lit a))) ∪ Sol v (.div (.sub (.neg (.lit b)) (.sqrt (.sub (.pow (.lit b) 2) (.mul (.mul (.lit 4) (.lit a)) (.lit c))))) (.mul (.lit 2) (.lit a)))
+
+def rule_factor_leading : Prop :=
+  ∀ (v : E) (a b c p q : ℚ) (x : ℝ), 0 < p → q ≠ 0 → p * (c / q) + q * (a / p) = b → ev (.add (.add (.mul (.lit a) (.pow v 2)) (.mul (.lit b) v)) (.lit c)) x = ev (.mul (.add (.mul (.lit p) v) (.lit q)) (.add (.mul (.lit (a / p)) v) (.lit (c / q)))) x
+
+def rule_factor_number : Prop :=
+  ∀ (a : E) (c m n : ℚ) (x : ℝ), 1 < n → ev (.add (.mul (.lit c) a) (.lit m)) x = ev (.mul (.lit n) (.add (.mul (.lit (c / n)) a) (.lit (m / n)))) x
+
+def rule_factor_number_three : Prop :=
+  ∀ (a b : E) (c d m n : ℚ) (x : ℝ), 1 < n → ev (.add (.add (.mul (.lit c) a) (.mul (.lit d) b)) (.lit m)) x = ev (.mul (.lit n) (.add (.add (.mul (.lit (c / n)) a) (.mul (.lit (d / n)) b)) (.lit (m / n)))) x
+
 end SymAlgebra

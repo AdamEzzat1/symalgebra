@@ -39,6 +39,11 @@
                  (when (and (consp subject) (eq (first subject) '^) (eql (third subject) 2))
                    (match pattern (list '* (second subject) (second subject)) b))))
         ((atom subject) nil)
+        ((eq (first pattern) 'rel)
+         ;; A rel rule covers < and <=, and every rel in one rule is the same one.
+         (let ((head (cdr (binding '%rel b))))
+           (when (and (member (first subject) '(< <=)) (member head (list nil (first subject))))
+             (match (cons (first subject) (rest pattern)) subject (acons '%rel (first subject) b)))))
         ((not (eq (first pattern) (first subject))) nil)
         ((member (first pattern) '(+ *))
          (loop for (found . rest) in (ac-assign (rest pattern) (node-items subject) b (first pattern))
@@ -137,12 +142,32 @@
               (more (mapcar (lambda (other) (cdr (binding other b))) others)))
           (ecase name
             (literal (unless (numberp bound) (return :type)))
+            (positive-literal (unless (and (numberp bound) (plusp bound)) (return :type)))
+            (positive-number (cond ((not (numberp bound)) (return :type))
+                                   ((<= bound 0) (setf state :failed))))
+            (negative-number (cond ((not (numberp bound)) (return :type))
+                                   ((>= bound 0) (setf state :failed))))
+            (real-discriminant (when (minusp (- (* (first more) (first more)) (* 4 bound (second more))))
+                                 (return :type)))
             (nonzero-literal (when (eql (if (numberp bound) bound 0) 0) (setf state :failed)))
             (total (unless (total-p bound) (setf state :failed)))
             (factors (unless (and (= (+ bound (first more)) (second more))
                                   (= (* bound (first more)) (third more)))
                        (setf state :failed)))
-            (square-of (unless (= (* bound bound) (first more)) (setf state :failed)))))))))
+            (square-of (unless (= (* bound bound) (first more)) (setf state :failed)))
+            (cube-of (unless (= (* bound bound bound) (first more)) (setf state :failed)))
+            (half-square (unless (= (* (/ bound 2) (/ bound 2)) (first more)) (setf state :failed)))
+            (split-root (destructuring-bind (k p) more
+                          (unless (and (integerp bound) (plusp bound) (integerp k) (> k 1)
+                                       (= (* bound bound k) p))
+                            (setf state :failed))))
+            (splits (destructuring-bind (q a b c) more
+                      (unless (and (plusp bound) (/= q 0) (integerp (/ a bound)) (integerp (/ c q))
+                                   (= (+ (* bound (/ c q)) (* q (/ a bound))) b))
+                        (setf state :failed))))
+            (common-factor (unless (and (integerp bound) (> bound 1)
+                                        (every (lambda (m) (integerp (/ m bound))) more))
+                             (setf state :failed)))))))))
 
 ;;; Building the result of a match.
 
@@ -154,6 +179,7 @@
                (+ (reduce #'+ args))
                (- (reduce #'- args))
                (* (reduce #'* args))
+               (neg (- (first args)))
                (/ (if (zerop (second args)) (throw 'no-edge nil) (/ (first args) (second args)))))))))
 
 (defun literal-node (q)
@@ -163,7 +189,10 @@
   (cond ((meta-p tree) (cdr (binding tree b)))
         ((atom tree) tree)
         ((eq (first tree) 'eval) (literal-node (calculate (instantiate (second tree) b))))
-        (t (cons (first tree) (mapcar (lambda (item) (instantiate item b)) (rest tree))))))
+        (t (let ((built (cons (if (eq (first tree) 'rel) (cdr (binding '%rel b)) (first tree))
+                              (mapcar (lambda (item) (instantiate item b)) (rest tree)))))
+             ;; A number worked out here may be 1, and nobody writes 1x.
+             (if (find 'eval (remove-if-not #'consp (rest tree)) :key #'first) (tidy built) built)))))
 
 (defun subterms (tree)
   (if (atom tree)
@@ -265,7 +294,7 @@
 (defun matches-at (rule subject)
   (let* ((pattern (rule-pattern rule)) (head (first pattern)))
     (cond ((atom subject) nil)
-          ((not (eq head (first subject))) nil)
+          ((not (member head (list (first subject) 'rel))) nil)
           ((member head '(+ *)) (ac-assign (rest pattern) (node-items subject) nil head))
           (t (mapcar #'list (match pattern subject nil))))))
 
@@ -301,10 +330,37 @@
                                                                  :failed-guards failed-guards)
                      collect (list rule (flat (list* 'or new others)) state b))))
 
+(defun same-parameters-p (rule b c)
+  (every (lambda (param) (equal (cdr (binding (first param) b)) (cdr (binding (first param) c))))
+         (rule-field rule :params)))
+
+(defun range-edges (line rules target failed-guards)
+  "A rule that works on an expression changes one part of a range. A rule with a number to apply, such
+as taking 1 from both sides, changes every part at once, by the same number."
+  (destructuring-bind (first-part second-part) (rest line)
+    (flet ((steps (part)
+             (edges part rules :target target :failed-guards failed-guards))
+           (range (a b)
+             (flat (list 'and a b))))
+      (let ((second-steps (steps second-part)))
+        (append
+         (loop for (rule new state b) in (steps first-part)
+               if (eq (rule-field rule :level) 'expr)
+                 collect (list rule (range new second-part) state b)
+               else if (rule-field rule :params)
+                 append (loop for (other other-new nil other-b) in second-steps
+                              when (and (eq rule other) (same-parameters-p rule b other-b))
+                                collect (list rule (range new other-new) state b)))
+         (loop for (rule new state b) in second-steps
+               when (eq (rule-field rule :level) 'expr)
+                 collect (list rule (range first-part new) state b)))))))
+
 (defun edges (line rules &key target failed-guards)
   "Every (rule new-line state bindings) from the flat LINE, without rules that leave it unmoved."
   (when (eq (first line) 'or)
     (return-from edges (alternative-edges line rules target failed-guards)))
+  (when (eq (first line) 'and)
+    (return-from edges (range-edges line rules target failed-guards)))
   (let ((sources (source-values line target))
         (seen (make-hash-table :test #'equal))
         (out '()))
@@ -328,16 +384,30 @@
 
 ;;; Attribution. A truncated search is `unavailable`, never "method unnamed".
 
+(defun changed-part (start goal)
+  "The one alternative that differs between two `or` lines, as two values, or the lines themselves."
+  (let ((old (and (eq (first start) 'or) (eq (first goal) 'or)
+                  (set-difference (rest start) (rest goal) :test #'equal)))
+        (new (and (eq (first start) 'or) (eq (first goal) 'or)
+                  (set-difference (rest goal) (rest start) :test #'equal))))
+    (if (and old new (null (rest old)) (null (rest new)))
+        (values (first old) (first new))
+        (values start goal))))
+
 (defun attribute (before after &key (depth 2) (rules *rules*) (budget +search-budget+))
   "Breadth-first search from the tree BEFORE to the tree AFTER.
 Returns (:state :ok :rules ids :uses ((rule . bindings) ...)), (:state :none) or
-(:state :unavailable)."
-  (let* ((start (flat before)) (goal (flat after))
-         (seen (make-hash-table :test #'equal))
+(:state :unavailable). A step that changes one alternative searches only that alternative, because
+the width of the search grows with every alternative beside it."
+  (multiple-value-bind (start goal) (changed-part (flat before) (flat after))
+    (search-rules start goal depth rules budget)))
+
+(defun search-rules (start goal depth rules budget)
+  (let* ((seen (make-hash-table :test #'equal))
          (frontier (list (cons start nil)))
          (expanded 0))
     (when (equal start goal)
-      (return-from attribute (list :state :ok :rules nil :uses nil)))
+      (return-from search-rules (list :state :ok :rules nil :uses nil)))
     (setf (gethash start seen) t)
     (handler-case
         (with-fuel
@@ -345,7 +415,7 @@ Returns (:state :ok :rules ids :uses ((rule . bindings) ...)), (:state :none) or
             (let ((next '()))
               (dolist (entry frontier)
                 (when (>= expanded budget)
-                  (return-from attribute (list :state :unavailable)))
+                  (return-from search-rules (list :state :unavailable)))
                 (incf expanded)
                 (dolist (edge (edges (car entry) rules :target goal))
                   (destructuring-bind (rule new state b) edge
@@ -353,7 +423,7 @@ Returns (:state :ok :rules ids :uses ((rule . bindings) ...)), (:state :none) or
                     (let ((path (cons (cons rule b) (cdr entry))))
                       (when (equal new goal)
                         (let ((uses (reverse path)))
-                          (return-from attribute
+                          (return-from search-rules
                             (list :state :ok :rules (mapcar (lambda (use) (rule-id (car use))) uses)
                                   :uses uses))))
                       (unless (gethash new seen)
@@ -364,7 +434,7 @@ Returns (:state :ok :rules ids :uses ((rule . bindings) ...)), (:state :none) or
 
 (defun labels-describe-p (before after names var)
   "Do the corpus's rule NAMES, and only those, carry BEFORE to AFTER?"
-  (let* ((a (parse-line before var)) (b (parse-line after var))
+  (let* ((a (read-tree before var)) (b (read-tree after var))
          (rules (remove-if (lambda (rule) (getf rule :order))
                            (mapcar #'find-rule names))))
     (eq (getf (attribute a b :depth 6 :rules rules :budget 4000) :state) :ok)))

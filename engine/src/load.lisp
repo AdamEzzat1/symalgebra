@@ -3,7 +3,8 @@
 
 (defpackage :symalgebra.engine
   (:use :cl)
-  (:export #:load-practice #:practice-list #:practice-check #:practice-hint #:bad-practice))
+  (:export #:load-practice #:practice-list #:practice-check #:practice-hint #:practice-solution
+           #:bad-practice))
 
-(dolist (name '("exact" "json" "parse" "poly" "meaning" "rules" "search" "step" "show" "tutor"))
+(dolist (name '("exact" "json" "parse" "poly" "meaning" "roots" "rules" "search" "step" "expressions" "systems" "complex" "logs" "show" "tutor"))
   (load (merge-pathnames (concatenate 'string name ".lisp") *load-truename*)))

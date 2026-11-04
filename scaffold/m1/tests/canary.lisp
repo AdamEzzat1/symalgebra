@@ -60,6 +60,8 @@
      (cons "practice line" (post "/api/practice/check"
                                  (format nil "{\"v\":1,\"problem\":\"dist-a\",\"previous\":\"x = 1\",\"text\":\"~a\"}"
                                          *marker*)))
+     (cons "practice steps" (post "/api/practice/solution"
+                                  (format nil "{\"v\":1,\"problem\":\"~a\"}" *marker*)))
      (cons "path" (get-request (format nil "/~a" *marker*) ""))
      (cons "header" (get-request "/" header))
      (cons "oversized" (post "/api/check" (make-string 2000 :initial-element #\Z) header)))))

@@ -6,153 +6,754 @@
   {"line":"3x = 11 + 4","rules":["transpose-sub"]},{"line":"3x = 15","rules":["add-literals"]},
   {"line":"x = 15/3","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
  {"id":"lin-c","area":"linear","start":"5x - 2 = 3x + 8","answer":"5","steps":[
-  {"line":"5x - 2 - 3x = 3x + 8 - 3x","rules":["sub-both"]},{"line":"2x - 2 = 8","rules":["add-comm","combine-like-sub","sub-self"]},
+  {"line":"5x - 2 - 3x = 3x + 8 - 3x","rules":["sub-both"]},
+  {"line":"2x - 2 = 8","rules":["add-comm","combine-like-sub","sub-self"]},
   {"line":"2x = 8 + 2","rules":["transpose-sub"]},{"line":"2x = 10","rules":["add-literals"]},
   {"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
  {"id":"lin-d","area":"linear","start":"10 - 3x = 1","answer":"3","steps":[
-  {"line":"10 - 3x - 10 = 1 - 10","rules":["sub-both"]},{"line":"-3x = -9","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"10 - 3x - 10 = 1 - 10","rules":["sub-both"]},
+  {"line":"-3x = -9","rules":["add-comm","sub-self","sub-literals"]},
   {"line":"x = -9/-3","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
  {"id":"lin-e","area":"linear","start":"x/2 = 3","answer":"6","steps":[
-  {"line":"x/2 * 2 = 3 * 2","rules":["mul-both"]},{"line":"x = 6","rules":["mul-comm","mul-by-fraction","cancel-literal","mul-literals"]}]},
+  {"line":"x/2 * 2 = 3 * 2","rules":["mul-both"]},
+  {"line":"x = 6","rules":["mul-comm","mul-by-fraction","cancel-literal","mul-literals"]}]},
  {"id":"lin-f","area":"linear","start":"0.5x + 1 = 4","answer":"6","steps":[
   {"line":"0.5x = 4 - 1","rules":["transpose-add"]},{"line":"0.5x = 3","rules":["sub-literals"]},
   {"line":"x = 3/0.5","rules":["isolate-by-division"]},{"line":"x = 6","rules":["div-literals"]}]},
  {"id":"lin-g","area":"linear","start":"4 = 2x - 6","answer":"5","steps":[
   {"line":"2x - 6 = 4","rules":["swap-sides"]},{"line":"2x = 4 + 6","rules":["transpose-sub"]},
-  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},
+  {"line":"x = 5","rules":["div-literals"]}]},
  {"id":"lin-h","area":"linear","start":"-x + 7 = 2","answer":"5","steps":[
   {"line":"-x = 2 - 7","rules":["transpose-add"]},{"line":"-x = -5","rules":["sub-literals"]},
   {"line":"-x * -1 = -5 * -1","rules":["mul-both"]},{"line":"x = 5","rules":["mul-literals"]}]},
  {"id":"lin-i","area":"linear","start":"3x + 2 = 3x + 5","answer":"none","steps":[
-  {"line":"3x + 2 - 3x = 3x + 5 - 3x","rules":["sub-both"]},{"line":"2 = 5","rules":["add-comm","sub-self"]}]},
+  {"line":"3x + 2 - 3x = 3x + 5 - 3x","rules":["sub-both"]},
+  {"line":"2 = 5","rules":["add-comm","sub-self"]}]},
  {"id":"lin-j","area":"linear","start":"2x + 6 = 2x + 6","answer":"all","steps":[
-  {"line":"2x + 6 - 2x = 2x + 6 - 2x","rules":["sub-both"]},{"line":"6 = 6","rules":["add-comm","sub-self"]}]},
+  {"line":"2x + 6 - 2x = 2x + 6 - 2x","rules":["sub-both"]},
+  {"line":"6 = 6","rules":["add-comm","sub-self"]}]},
  {"id":"lin-k","area":"linear","start":"7 - x = 3","answer":"4","steps":[
-  {"line":"7 - x - 7 = 3 - 7","rules":["sub-both"]},{"line":"-x = -4","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"7 - x - 7 = 3 - 7","rules":["sub-both"]},
+  {"line":"-x = -4","rules":["add-comm","sub-self","sub-literals"]},
   {"line":"-x * -1 = -4 * -1","rules":["mul-both"]},{"line":"x = 4","rules":["mul-literals"]}]},
  {"id":"lin-l","area":"linear","start":"1.5x = 6","answer":"4","steps":[
   {"line":"x = 6/1.5","rules":["isolate-by-division"]},{"line":"x = 4","rules":["div-literals"]}]},
-
  {"id":"dist-a","area":"distribution","start":"2(x + 3) = 10","answer":"2","steps":[
   {"line":"2x + 2 * 3 = 10","rules":["distribute"]},{"line":"2x + 6 = 10","rules":["mul-literals"]},
   {"line":"2x = 10 - 6","rules":["transpose-add"]},{"line":"2x = 4","rules":["sub-literals"]},
   {"line":"x = 4/2","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
  {"id":"dist-b","area":"distribution","start":"3(x - 2) = 9","answer":"5","steps":[
-  {"line":"3x - 3 * 2 = 9","rules":["distribute-sub"]},{"line":"3x - 6 = 9","rules":["mul-literals"]},
-  {"line":"3x = 9 + 6","rules":["transpose-sub"]},{"line":"3x = 15","rules":["add-literals"]},
-  {"line":"x = 15/3","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+  {"line":"3x - 3 * 2 = 9","rules":["distribute-sub"]},
+  {"line":"3x - 6 = 9","rules":["mul-literals"]},{"line":"3x = 9 + 6","rules":["transpose-sub"]},
+  {"line":"3x = 15","rules":["add-literals"]},{"line":"x = 15/3","rules":["isolate-by-division"]},
+  {"line":"x = 5","rules":["div-literals"]}]},
  {"id":"dist-c","area":"distribution","start":"3x + 2x = 15","answer":"3","steps":[
-  {"line":"5x = 15","rules":["combine-like"]},{"line":"x = 15/5","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
+  {"line":"5x = 15","rules":["combine-like"]},{"line":"x = 15/5","rules":["isolate-by-division"]},
+  {"line":"x = 3","rules":["div-literals"]}]},
  {"id":"dist-d","area":"distribution","start":"3x + 2 + x = 14","answer":"3","steps":[
-  {"line":"3x + x + 2 = 14","rules":["add-comm"]},{"line":"4x + 2 = 14","rules":["add-comm","combine-implicit"]},
+  {"line":"3x + x + 2 = 14","rules":["add-comm"]},
+  {"line":"4x + 2 = 14","rules":["add-comm","combine-implicit"]},
   {"line":"4x = 14 - 2","rules":["transpose-add"]},{"line":"4x = 12","rules":["sub-literals"]},
   {"line":"x = 12/4","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
  {"id":"dist-e","area":"distribution","start":"5 - (x + 2) = 1","answer":"2","steps":[
-  {"line":"5 - x - 2 = 1","rules":["sub-bracket"]},{"line":"3 - x = 1","rules":["add-comm","sub-literals"]},
-  {"line":"3 - x - 3 = 1 - 3","rules":["sub-both"]},{"line":"-x = -2","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"5 - x - 2 = 1","rules":["sub-bracket"]},
+  {"line":"3 - x = 1","rules":["add-comm","sub-literals"]},
+  {"line":"3 - x - 3 = 1 - 3","rules":["sub-both"]},
+  {"line":"-x = -2","rules":["add-comm","sub-self","sub-literals"]},
   {"line":"-x * -1 = -2 * -1","rules":["mul-both"]},{"line":"x = 2","rules":["mul-literals"]}]},
  {"id":"dist-f","area":"distribution","start":"5 - (x - 2) = 1","answer":"6","steps":[
-  {"line":"5 - x + 2 = 1","rules":["sub-bracket-sub"]},{"line":"7 - x = 1","rules":["add-comm","add-literals"]},
-  {"line":"7 - x - 7 = 1 - 7","rules":["sub-both"]},{"line":"-x = -6","rules":["add-comm","sub-self","sub-literals"]},
+  {"line":"5 - x + 2 = 1","rules":["sub-bracket-sub"]},
+  {"line":"7 - x = 1","rules":["add-comm","add-literals"]},
+  {"line":"7 - x - 7 = 1 - 7","rules":["sub-both"]},
+  {"line":"-x = -6","rules":["add-comm","sub-self","sub-literals"]},
   {"line":"-x * -1 = -6 * -1","rules":["mul-both"]},{"line":"x = 6","rules":["mul-literals"]}]},
  {"id":"dist-g","area":"distribution","start":"-(x + 3) = 2","answer":"-5","steps":[
-  {"line":"-x - 3 = 2","rules":["negate-sum"]},{"line":"-x = 2 + 3","rules":["transpose-sub"]},{"line":"-x = 5","rules":["add-literals"]},
-  {"line":"-x * -1 = 5 * -1","rules":["mul-both"]},{"line":"x = -5","rules":["mul-literals"]}]},
+  {"line":"-x - 3 = 2","rules":["negate-sum"]},{"line":"-x = 2 + 3","rules":["transpose-sub"]},
+  {"line":"-x = 5","rules":["add-literals"]},{"line":"-x * -1 = 5 * -1","rules":["mul-both"]},
+  {"line":"x = -5","rules":["mul-literals"]}]},
  {"id":"dist-h","area":"distribution","start":"2(x + 1) + 3(x - 1) = 9","answer":"2","steps":[
-  {"line":"2x + 2 * 1 + 3x - 3 * 1 = 9","rules":["distribute","distribute-sub"]},{"line":"5x - 1 = 9","rules":["add-comm","combine-like","mul-literals","sub-literals"]},
+  {"line":"2x + 2 * 1 + 3x - 3 * 1 = 9","rules":["distribute","distribute-sub"]},
+  {"line":"5x - 1 = 9","rules":["add-comm","combine-like","mul-literals","sub-literals"]},
   {"line":"5x = 9 + 1","rules":["transpose-sub"]},{"line":"5x = 10","rules":["add-literals"]},
   {"line":"x = 10/5","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
  {"id":"dist-i","area":"distribution","start":"4(x - 1) = 2(x + 3)","answer":"5","steps":[
-  {"line":"4x - 4 = 2x + 6","rules":["distribute-sub","distribute","mul-literals"]},{"line":"4x - 4 - 2x = 2x + 6 - 2x","rules":["sub-both"]},
-  {"line":"2x - 4 = 6","rules":["add-comm","combine-like-sub","sub-self"]},{"line":"2x = 6 + 4","rules":["transpose-sub"]},
-  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
+  {"line":"4x - 4 = 2x + 6","rules":["distribute-sub","distribute","mul-literals"]},
+  {"line":"4x - 4 - 2x = 2x + 6 - 2x","rules":["sub-both"]},
+  {"line":"2x - 4 = 6","rules":["add-comm","combine-like-sub","sub-self"]},
+  {"line":"2x = 6 + 4","rules":["transpose-sub"]},{"line":"2x = 10","rules":["add-literals"]},
+  {"line":"x = 10/2","rules":["isolate-by-division"]},{"line":"x = 5","rules":["div-literals"]}]},
  {"id":"dist-j","area":"distribution","start":"x + x + x = 9","answer":"3","steps":[
-  {"line":"2x + x = 9","rules":["combine-unit"]},{"line":"3x = 9","rules":["add-comm","combine-implicit"]},
+  {"line":"2x + x = 9","rules":["combine-unit"]},
+  {"line":"3x = 9","rules":["add-comm","combine-implicit"]},
   {"line":"x = 9/3","rules":["isolate-by-division"]},{"line":"x = 3","rules":["div-literals"]}]},
  {"id":"dist-k","area":"distribution","start":"6x - 2x + 1 = 9","answer":"2","steps":[
   {"line":"4x + 1 = 9","rules":["combine-like-sub"]},{"line":"4x = 9 - 1","rules":["transpose-add"]},
-  {"line":"4x = 8","rules":["sub-literals"]},{"line":"x = 8/4","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+  {"line":"4x = 8","rules":["sub-literals"]},{"line":"x = 8/4","rules":["isolate-by-division"]},
+  {"line":"x = 2","rules":["div-literals"]}]},
  {"id":"dist-l","area":"distribution","start":"2(x + 1) = 2x + 2","answer":"all","steps":[
-  {"line":"2x + 2 * 1 = 2x + 2","rules":["distribute"]},{"line":"2x + 2 = 2x + 2","rules":["mul-literals"]},
-  {"line":"2x + 2 - 2x = 2x + 2 - 2x","rules":["sub-both"]},{"line":"2 = 2","rules":["add-comm","sub-self"]}]},
+  {"line":"2x + 2 * 1 = 2x + 2","rules":["distribute"]},
+  {"line":"2x + 2 = 2x + 2","rules":["mul-literals"]},
+  {"line":"2x + 2 - 2x = 2x + 2 - 2x","rules":["sub-both"]},
+  {"line":"2 = 2","rules":["add-comm","sub-self"]}]},
  {"id":"dist-m","area":"distribution","start":"3(x + 1) = 3x + 5","answer":"none","steps":[
-  {"line":"3x + 3 * 1 = 3x + 5","rules":["distribute"]},{"line":"3x + 3 = 3x + 5","rules":["mul-literals"]},
-  {"line":"3x + 3 - 3x = 3x + 5 - 3x","rules":["sub-both"]},{"line":"3 = 5","rules":["add-comm","sub-self"]}]},
-
+  {"line":"3x + 3 * 1 = 3x + 5","rules":["distribute"]},
+  {"line":"3x + 3 = 3x + 5","rules":["mul-literals"]},
+  {"line":"3x + 3 - 3x = 3x + 5 - 3x","rules":["sub-both"]},
+  {"line":"3 = 5","rules":["add-comm","sub-self"]}]},
  {"id":"frac-a","area":"fractions","start":"x/3 + 2/3 = 1","answer":"1","steps":[
-  {"line":"(x + 2)/3 = 1","rules":["add-same-denom"]},{"line":"(x + 2)/3 * 3 = 1 * 3","rules":["mul-both"]},
-  {"line":"x + 2 = 3","rules":["cancel-literal","mul-literals"]},{"line":"x = 3 - 2","rules":["transpose-add"]},{"line":"x = 1","rules":["sub-literals"]}]},
+  {"line":"(x + 2)/3 = 1","rules":["add-same-denom"]},
+  {"line":"(x + 2)/3 * 3 = 1 * 3","rules":["mul-both"]},
+  {"line":"x + 2 = 3","rules":["cancel-literal","mul-literals"]},
+  {"line":"x = 3 - 2","rules":["transpose-add"]},{"line":"x = 1","rules":["sub-literals"]}]},
  {"id":"frac-b","area":"fractions","start":"x/2 + x/3 = 5","answer":"6","steps":[
-  {"line":"(x * 3 + x * 2)/(2 * 3) = 5","rules":["add-cross"]},{"line":"5x/6 = 5","rules":["mul-comm","combine-like","mul-literals"]},
-  {"line":"5x/6 * 6 = 5 * 6","rules":["mul-both"]},{"line":"5x = 30","rules":["cancel-literal","mul-literals"]},
+  {"line":"(x * 3 + x * 2)/(2 * 3) = 5","rules":["add-cross"]},
+  {"line":"5x/6 = 5","rules":["mul-comm","combine-like","mul-literals"]},
+  {"line":"5x/6 * 6 = 5 * 6","rules":["mul-both"]},
+  {"line":"5x = 30","rules":["cancel-literal","mul-literals"]},
   {"line":"x = 30/5","rules":["isolate-by-division"]},{"line":"x = 6","rules":["div-literals"]}]},
  {"id":"frac-c","area":"fractions","start":"(x + 1)/2 = 3","answer":"5","steps":[
-  {"line":"(x + 1)/2 * 2 = 3 * 2","rules":["mul-both"]},{"line":"x + 1 = 6","rules":["cancel-literal","mul-literals"]},
+  {"line":"(x + 1)/2 * 2 = 3 * 2","rules":["mul-both"]},
+  {"line":"x + 1 = 6","rules":["cancel-literal","mul-literals"]},
   {"line":"x = 6 - 1","rules":["transpose-add"]},{"line":"x = 5","rules":["sub-literals"]}]},
  {"id":"frac-d","area":"fractions","start":"x/2 = 3/4","answer":"3/2","steps":[
-  {"line":"x * 4 = 3 * 2","rules":["cross-multiply"]},{"line":"4x = 6","rules":["mul-comm","mul-literals"]},
+  {"line":"x * 4 = 3 * 2","rules":["cross-multiply"]},
+  {"line":"4x = 6","rules":["mul-comm","mul-literals"]},
   {"line":"x = 6/4","rules":["isolate-by-division"]},{"line":"x = 3/2","rules":["cancel-literal"]}]},
  {"id":"frac-e","area":"fractions","start":"1/x = 2","answer":"1/2","steps":[
-  {"line":"1/x * x = 2 * x","rules":["clear-denominators"]},{"line":"1 = 2x","rules":["cancel-variable"]},
-  {"line":"2x = 1","rules":["swap-sides"]},{"line":"x = 1/2","rules":["isolate-by-division"]}]},
+  {"line":"1/x * x = 2 * x","rules":["clear-denominators"]},
+  {"line":"1 = 2x","rules":["cancel-variable"]},{"line":"2x = 1","rules":["swap-sides"]},
+  {"line":"x = 1/2","rules":["isolate-by-division"]}]},
  {"id":"frac-f","area":"fractions","start":"x/(x - 1) = 1/(x - 1)","answer":"none","steps":[
   {"line":"x/(x - 1) * (x - 1) = 1/(x - 1) * (x - 1)","rules":["clear-denominators"]},
   {"line":"x = 1","verdict":"GAINS","rules":["cancel-variable"]}]},
  {"id":"frac-g","area":"fractions","start":"2/(x + 1) = 1","answer":"1","steps":[
-  {"line":"2/(x + 1) * (x + 1) = 1 * (x + 1)","rules":["clear-denominators"]},{"line":"2 = x + 1","rules":["cancel-variable","mul-one"]},
-  {"line":"x + 1 = 2","rules":["swap-sides"]},{"line":"x = 2 - 1","rules":["transpose-add"]},{"line":"x = 1","rules":["sub-literals"]}]},
+  {"line":"2/(x + 1) * (x + 1) = 1 * (x + 1)","rules":["clear-denominators"]},
+  {"line":"2 = x + 1","rules":["cancel-variable","mul-one"]},
+  {"line":"x + 1 = 2","rules":["swap-sides"]},{"line":"x = 2 - 1","rules":["transpose-add"]},
+  {"line":"x = 1","rules":["sub-literals"]}]},
  {"id":"frac-h","area":"fractions","start":"3/x + 1/x = 2","answer":"2","steps":[
   {"line":"(3 + 1)/x = 2","rules":["add-same-denom"]},{"line":"4/x = 2","rules":["add-literals"]},
-  {"line":"4/x * x = 2 * x","rules":["clear-denominators"]},{"line":"4 = 2x","rules":["cancel-variable"]},
-  {"line":"2x = 4","rules":["swap-sides"]},{"line":"x = 4/2","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
+  {"line":"4/x * x = 2 * x","rules":["clear-denominators"]},
+  {"line":"4 = 2x","rules":["cancel-variable"]},{"line":"2x = 4","rules":["swap-sides"]},
+  {"line":"x = 4/2","rules":["isolate-by-division"]},{"line":"x = 2","rules":["div-literals"]}]},
  {"id":"frac-i","area":"fractions","start":"(x/2) * (3/5) = 3","answer":"10","steps":[
-  {"line":"(x * 3)/(2 * 5) = 3","rules":["mul-fractions"]},{"line":"3x/10 = 3","rules":["mul-comm","mul-literals"]},
-  {"line":"3x/10 * 10 = 3 * 10","rules":["mul-both"]},{"line":"3x = 30","rules":["cancel-literal","mul-literals"]},
+  {"line":"(x * 3)/(2 * 5) = 3","rules":["mul-fractions"]},
+  {"line":"3x/10 = 3","rules":["mul-comm","mul-literals"]},
+  {"line":"3x/10 * 10 = 3 * 10","rules":["mul-both"]},
+  {"line":"3x = 30","rules":["cancel-literal","mul-literals"]},
   {"line":"x = 30/3","rules":["isolate-by-division"]},{"line":"x = 10","rules":["div-literals"]}]},
  {"id":"frac-j","area":"fractions","start":"x/(2/3) = 6","answer":"4","steps":[
   {"line":"(x * 3)/2 = 6","rules":["div-by-fraction"]},{"line":"3x/2 = 6","rules":["mul-comm"]},
-  {"line":"3x/2 * 2 = 6 * 2","rules":["mul-both"]},{"line":"3x = 12","rules":["cancel-literal","mul-literals"]},
+  {"line":"3x/2 * 2 = 6 * 2","rules":["mul-both"]},
+  {"line":"3x = 12","rules":["cancel-literal","mul-literals"]},
   {"line":"x = 12/3","rules":["isolate-by-division"]},{"line":"x = 4","rules":["div-literals"]}]},
  {"id":"frac-k","area":"fractions","start":"(x * 3)/(2 * 3) = 5","answer":"10","steps":[
-  {"line":"x/2 = 5","rules":["cancel-literal"]},{"line":"x/2 * 2 = 5 * 2","rules":["mul-both"]},{"line":"x = 10","rules":["cancel-literal","mul-literals"]}]},
+  {"line":"x/2 = 5","rules":["cancel-literal"]},{"line":"x/2 * 2 = 5 * 2","rules":["mul-both"]},
+  {"line":"x = 10","rules":["cancel-literal","mul-literals"]}]},
  {"id":"frac-l","area":"fractions","start":"(x * (x - 1))/(2 * (x - 1)) = 1/2","answer":"none","steps":[
   {"line":"x/2 = 1/2","verdict":"GAINS","rules":["cancel-variable"]}]},
  {"id":"frac-m","area":"fractions","start":"x/2 + x/2 = x","answer":"all","steps":[
-  {"line":"(x + x)/2 = x","rules":["add-same-denom"]},{"line":"2x/2 = x","rules":["combine-unit"]},{"line":"x = x","rules":["cancel-literal"]}]},
+  {"line":"(x + x)/2 = x","rules":["add-same-denom"]},{"line":"2x/2 = x","rules":["combine-unit"]},
+  {"line":"x = x","rules":["cancel-literal"]}]},
  {"id":"frac-n","area":"fractions","start":"x/3 = x/6 + 1","answer":"6","steps":[
-  {"line":"x/3 * 6 = (x/6 + 1) * 6","rules":["mul-both"]},{"line":"2x = x + 6","rules":["distribute","cancel-literal","mul-literals"]},
-  {"line":"2x - x = x + 6 - x","rules":["sub-both"]},{"line":"x = 6","rules":["add-comm","sub-self","combine-like-sub"]}]},
+  {"line":"x/3 * 6 = (x/6 + 1) * 6","rules":["mul-both"]},
+  {"line":"2x = x + 6","rules":["distribute","cancel-literal","mul-literals"]},
+  {"line":"2x - x = x + 6 - x","rules":["sub-both"]},
+  {"line":"x = 6","rules":["add-comm","sub-self","combine-like-sub"]}]},
  {"id":"quad-a","area":"quadratics","start":"x^2 + 5x + 6 = 0","answer":"-2,-3","steps":[
-  {"line":"(x + 2)(x + 3) = 0","rules":["factor-trinomial"]},{"line":"x + 2 = 0 or x + 3 = 0","rules":["zero-product"]},
-  {"line":"x = -2 or x + 3 = 0","rules":["transpose-add","sub-literals"]},{"line":"x = -2 or x = -3","rules":["transpose-add","sub-literals"]}]},
+  {"line":"(x + 2)(x + 3) = 0","rules":["factor-trinomial"]},
+  {"line":"x + 2 = 0 or x + 3 = 0","rules":["zero-product"]},
+  {"line":"x = -2 or x + 3 = 0","rules":["transpose-add","sub-literals"]},
+  {"line":"x = -2 or x = -3","rules":["transpose-add","sub-literals"]}]},
  {"id":"quad-b","area":"quadratics","start":"x^2 - 5x + 6 = 0","answer":"2,3","steps":[
-  {"line":"(x - 2)(x - 3) = 0","rules":["factor-trinomial"]},{"line":"x - 2 = 0 or x - 3 = 0","rules":["zero-product"]},
-  {"line":"x = 2 or x - 3 = 0","rules":["transpose-add","add-zero"]},{"line":"x = 2 or x = 3","rules":["transpose-add","add-zero"]}]},
+  {"line":"(x - 2)(x - 3) = 0","rules":["factor-trinomial"]},
+  {"line":"x - 2 = 0 or x - 3 = 0","rules":["zero-product"]},
+  {"line":"x = 2 or x - 3 = 0","rules":["transpose-add","add-zero"]},
+  {"line":"x = 2 or x = 3","rules":["transpose-add","add-zero"]}]},
  {"id":"quad-c","area":"quadratics","start":"x^2 + 3x = 0","answer":"0,-3","steps":[
-  {"line":"x(x + 3) = 0","rules":["factor-common"]},{"line":"x = 0 or x + 3 = 0","rules":["zero-product"]},
+  {"line":"x(x + 3) = 0","rules":["factor-common"]},
+  {"line":"x = 0 or x + 3 = 0","rules":["zero-product"]},
   {"line":"x = 0 or x = -3","rules":["transpose-add","sub-literals"]}]},
  {"id":"quad-d","area":"quadratics","start":"x^2 - 9 = 0","answer":"3,-3","steps":[
-  {"line":"(x - 3)(x + 3) = 0","rules":["factor-squares"]},{"line":"x - 3 = 0 or x + 3 = 0","rules":["zero-product"]},
-  {"line":"x = 3 or x + 3 = 0","rules":["transpose-add","add-zero"]},{"line":"x = 3 or x = -3","rules":["transpose-add","sub-literals"]}]},
+  {"line":"(x - 3)(x + 3) = 0","rules":["factor-squares"]},
+  {"line":"x - 3 = 0 or x + 3 = 0","rules":["zero-product"]},
+  {"line":"x = 3 or x + 3 = 0","rules":["transpose-add","add-zero"]},
+  {"line":"x = 3 or x = -3","rules":["transpose-add","sub-literals"]}]},
  {"id":"quad-e","area":"quadratics","start":"x^2 = 9","answer":"3,-3","steps":[
   {"line":"x = 3 or x = -3","rules":["square-root"]}]},
  {"id":"quad-f","area":"quadratics","start":"(x + 1)(x - 4) = 0","answer":"-1,4","steps":[
-  {"line":"x + 1 = 0 or x - 4 = 0","rules":["zero-product"]},{"line":"x = -1 or x - 4 = 0","rules":["transpose-add","sub-literals"]},
+  {"line":"x + 1 = 0 or x - 4 = 0","rules":["zero-product"]},
+  {"line":"x = -1 or x - 4 = 0","rules":["transpose-add","sub-literals"]},
   {"line":"x = -1 or x = 4","rules":["transpose-add","add-zero"]}]},
  {"id":"quad-g","area":"quadratics","start":"(2x + 1)(x + 3) = 0","answer":"-1/2,-3","steps":[
-  {"line":"2x + 1 = 0 or x + 3 = 0","rules":["zero-product"]},{"line":"2x = -1 or x + 3 = 0","rules":["transpose-add","sub-literals"]},
-  {"line":"x = -1/2 or x + 3 = 0","rules":["isolate-by-division"]},{"line":"x = -1/2 or x = -3","rules":["transpose-add","sub-literals"]}]},
+  {"line":"2x + 1 = 0 or x + 3 = 0","rules":["zero-product"]},
+  {"line":"2x = -1 or x + 3 = 0","rules":["transpose-add","sub-literals"]},
+  {"line":"x = -1/2 or x + 3 = 0","rules":["isolate-by-division"]},
+  {"line":"x = -1/2 or x = -3","rules":["transpose-add","sub-literals"]}]},
  {"id":"quad-h","area":"quadratics","start":"x^2 - 4x + 4 = 0","answer":"2","steps":[
-  {"line":"(x - 2)(x - 2) = 0","rules":["factor-trinomial"]},{"line":"x - 2 = 0","rules":["zero-product"]},
+  {"line":"(x - 2)(x - 2) = 0","rules":["factor-trinomial"]},
+  {"line":"x - 2 = 0","rules":["zero-product"]},
   {"line":"x = 2","rules":["transpose-add","add-zero"]}]},
  {"id":"quad-i","area":"quadratics","start":"x^2 + 2x - 15 = 0","answer":"3,-5","steps":[
-  {"line":"(x - 3)(x + 5) = 0","rules":["factor-trinomial"]},{"line":"x - 3 = 0 or x + 5 = 0","rules":["zero-product"]},
+  {"line":"(x - 3)(x + 5) = 0","rules":["factor-trinomial"]},
+  {"line":"x - 3 = 0 or x + 5 = 0","rules":["zero-product"]},
   {"line":"x = 3 or x = -5","rules":["transpose-add","add-zero","transpose-add","sub-literals"]}]},
  {"id":"quad-j","area":"quadratics","start":"x^2 + 4 = 0","answer":"none","steps":[
   {"line":"x^2 = -4","rules":["transpose-add","sub-literals"]}]},
  {"id":"quad-k","area":"quadratics","start":"x * x = 16","answer":"4,-4","steps":[
-  {"line":"x^2 = 16","rules":["product-as-square"]},{"line":"x = 4 or x = -4","rules":["square-root"]}]},
+  {"line":"x^2 = 16","rules":["product-as-square"]},
+  {"line":"x = 4 or x = -4","rules":["square-root"]}]},
  {"id":"quad-l","area":"quadratics","start":"(x + 1)(x + 1) = 4","answer":"1,-3","steps":[
-  {"line":"(x + 1)^2 = 4","rules":["product-as-square"]},{"line":"x + 1 = 2 or x + 1 = -2","rules":["square-root"]},
-  {"line":"x = 1 or x + 1 = -2","rules":["transpose-add","sub-literals"]},{"line":"x = 1 or x = -3","rules":["transpose-add","sub-literals"]}]}
+  {"line":"(x + 1)^2 = 4","rules":["product-as-square"]},
+  {"line":"x + 1 = 2 or x + 1 = -2","rules":["square-root"]},
+  {"line":"x = 1 or x + 1 = -2","rules":["transpose-add","sub-literals"]},
+  {"line":"x = 1 or x = -3","rules":["transpose-add","sub-literals"]}]},
+ {"id":"quad-m","area":"quadratics","start":"x^2 = 2","answer":"sqrt(2),-sqrt(2)","steps":[
+  {"line":"x = sqrt(2) or x = -sqrt(2)","rules":["take-root"]}]},
+ {"id":"quad-n","area":"quadratics","start":"x^2 = 12","answer":"2sqrt(3),-2sqrt(3)","steps":[
+  {"line":"x = sqrt(12) or x = -sqrt(12)","rules":["take-root"]},
+  {"line":"x = 2sqrt(3) or x = -sqrt(12)","rules":["simplify-root"]},
+  {"line":"x = 2sqrt(3) or x = -2sqrt(3)","rules":["simplify-root"]}]},
+ {"id":"quad-o","area":"quadratics","start":"(x - 1)^2 = 5","answer":"1 + sqrt(5),1 - sqrt(5)","steps":[
+  {"line":"x - 1 = sqrt(5) or x - 1 = -sqrt(5)","rules":["take-root"]},
+  {"line":"x = 1 + sqrt(5) or x - 1 = -sqrt(5)","rules":["transpose-sub"]},
+  {"line":"x = 1 + sqrt(5) or x = 1 - sqrt(5)","rules":["transpose-sub"]}]},
+ {"id":"quad-p","area":"quadratics","start":"x^2 + 6x = 4","answer":"-3 + sqrt(13),-3 - sqrt(13)","steps":[
+  {"line":"x^2 + 6x + 9 = 4 + 9","rules":["complete-square"]},
+  {"line":"x^2 + 6x + 9 = 13","rules":["add-literals"]},
+  {"line":"(x + 3)^2 = 13","rules":["factor-perfect-square"]},
+  {"line":"x + 3 = sqrt(13) or x + 3 = -sqrt(13)","rules":["take-root"]},
+  {"line":"x = -3 + sqrt(13) or x + 3 = -sqrt(13)","rules":["transpose-add"]},
+  {"line":"x = -3 + sqrt(13) or x = -3 - sqrt(13)","rules":["transpose-add"]}]},
+ {"id":"quad-q","area":"quadratics","start":"x^2 - 4x = 1","answer":"2 + sqrt(5),2 - sqrt(5)","steps":[
+  {"line":"x^2 - 4x + 4 = 1 + 4","rules":["complete-square"]},
+  {"line":"x^2 - 4x + 4 = 5","rules":["add-literals"]},
+  {"line":"(x - 2)^2 = 5","rules":["factor-perfect-square"]},
+  {"line":"x - 2 = sqrt(5) or x - 2 = -sqrt(5)","rules":["take-root"]},
+  {"line":"x = 2 + sqrt(5) or x - 2 = -sqrt(5)","rules":["transpose-sub"]},
+  {"line":"x = 2 + sqrt(5) or x = 2 - sqrt(5)","rules":["transpose-sub"]}]},
+ {"id":"quad-r","area":"quadratics","start":"x^2 - 3x - 1 = 0","answer":"(3 + sqrt(13))/2,(3 - sqrt(13))/2","steps":[
+  {"line":"x = (3 + sqrt(13))/2 or x = (3 - sqrt(13))/2","rules":["quadratic-formula"]}]},
+ {"id":"quad-s","area":"quadratics","start":"2x^2 + 5x + 1 = 0","answer":"(-5 + sqrt(17))/4,(-5 - sqrt(17))/4","steps":[
+  {"line":"x = (-5 + sqrt(17))/4 or x = (-5 - sqrt(17))/4","rules":["quadratic-formula"]}]},
+ {"id":"quad-t","area":"quadratics","start":"2x^2 + 7x + 3 = 0","answer":"-1/2,-3","steps":[
+  {"line":"(2x + 1)(x + 3) = 0","rules":["factor-leading"]},
+  {"line":"2x + 1 = 0 or x + 3 = 0","rules":["zero-product"]},
+  {"line":"2x = -1 or x + 3 = 0","rules":["transpose-add","sub-literals"]},
+  {"line":"x = -1/2 or x + 3 = 0","rules":["isolate-by-division"]},
+  {"line":"x = -1/2 or x = -3","rules":["transpose-add","sub-literals"]}]},
+ {"id":"quad-u","area":"quadratics","start":"x^2 + 4x + 1 = 0","answer":"-2 + sqrt(3),-2 - sqrt(3)","steps":[
+  {"line":"x = (-4 + sqrt(12))/2 or x = (-4 - sqrt(12))/2","rules":["quadratic-formula"]},
+  {"line":"x = (-4 + 2sqrt(3))/2 or x = (-4 - sqrt(12))/2","rules":["simplify-root"]},
+  {"line":"x = (-4 + 2sqrt(3))/2 or x = (-4 - 2sqrt(3))/2","rules":["simplify-root"]},
+  {"line":"x = -2 + sqrt(3) or x = (-4 - 2sqrt(3))/2","rules":["divide-terms"]},
+  {"line":"x = -2 + sqrt(3) or x = -2 - sqrt(3)","rules":["divide-terms"]}]},
+ {"id":"quad-v","area":"quadratics","start":"x^2 + x + 1 = 0","answer":"none","steps":[]},
+ {"id":"ineq-a","area":"inequalities","start":"2x + 5 < 17","answer":"x < 6","steps":[
+  {"line":"2x < 17 - 5","rules":["ineq-move-add-left"]},{"line":"2x < 12","rules":["sub-literals"]},
+  {"line":"x < 12/2","rules":["ineq-isolate-pos-left"]},{"line":"x < 6","rules":["div-literals"]}]},
+ {"id":"ineq-b","area":"inequalities","start":"3x - 4 >= 11","answer":"x >= 5","steps":[
+  {"line":"3x >= 11 + 4","rules":["ineq-move-sub-right"]},
+  {"line":"3x >= 15","rules":["add-literals"]},
+  {"line":"x >= 15/3","rules":["ineq-isolate-pos-right"]},{"line":"x >= 5","rules":["div-literals"]}]},
+ {"id":"ineq-c","area":"inequalities","start":"-2x < 6","answer":"x > -3","steps":[
+  {"line":"x > 6/(-2)","rules":["ineq-isolate-neg-left"]},{"line":"x > -3","rules":["div-literals"]}]},
+ {"id":"ineq-d","area":"inequalities","start":"-3x + 1 >= 10","answer":"x <= -3","steps":[
+  {"line":"-3x >= 10 - 1","rules":["ineq-move-add-right"]},
+  {"line":"-3x >= 9","rules":["sub-literals"]},
+  {"line":"x <= 9/(-3)","rules":["ineq-isolate-neg-right"]},
+  {"line":"x <= -3","rules":["div-literals"]}]},
+ {"id":"ineq-e","area":"inequalities","start":"2(x + 3) > 10","answer":"x > 2","steps":[
+  {"line":"2x + 2 * 3 > 10","rules":["distribute"]},{"line":"2x + 6 > 10","rules":["mul-literals"]},
+  {"line":"2x > 10 - 6","rules":["ineq-move-add-right"]},{"line":"2x > 4","rules":["sub-literals"]},
+  {"line":"x > 4/2","rules":["ineq-isolate-pos-right"]},{"line":"x > 2","rules":["div-literals"]}]},
+ {"id":"ineq-f","area":"inequalities","start":"5x + 2 <= 3x + 8","answer":"x <= 3","steps":[
+  {"line":"5x + 2 - 3x <= 3x + 8 - 3x","rules":["ineq-sub-both"]},
+  {"line":"2x + 2 <= 8","rules":["add-comm","combine-like-sub","sub-self"]},
+  {"line":"2x <= 8 - 2","rules":["ineq-move-add-left"]},{"line":"2x <= 6","rules":["sub-literals"]},
+  {"line":"x <= 6/2","rules":["ineq-isolate-pos-left"]},{"line":"x <= 3","rules":["div-literals"]}]},
+ {"id":"ineq-g","area":"inequalities","start":"x/2 + 1 < 4","answer":"x < 6","steps":[
+  {"line":"x/2 < 4 - 1","rules":["ineq-move-add-left"]},{"line":"x/2 < 3","rules":["sub-literals"]},
+  {"line":"x/2 * 2 < 3 * 2","rules":["ineq-mul-pos"]},
+  {"line":"x < 6","rules":["mul-comm","mul-by-fraction","cancel-literal","mul-literals"]}]},
+ {"id":"ineq-h","area":"inequalities","start":"-1 < 2x + 1 < 7","answer":"-1 < x < 3","steps":[
+  {"line":"-1 - 1 < 2x + 1 - 1 < 7 - 1","rules":["ineq-sub-both"]},
+  {"line":"-2 < 2x < 6","rules":["add-literals"]},
+  {"line":"-2/2 < 2x/2 < 6/2","rules":["ineq-div-pos"]},
+  {"line":"-1 < x < 3","rules":["div-literals","cancel-literal"]}]},
+ {"id":"ineq-i","area":"inequalities","start":"3 <= 2x - 1 < 9","answer":"2 <= x < 5","steps":[
+  {"line":"3 + 1 <= 2x - 1 + 1 < 9 + 1","rules":["ineq-add-both"]},
+  {"line":"4 <= 2x < 10","rules":["add-literals"]},
+  {"line":"4/2 <= 2x/2 < 10/2","rules":["ineq-div-pos"]},
+  {"line":"2 <= x < 5","rules":["div-literals","cancel-literal"]}]},
+ {"id":"ineq-j","area":"inequalities","start":"5 - x > 2","answer":"x < 3","steps":[
+  {"line":"-x > 2 - 5","rules":["ineq-move-add-right"]},{"line":"-x > -3","rules":["sub-literals"]},
+  {"line":"x < -3/(-1)","rules":["ineq-isolate-neg-right"]},
+  {"line":"x < 3","rules":["div-literals"]}]},
+ {"id":"ineq-k","area":"inequalities","start":"4 - 3x <= 10","answer":"x >= -2","steps":[
+  {"line":"-3x <= 10 - 4","rules":["ineq-move-add-left"]},
+  {"line":"-3x <= 6","rules":["sub-literals"]},
+  {"line":"x >= 6/(-3)","rules":["ineq-isolate-neg-left"]},
+  {"line":"x >= -2","rules":["div-literals"]}]},
+ {"id":"ineq-l","area":"inequalities","start":"x + 1 < x","answer":"none","steps":[
+  {"line":"x + 1 - x < x - x","rules":["ineq-sub-both"]},
+  {"line":"1 < 0","rules":["add-comm","sub-self"]}]},
+ {"id":"ineq-m","area":"inequalities","start":"x - 1 < x","answer":"all","steps":[
+  {"line":"x - 1 - x < x - x","rules":["ineq-sub-both"]},
+  {"line":"-1 < 0","rules":["add-comm","sub-self"]}]},
+ {"id":"ineq-n","area":"inequalities","start":"x^2 < 9","answer":"-3 < x < 3","steps":[
+  {"line":"-3 < x < 3","rules":["ineq-square-below"]}]},
+ {"id":"ineq-o","area":"inequalities","start":"x^2 >= 16","answer":"x <= -4 or x >= 4","steps":[
+  {"line":"x <= -4 or x >= 4","rules":["ineq-square-above"]}]},
+ {"id":"ineq-p","area":"inequalities","start":"x^2 + 1 > 10","answer":"x < -3 or x > 3","steps":[
+  {"line":"x^2 > 10 - 1","rules":["ineq-move-add-right"]},
+  {"line":"x^2 > 9","rules":["sub-literals"]},
+  {"line":"x < -3 or x > 3","rules":["ineq-square-above"]}]},
+ {"id":"ineq-q","area":"inequalities","start":"x^2 < -1","answer":"none","ending":"A square is never negative, so there is no solution.","nudge":"Can a square be negative? Use the buttons below.","steps":[]},
+ {"id":"ineq-r","area":"inequalities","start":"x^2 >= 0","answer":"all","nudge":"Can a square be negative? Use the buttons below.","steps":[]},
+ {"id":"abs-a","area":"absolute","start":"|x - 3| = 5","answer":"8,-2","steps":[
+  {"line":"x - 3 = 5 or x - 3 = -5","rules":["abs-equal"]},
+  {"line":"x = 5 + 3 or x - 3 = -5","rules":["transpose-sub"]},
+  {"line":"x = 8 or x - 3 = -5","rules":["add-literals"]},
+  {"line":"x = 8 or x = -5 + 3","rules":["transpose-sub"]},
+  {"line":"x = 8 or x = -2","rules":["add-literals"]}]},
+ {"id":"abs-b","area":"absolute","start":"2|x| = 6","answer":"3,-3","steps":[
+  {"line":"|x| = 6/2","rules":["isolate-by-division"]},{"line":"|x| = 3","rules":["div-literals"]},
+  {"line":"x = 3 or x = -3","rules":["abs-equal"]}]},
+ {"id":"abs-c","area":"absolute","start":"|2x + 1| = 7","answer":"3,-4","steps":[
+  {"line":"2x + 1 = 7 or 2x + 1 = -7","rules":["abs-equal"]},
+  {"line":"2x = 7 - 1 or 2x + 1 = -7","rules":["transpose-add"]},
+  {"line":"2x = 6 or 2x + 1 = -7","rules":["sub-literals"]},
+  {"line":"x = 6/2 or 2x + 1 = -7","rules":["isolate-by-division"]},
+  {"line":"x = 3 or 2x + 1 = -7","rules":["div-literals"]},
+  {"line":"x = 3 or 2x = -7 - 1","rules":["transpose-add"]},
+  {"line":"x = 3 or 2x = -8","rules":["sub-literals"]},
+  {"line":"x = 3 or x = -8/2","rules":["isolate-by-division"]},
+  {"line":"x = 3 or x = -4","rules":["div-literals"]}]},
+ {"id":"abs-d","area":"absolute","start":"|x| + 4 = 9","answer":"5,-5","steps":[
+  {"line":"|x| = 9 - 4","rules":["transpose-add"]},{"line":"|x| = 5","rules":["sub-literals"]},
+  {"line":"x = 5 or x = -5","rules":["abs-equal"]}]},
+ {"id":"abs-e","area":"absolute","start":"|x + 2| = 0","answer":"-2","steps":[
+  {"line":"x + 2 = 0","rules":["abs-zero"]},{"line":"x = 0 - 2","rules":["transpose-add"]},
+  {"line":"x = -2","rules":["sub-literals"]}]},
+ {"id":"abs-f","area":"absolute","start":"|x| = -4","answer":"none","ending":"An absolute value is never negative, so there is no solution.","nudge":"Can an absolute value be negative? Use the buttons below.","steps":[]},
+ {"id":"abs-g","area":"absolute","start":"|x| < 3","answer":"-3 < x < 3","steps":[
+  {"line":"-3 < x < 3","rules":["abs-less"]}]},
+ {"id":"abs-h","area":"absolute","start":"|x - 1| <= 4","answer":"-3 <= x <= 5","steps":[
+  {"line":"-4 <= x - 1 <= 4","rules":["abs-less"]},
+  {"line":"-4 + 1 <= x - 1 + 1 <= 4 + 1","rules":["ineq-add-both"]},
+  {"line":"-3 <= x <= 5","rules":["add-literals"]}]},
+ {"id":"abs-i","area":"absolute","start":"|x| > 2","answer":"x < -2 or x > 2","steps":[
+  {"line":"x < -2 or x > 2","rules":["abs-more"]}]},
+ {"id":"abs-j","area":"absolute","start":"|2x| >= 6","answer":"x <= -3 or x >= 3","steps":[
+  {"line":"2x <= -6 or 2x >= 6","rules":["abs-more"]},
+  {"line":"x <= -6/2 or 2x >= 6","rules":["ineq-isolate-pos-left"]},
+  {"line":"x <= -3 or 2x >= 6","rules":["div-literals"]},
+  {"line":"x <= -3 or x >= 6/2","rules":["ineq-isolate-pos-right"]},
+  {"line":"x <= -3 or x >= 3","rules":["div-literals"]}]},
+ {"id":"abs-k","area":"absolute","start":"|x| < -2","answer":"none","ending":"An absolute value is never negative, so there is no solution.","nudge":"Can an absolute value be negative? Use the buttons below.","steps":[]},
+ {"id":"abs-l","area":"absolute","start":"|x| >= -1","answer":"all","nudge":"Can an absolute value be negative? Use the buttons below.","steps":[]},
+ {"id":"rad-a","area":"radicals","start":"sqrt(x) = 7","answer":"49","steps":[
+  {"line":"x = 7^2","rules":["radical-square"]},{"line":"x = 49","rules":["square-literal"]}]},
+ {"id":"rad-b","area":"radicals","start":"sqrt(x + 3) = 5","answer":"22","steps":[
+  {"line":"x + 3 = 5^2","rules":["radical-square"]},{"line":"x + 3 = 25","rules":["square-literal"]},
+  {"line":"x = 25 - 3","rules":["transpose-add"]},{"line":"x = 22","rules":["sub-literals"]}]},
+ {"id":"rad-c","area":"radicals","start":"sqrt(2x - 1) = 3","answer":"5","steps":[
+  {"line":"2x - 1 = 3^2","rules":["radical-square"]},
+  {"line":"2x - 1 = 9","rules":["square-literal"]},{"line":"2x = 9 + 1","rules":["transpose-sub"]},
+  {"line":"2x = 10","rules":["add-literals"]},{"line":"x = 10/2","rules":["isolate-by-division"]},
+  {"line":"x = 5","rules":["div-literals"]}]},
+ {"id":"rad-d","area":"radicals","start":"sqrt(x) + 4 = 9","answer":"25","steps":[
+  {"line":"sqrt(x) = 9 - 4","rules":["transpose-add"]},
+  {"line":"sqrt(x) = 5","rules":["sub-literals"]},{"line":"x = 5^2","rules":["radical-square"]},
+  {"line":"x = 25","rules":["square-literal"]}]},
+ {"id":"rad-e","area":"radicals","start":"3sqrt(x) = 12","answer":"16","steps":[
+  {"line":"sqrt(x) = 12/3","rules":["isolate-by-division"]},
+  {"line":"sqrt(x) = 4","rules":["div-literals"]},{"line":"x = 4^2","rules":["radical-square"]},
+  {"line":"x = 16","rules":["square-literal"]}]},
+ {"id":"rad-f","area":"radicals","start":"sqrt(x + 5) = sqrt(2x + 1)","answer":"4","steps":[
+  {"line":"x + 5 = 2x + 1","rules":["radical-both"]},
+  {"line":"x - 2x = 1 - 5","rules":[],"why":"Gather x on the left and numbers on the right."},
+  {"line":"-x = -4","rules":[],"why":"Work out each side."},
+  {"line":"x = 4","rules":[],"why":"Change the sign of both sides."}]},
+ {"id":"rad-g","area":"radicals","start":"sqrt(x + 7) = -2","answer":"none","steps":[]},
+ {"id":"rad-h","area":"radicals","start":"sqrt(x + 2) = x","answer":"2","steps":[
+  {"line":"x + 2 = x^2","rules":["radical-square"],"verdict":"GAINS"},
+  {"line":"x^2 - x - 2 = 0","rules":[],"why":"Take x and 2 from both sides."},
+  {"line":"(x - 2)(x + 1) = 0","rules":["factor-trinomial"]},
+  {"line":"x = 2 or x = -1","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."},
+  {"line":"x = 2","rules":[],"verdict":"LOSES","why":"Test each answer in the first line. x = -1 gives 1 = -1, so it is false, and x = 2 gives 2 = 2."}]},
+ {"id":"rad-i","area":"radicals","start":"sqrt(x + 6) = x","answer":"3","steps":[
+  {"line":"x + 6 = x^2","rules":["radical-square"],"verdict":"GAINS"},
+  {"line":"x^2 - x - 6 = 0","rules":[],"why":"Take x and 6 from both sides."},
+  {"line":"(x - 3)(x + 2) = 0","rules":["factor-trinomial"]},
+  {"line":"x = 3 or x = -2","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."},
+  {"line":"x = 3","rules":[],"verdict":"LOSES","why":"Test each answer in the first line. x = -2 gives 2 = -2, so it is false, and x = 3 gives 3 = 3."}]},
+ {"id":"rad-j","area":"radicals","start":"sqrt(x) = x - 2","answer":"4","steps":[
+  {"line":"x = (x - 2)^2","rules":["radical-square"],"verdict":"GAINS"},
+  {"line":"x = x^2 - 4x + 4","rules":[],"why":"Expand the square on the right."},
+  {"line":"x^2 - 5x + 4 = 0","rules":[],"why":"Take x from both sides, and write the zero on the right."},
+  {"line":"(x - 1)(x - 4) = 0","rules":["factor-trinomial"]},
+  {"line":"x = 1 or x = 4","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."},
+  {"line":"x = 4","rules":[],"verdict":"LOSES","why":"Test each answer in the first line. x = 1 gives 1 = -1, so it is false, and x = 4 gives 2 = 2."}]},
+ {"id":"rad-k","area":"radicals","start":"sqrt(x^2) = 3","answer":"3,-3","steps":[
+  {"line":"|x| = 3","rules":["radical-of-square"]},{"line":"x = 3 or x = -3","rules":["abs-equal"]}]},
+ {"id":"rad-l","area":"radicals","start":"sqrt(x)^2 = 9","answer":"9","steps":[
+  {"line":"x = 9","rules":["radical-squared"]}]},
+ {"id":"rad-m","area":"radicals","start":"sqrt(x) < 3","answer":"0 <= x < 9","steps":[
+  {"line":"0 <= x < 9","rules":[],"why":"A root needs 0 or more under it, and squaring both sides of sqrt(x) < 3 gives x < 9."}]},
+ {"id":"rad-n","area":"radicals","start":"sqrt(x - 1) >= 2","answer":"x >= 5","steps":[
+  {"line":"x - 1 >= 4","rules":[],"why":"Square both sides. Both are 0 or more, so the sign stays."},
+  {"line":"x >= 4 + 1","rules":["ineq-move-sub-right"]},{"line":"x >= 5","rules":["add-literals"]}]},
+ {"id":"poly-a","area":"polynomials","kind":"expression","prompt":"Expand","start":"(x + 2)(x + 3)","answer":"x^2 + 5x + 6","finished":["x^2 + 5x + 6"],"steps":[
+  {"line":"x^2 + 3x + 2x + 6","rules":[],"why":"Multiply each term in the first bracket by each term in the second."},
+  {"line":"x^2 + 5x + 6","rules":[],"why":"Add the like terms."}]},
+ {"id":"poly-b","area":"polynomials","kind":"expression","prompt":"Expand","start":"(x + 1)^3","answer":"x^3 + 3x^2 + 3x + 1","finished":["x^3 + 3x^2 + 3x + 1"],"steps":[
+  {"line":"(x + 1)(x + 1)^2","rules":["cube-as-product"]},
+  {"line":"(x + 1)(x^2 + 2x + 1)","rules":[],"why":"Expand the square."},
+  {"line":"x^3 + 2x^2 + x + x^2 + 2x + 1","rules":[],"why":"Multiply each term in the first bracket by each term in the second."},
+  {"line":"x^3 + 3x^2 + 3x + 1","rules":[],"why":"Add the like terms."}]},
+ {"id":"poly-c","area":"polynomials","kind":"expression","prompt":"Factor","start":"x^2 - 5x + 6","answer":"(x - 2)(x - 3)","finished":["(x - 2)(x - 3)"],"steps":[
+  {"line":"(x - 2)(x - 3)","rules":["factor-trinomial"]}]},
+ {"id":"poly-d","area":"polynomials","kind":"expression","prompt":"Factor","start":"x^3 - 8","answer":"(x - 2)(x^2 + 2x + 4)","finished":["(x - 2)(x^2 + 2x + 4)"],"steps":[
+  {"line":"(x - 2)(x^2 + 2x + 4)","rules":["difference-of-cubes"]}]},
+ {"id":"poly-e","area":"polynomials","kind":"expression","prompt":"Factor","start":"x^3 + 27","answer":"(x + 3)(x^2 - 3x + 9)","finished":["(x + 3)(x^2 - 3x + 9)"],"steps":[
+  {"line":"(x + 3)(x^2 - 3x + 9)","rules":["sum-of-cubes"]}]},
+ {"id":"poly-f","area":"polynomials","kind":"expression","prompt":"Factor","start":"x^3 + 2x^2 + 3x + 6","answer":"(x^2 + 3)(x + 2)","finished":["(x^2 + 3)(x + 2)"],"steps":[
+  {"line":"x^2(x + 2) + 3(x + 2)","rules":[],"why":"Group the first two terms and the last two, and take out what each group shares."},
+  {"line":"(x^2 + 3)(x + 2)","rules":["factor-common"]}]},
+ {"id":"poly-g","area":"polynomials","kind":"expression","prompt":"Factor","start":"2x^3 - 8x","answer":"2x(x - 2)(x + 2)","finished":["2x(x - 2)(x + 2)"],"steps":[
+  {"line":"2x(x^2 - 4)","rules":[],"why":"Take out 2x, which every term shares."},
+  {"line":"2x(x - 2)(x + 2)","rules":[],"why":"x^2 - 4 is a difference of two squares."}]},
+ {"id":"poly-h","area":"polynomials","start":"x^3 - 4x = 0","answer":"0,2,-2","steps":[
+  {"line":"x(x^2 - 4) = 0","rules":[],"why":"Take out x, which every term shares."},
+  {"line":"x(x - 2)(x + 2) = 0","rules":[],"why":"x^2 - 4 is a difference of two squares."},
+  {"line":"x = 0 or x = 2 or x = -2","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."}]},
+ {"id":"poly-i","area":"polynomials","start":"x^3 - 8 = 0","answer":"2","steps":[
+  {"line":"(x - 2)(x^2 + 2x + 4) = 0","rules":["difference-of-cubes"]},
+  {"line":"x = 2","rules":[],"why":"x - 2 = 0 gives 2. The other factor has a negative number under the root in the quadratic formula, so it gives no real answer."}]},
+ {"id":"poly-j","area":"polynomials","start":"x^4 - 5x^2 + 4 = 0","answer":"1,-1,2,-2","steps":[
+  {"line":"(x^2 - 1)(x^2 - 4) = 0","rules":[],"why":"Read it as a quadratic in x^2: two numbers that multiply to 4 and add to -5."},
+  {"line":"x^2 = 1 or x^2 = 4","rules":[],"why":"A product is zero only when a factor is zero."},
+  {"line":"x = 1 or x = -1 or x = 2 or x = -2","rules":[],"why":"Each square has two roots."}]},
+ {"id":"poly-k","area":"polynomials","start":"x^3 - 6x^2 + 11x - 6 = 0","answer":"1,2,3","steps":[
+  {"line":"(x - 1)(x^2 - 5x + 6) = 0","rules":[],"why":"x = 1 makes this 0, so x - 1 is a factor. Divide it out."},
+  {"line":"(x - 1)(x - 2)(x - 3) = 0","rules":[],"why":"Factor the quadratic."},
+  {"line":"x = 1 or x = 2 or x = 3","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."}]},
+ {"id":"poly-l","area":"polynomials","start":"x^3 + 2x^2 - x - 2 = 0","answer":"1,-1,-2","steps":[
+  {"line":"x^2(x + 2) - (x + 2) = 0","rules":[],"why":"Group the first two terms and the last two."},
+  {"line":"(x^2 - 1)(x + 2) = 0","rules":[],"why":"Take out x + 2, which both groups share."},
+  {"line":"(x - 1)(x + 1)(x + 2) = 0","rules":[],"why":"x^2 - 1 is a difference of two squares."},
+  {"line":"x = 1 or x = -1 or x = -2","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."}]},
+ {"id":"poly-m","area":"polynomials","start":"(x - 1)(x - 2)(x - 3) > 0","answer":"1 < x < 2 or x > 3","steps":[
+  {"line":"1 < x < 2 or x > 3","rules":[],"why":"The factors change sign at 1, 2 and 3. Test a number in each gap: the product is above 0 between 1 and 2, and above 3."}]},
+ {"id":"poly-n","area":"polynomials","kind":"expression","prompt":"Divide","start":"(x^2 + 5x + 6)/(x + 2)","answer":"x + 3","finished":["x + 3"],"steps":[
+  {"line":"((x + 2)(x + 3))/(x + 2)","rules":[],"why":"Factor the top."},
+  {"line":"x + 3","rules":[],"why":"Cancel x + 2. This holds wherever x is not -2."}]},
+ {"id":"rat-a","area":"rational","kind":"expression","prompt":"Simplify","start":"(x^2 - 1)/(x - 1)","answer":"x + 1","finished":["x + 1"],"steps":[
+  {"line":"((x - 1)(x + 1))/(x - 1)","rules":[],"why":"Factor the top: it is a difference of two squares."},
+  {"line":"x + 1","rules":[],"why":"Cancel x - 1. This holds wherever x is not 1."}]},
+ {"id":"rat-b","area":"rational","kind":"expression","prompt":"Simplify","start":"(x^2 + 5x + 6)/(x^2 + 3x + 2)","answer":"(x + 3)/(x + 1)","finished":["(x + 3)/(x + 1)"],"steps":[
+  {"line":"((x + 2)(x + 3))/((x + 1)(x + 2))","rules":[],"why":"Factor the top and the bottom."},
+  {"line":"(x + 3)/(x + 1)","rules":[],"why":"Cancel x + 2. This holds wherever x is not -2."}]},
+ {"id":"rat-c","area":"rational","kind":"expression","prompt":"Add","start":"1/x + 2/x","answer":"3/x","finished":["3/x"],"steps":[
+  {"line":"(1 + 2)/x","rules":["add-same-denom"]},{"line":"3/x","rules":["add-literals"]}]},
+ {"id":"rat-d","area":"rational","kind":"expression","prompt":"Add","start":"1/x + 1/(x + 1)","answer":"(2x + 1)/(x(x + 1))","finished":["(2x + 1)/(x(x + 1))","(2x + 1)/(x^2 + x)"],"steps":[
+  {"line":"(x + 1)/(x(x + 1)) + x/(x(x + 1))","rules":[],"why":"Write both over the common denominator x(x + 1)."},
+  {"line":"(x + 1 + x)/(x(x + 1))","rules":[],"why":"Add the tops."},
+  {"line":"(2x + 1)/(x(x + 1))","rules":[],"why":"Add the like terms."}]},
+ {"id":"rat-e","area":"rational","kind":"expression","prompt":"Subtract","start":"3/(x - 1) - 2/(x + 1)","answer":"(x + 5)/((x - 1)(x + 1))","finished":["(x + 5)/((x - 1)(x + 1))","(x + 5)/(x^2 - 1)"],"steps":[
+  {"line":"(3(x + 1) - 2(x - 1))/((x - 1)(x + 1))","rules":[],"why":"Write both over the common denominator (x - 1)(x + 1)."},
+  {"line":"(3x + 3 - 2x + 2)/((x - 1)(x + 1))","rules":[],"why":"Multiply out the top."},
+  {"line":"(x + 5)/((x - 1)(x + 1))","rules":[],"why":"Add the like terms."}]},
+ {"id":"rat-f","area":"rational","kind":"expression","prompt":"Multiply","start":"(x/2) * (4/x^2)","answer":"2/x","finished":["2/x"],"steps":[
+  {"line":"(x * 4)/(2 * x^2)","rules":["mul-fractions"]},
+  {"line":"2/x","rules":[],"why":"Cancel 2x from the top and the bottom."}]},
+ {"id":"rat-g","area":"rational","kind":"expression","prompt":"Simplify","start":"(1/x)/(1/(x + 1))","answer":"(x + 1)/x","finished":["(x + 1)/x"],"steps":[
+  {"line":"(1/x) * ((x + 1)/1)","rules":[],"why":"To divide by a fraction, multiply by it turned over."},
+  {"line":"(x + 1)/x","rules":[],"why":"Multiply the tops and the bottoms. This holds wherever x is not -1."}]},
+ {"id":"rat-h","area":"rational","kind":"expression","prompt":"Simplify","start":"((x^2 - 4)/(x + 2)) * (1/(x - 2))","answer":"1","finished":["1"],"steps":[
+  {"line":"(((x - 2)(x + 2))/(x + 2)) * (1/(x - 2))","rules":[],"why":"Factor the top of the first fraction."},
+  {"line":"(x - 2) * (1/(x - 2))","rules":[],"why":"Cancel x + 2."},
+  {"line":"1","rules":[],"why":"Cancel x - 2."}]},
+ {"id":"rat-i","area":"rational","kind":"expression","prompt":"Simplify","start":"(x + 1/x)/(x - 1/x)","answer":"(x^2 + 1)/(x^2 - 1)","finished":["(x^2 + 1)/(x^2 - 1)"],"steps":[
+  {"line":"((x^2 + 1)/x)/((x^2 - 1)/x)","rules":[],"why":"Write the top and the bottom as one fraction each."},
+  {"line":"(x^2 + 1)/(x^2 - 1)","rules":[],"why":"Dividing fractions with the same bottom leaves the tops."}]},
+ {"id":"rat-j","area":"rational","kind":"expression","prompt":"Add","start":"2x/(x^2 - 1) + 1/(x + 1)","answer":"(3x - 1)/(x^2 - 1)","finished":["(3x - 1)/(x^2 - 1)","(3x - 1)/((x - 1)(x + 1))"],"steps":[
+  {"line":"2x/(x^2 - 1) + (x - 1)/(x^2 - 1)","rules":[],"why":"Write both over x^2 - 1, because (x - 1)(x + 1) is x^2 - 1."},
+  {"line":"(2x + x - 1)/(x^2 - 1)","rules":[],"why":"Add the tops."},
+  {"line":"(3x - 1)/(x^2 - 1)","rules":[],"why":"Add the like terms."}]},
+ {"id":"rat-k","area":"rational","start":"1/(x - 2) + 1/(x + 2) = 4/(x^2 - 4)","answer":"none","steps":[
+  {"line":"(x + 2) + (x - 2) = 4","rules":[],"why":"Multiply both sides by (x - 2)(x + 2).","verdict":"GAINS"},
+  {"line":"2x = 4","rules":[],"why":"Add the like terms."},
+  {"line":"x = 2","rules":[],"why":"Divide both sides by 2."}]},
+ {"id":"rat-l","area":"rational","start":"x/(x - 3) = 3/(x - 3) + 2","answer":"none","steps":[
+  {"line":"x = 3 + 2(x - 3)","rules":[],"why":"Multiply both sides by x - 3.","verdict":"GAINS"},
+  {"line":"x = 2x - 3","rules":[],"why":"Multiply out and add the numbers."},
+  {"line":"x = 3","rules":[],"why":"Gather x on one side."}]},
+ {"id":"rat-m","area":"rational","start":"1/x + 1/(x + 2) = 3/4","answer":"2,-4/3","steps":[
+  {"line":"4(x + 2) + 4x = 3x(x + 2)","rules":[],"why":"Multiply both sides by 4x(x + 2)."},
+  {"line":"8x + 8 = 3x^2 + 6x","rules":[],"why":"Multiply out and add the like terms."},
+  {"line":"3x^2 - 2x - 8 = 0","rules":[],"why":"Move every term to one side."},
+  {"line":"(x - 2)(3x + 4) = 0","rules":[],"why":"Factor."},
+  {"line":"x = 2 or x = -4/3","rules":[],"why":"A product is zero only when a factor is zero, so solve each one."}]},
+ {"id":"rat-n","area":"rational","start":"(x + 1)/(x - 1) > 0","answer":"x < -1 or x > 1","steps":[
+  {"line":"x < -1 or x > 1","rules":[],"why":"The top is 0 at -1 and the bottom at 1. Test a number in each gap: the fraction is above 0 below -1 and above 1."}]},
+ {"id":"sys-a","area":"systems","start":"x + y = 5, x - y = 1","answer":"x = 3, y = 2","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"2x = 6","rules":[],"why":"Add the equations, so y cancels."},
+  {"line":"x = 3","rules":[],"why":"Divide both sides by 2."},
+  {"line":"3 + y = 5","rules":[],"why":"Put x = 3 into the first equation."},
+  {"line":"y = 2","rules":[],"why":"Subtract 3 from both sides."},
+  {"line":"x = 3, y = 2","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-b","area":"systems","start":"y = 2x, x + y = 9","answer":"x = 3, y = 6","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"x + 2x = 9","rules":[],"why":"Put 2x in place of y in the second equation."},
+  {"line":"3x = 9","rules":[],"why":"Add the like terms."},
+  {"line":"x = 3","rules":[],"why":"Divide both sides by 3."},
+  {"line":"y = 6","rules":[],"why":"Put x = 3 into y = 2x."},
+  {"line":"x = 3, y = 6","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-c","area":"systems","start":"2x + y = 7, x - y = 2","answer":"x = 3, y = 1","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"3x = 9","rules":[],"why":"Add the equations, so y cancels."},
+  {"line":"x = 3","rules":[],"why":"Divide both sides by 3."},
+  {"line":"2(3) + y = 7","rules":[],"why":"Put x = 3 into the first equation."},
+  {"line":"y = 1","rules":[],"why":"Work out 2(3), then subtract 6."},
+  {"line":"x = 3, y = 1","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-d","area":"systems","start":"3x + 2y = 12, x + 2y = 8","answer":"x = 2, y = 3","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"2x = 4","rules":[],"why":"Subtract the second equation from the first, so y cancels."},
+  {"line":"x = 2","rules":[],"why":"Divide both sides by 2."},
+  {"line":"2 + 2y = 8","rules":[],"why":"Put x = 2 into the second equation."},
+  {"line":"y = 3","rules":[],"why":"Subtract 2, then divide by 2."},
+  {"line":"x = 2, y = 3","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-e","area":"systems","start":"y = x + 1, y = 2x - 3","answer":"x = 4, y = 5","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"x + 1 = 2x - 3","rules":[],"why":"Both equal y, so they equal each other."},
+  {"line":"x = 4","rules":[],"why":"Take x from both sides, then add 3."},
+  {"line":"y = 5","rules":[],"why":"Put x = 4 into y = x + 1."},
+  {"line":"x = 4, y = 5","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-f","area":"systems","start":"2x + 3y = 8, 3x + 2y = 7","answer":"x = 1, y = 2","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"6x + 9y = 24, 6x + 4y = 14","rules":[],"why":"Multiply the first equation by 3 and the second by 2, so the x terms match."},
+  {"line":"5y = 10","rules":[],"why":"Subtract, so x cancels."},
+  {"line":"y = 2","rules":[],"why":"Divide both sides by 5."},
+  {"line":"2x + 6 = 8","rules":[],"why":"Put y = 2 into the first equation."},
+  {"line":"x = 1","rules":[],"why":"Subtract 6, then divide by 2."},
+  {"line":"x = 1, y = 2","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-g","area":"systems","start":"x + y = 1, 2x - y = 1/2","answer":"x = 1/2, y = 1/2","kind":"system","vars":"xy","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"3x = 3/2","rules":[],"why":"Add the equations, so y cancels."},
+  {"line":"x = 1/2","rules":[],"why":"Divide both sides by 3."},
+  {"line":"1/2 + y = 1","rules":[],"why":"Put x = 1/2 into the first equation."},
+  {"line":"y = 1/2","rules":[],"why":"Subtract 1/2 from both sides."},
+  {"line":"x = 1/2, y = 1/2","rules":[],"why":"Write both values together."}]},
+ {"id":"sys-h","area":"systems","start":"x + y = 2, x + y = 5","answer":"none","kind":"system","vars":"xy","ask":"Solve this system, one line at a time.","ending":"This line is never true, so no point fits both equations: there is no solution.","steps":[
+  {"line":"0 = 3","rules":[],"why":"Subtract the first equation from the second."}]},
+ {"id":"sys-i","area":"systems","start":"y = 2x + 1, y = 2x + 4","answer":"none","kind":"system","vars":"xy","ask":"Solve this system, one line at a time.","ending":"This line is never true, so no point fits both equations: there is no solution.","steps":[
+  {"line":"2x + 1 = 2x + 4","rules":[],"why":"Both equal y, so they equal each other."},
+  {"line":"1 = 4","rules":[],"why":"Take 2x from both sides."}]},
+ {"id":"sys-j","area":"systems","start":"x + y = 3, 2x + 2y = 6","answer":"all","kind":"system","vars":"xy","ask":"Solve this system, one line at a time.","ending":"This line is always true, so the equations say the same thing: there are infinitely many solutions.","steps":[
+  {"line":"2x + 2y = 6","rules":[],"why":"Multiply the first equation by 2."},
+  {"line":"0 = 0","rules":[],"why":"Subtract this from the second equation."}]},
+ {"id":"sys-k","area":"systems","start":"y = 3x - 1, 6x - 2y = 2","answer":"all","kind":"system","vars":"xy","ask":"Solve this system, one line at a time.","ending":"This line is always true, so the equations say the same thing: there are infinitely many solutions.","steps":[
+  {"line":"6x - 2(3x - 1) = 2","rules":[],"why":"Put 3x - 1 in place of y in the second equation."},
+  {"line":"2 = 2","rules":[],"why":"Multiply out the bracket. The x terms cancel."}]},
+ {"id":"sys-l","area":"systems","start":"x + y + z = 6, y + z = 5, z = 3","answer":"x = 1, y = 2, z = 3","kind":"system","vars":"xyz","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"y + 3 = 5","rules":[],"why":"Put z = 3 into the second equation."},
+  {"line":"y = 2","rules":[],"why":"Subtract 3 from both sides."},
+  {"line":"x + 2 + 3 = 6","rules":[],"why":"Put y = 2 and z = 3 into the first equation."},
+  {"line":"x = 1","rules":[],"why":"Subtract 5 from both sides."},
+  {"line":"x = 1, y = 2, z = 3","rules":[],"why":"Write all three values together."}]},
+ {"id":"sys-m","area":"systems","start":"x + y + z = 6, x - y = -1, y - z = -1","answer":"x = 1, y = 2, z = 3","kind":"system","vars":"xyz","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"x = y - 1","rules":[],"why":"Add y to both sides of the second equation."},
+  {"line":"z = y + 1","rules":[],"why":"Rearrange the third equation."},
+  {"line":"(y - 1) + y + (y + 1) = 6","rules":[],"why":"Put both into the first equation."},
+  {"line":"3y = 6","rules":[],"why":"Add the like terms."},
+  {"line":"y = 2","rules":[],"why":"Divide both sides by 3."},
+  {"line":"x = 1","rules":[],"why":"Put y = 2 into x = y - 1."},
+  {"line":"z = 3","rules":[],"why":"Put y = 2 into z = y + 1."},
+  {"line":"x = 1, y = 2, z = 3","rules":[],"why":"Write all three values together."}]},
+ {"id":"sys-n","area":"systems","start":"2a + b = 5, a - b = 1","answer":"a = 2, b = 1","kind":"system","vars":"ab","ask":"Solve this system, one line at a time. Finish with every value on one line, separated by commas.","steps":[
+  {"line":"3a = 6","rules":[],"why":"Add the equations, so b cancels."},
+  {"line":"a = 2","rules":[],"why":"Divide both sides by 3."},
+  {"line":"4 + b = 5","rules":[],"why":"Put a = 2 into the first equation."},
+  {"line":"b = 1","rules":[],"why":"Subtract 4 from both sides."},
+  {"line":"a = 2, b = 1","rules":[],"why":"Write both values together."}]},
+ {"id":"cpx-a","area":"complex","start":"(2 + 3i) + (1 - i)","answer":"3 + 2i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"2 + 1 + 3i - i","rules":[],"why":"Take off the brackets."},
+  {"line":"3 + 2i","rules":[],"why":"Add the real parts, then the i parts."}]},
+ {"id":"cpx-b","area":"complex","start":"(5 + 2i) - (3 - 4i)","answer":"2 + 6i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"5 + 2i - 3 + 4i","rules":[],"why":"Taking away a negative adds it."},
+  {"line":"2 + 6i","rules":[],"why":"Add the real parts, then the i parts."}]},
+ {"id":"cpx-c","area":"complex","start":"i^2 + 3","answer":"2","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"-1 + 3","rules":[],"why":"i^2 is -1."},{"line":"2","rules":[],"why":"Add."}]},
+ {"id":"cpx-d","area":"complex","start":"(2 + i)(3 - i)","answer":"7 + i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"6 - 2i + 3i - i^2","rules":[],"why":"Multiply each term by each term."},
+  {"line":"6 + i + 1","rules":[],"why":"Add the i terms, and use i^2 = -1."},
+  {"line":"7 + i","rules":[],"why":"Add the real parts."}]},
+ {"id":"cpx-e","area":"complex","start":"(1 + 2i)(1 - 2i)","answer":"5","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"1 - 4i^2","rules":[],"why":"This is a difference of squares."},
+  {"line":"1 + 4","rules":[],"why":"Use i^2 = -1."},{"line":"5","rules":[],"why":"Add."}]},
+ {"id":"cpx-f","area":"complex","start":"i^3","answer":"-i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"i^2 * i","rules":[],"why":"Split off a square."},
+  {"line":"-1 * i","rules":[],"why":"Use i^2 = -1."},{"line":"-i","rules":[],"why":"Multiply."}]},
+ {"id":"cpx-g","area":"complex","start":"(1 + i)/(1 - i)","answer":"i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"((1 + i)(1 + i))/((1 - i)(1 + i))","rules":[],"why":"Multiply top and bottom by the conjugate of the bottom, 1 + i."},
+  {"line":"(2i)/2","rules":[],"why":"Multiply out: the top is 2i and the bottom is 2."},
+  {"line":"i","rules":[],"why":"Divide."}]},
+ {"id":"cpx-h","area":"complex","start":"5/(2 + i)","answer":"2 - i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"(5(2 - i))/((2 + i)(2 - i))","rules":[],"why":"Multiply top and bottom by the conjugate of the bottom, 2 - i."},
+  {"line":"(10 - 5i)/5","rules":[],"why":"Multiply out: the bottom is 4 + 1."},
+  {"line":"2 - i","rules":[],"why":"Divide each term by 5."}]},
+ {"id":"cpx-i","area":"complex","start":"|3 + 4i|","answer":"5","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"sqrt(3^2 + 4^2)","rules":[],"why":"The size of a + bi is the square root of a^2 + b^2."},
+  {"line":"sqrt(25)","rules":[],"why":"Add the squares."},
+  {"line":"5","rules":[],"why":"Take the root."}]},
+ {"id":"cpx-j","area":"complex","start":"sqrt(-9) + 1","answer":"1 + 3i","kind":"complex","form":"number","ask":"Work this out, one line at a time. Finish in the form a + bi.","steps":[
+  {"line":"3i + 1","rules":[],"why":"The square root of -9 is 3i."},
+  {"line":"1 + 3i","rules":[],"why":"Write the real part first."}]},
+ {"id":"cpx-k","area":"complex","start":"x^2 + 4 = 0","answer":"x = 2i or x = -2i","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"x^2 = -4","rules":[],"why":"Subtract 4 from both sides."},
+  {"line":"x = 2i or x = -2i","rules":[],"why":"Take both square roots of -4."}]},
+ {"id":"cpx-l","area":"complex","start":"x^2 + 9 = 0","answer":"x = ±3i","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"x^2 = -9","rules":[],"why":"Subtract 9 from both sides."},
+  {"line":"x = ±3i","rules":[],"why":"Take both square roots of -9."}]},
+ {"id":"cpx-m","area":"complex","start":"x^2 - 2x + 5 = 0","answer":"x = 1 ± 2i","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"x = (2 ± sqrt(-16))/2","rules":[],"why":"Use the quadratic formula. The number under the root is negative."},
+  {"line":"x = (2 ± 4i)/2","rules":[],"why":"The square root of -16 is 4i."},
+  {"line":"x = 1 ± 2i","rules":[],"why":"Divide each term by 2."}]},
+ {"id":"cpx-n","area":"complex","start":"x^2 + x + 1 = 0","answer":"x = (-1 ± i sqrt(3))/2","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"x = (-1 ± sqrt(-3))/2","rules":[],"why":"Use the quadratic formula. The number under the root is negative."},
+  {"line":"x = (-1 ± i sqrt(3))/2","rules":[],"why":"The square root of -3 is i sqrt(3)."}]},
+ {"id":"cpx-o","area":"complex","start":"2x + 3i = 1","answer":"x = (1 - 3i)/2","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"2x = 1 - 3i","rules":[],"why":"Subtract 3i from both sides."},
+  {"line":"x = (1 - 3i)/2","rules":[],"why":"Divide both sides by 2."}]},
+ {"id":"cpx-p","area":"complex","start":"x^3 - 1 = 0","answer":"x = 1 or x = (-1 + i sqrt(3))/2 or x = (-1 - i sqrt(3))/2","kind":"complex","form":"line","ask":"Solve this over the complex numbers, one line at a time. Finish with x = a + bi.","steps":[
+  {"line":"(x - 1)(x^2 + x + 1) = 0","rules":[],"why":"This is a difference of two cubes."},
+  {"line":"x - 1 = 0 or x^2 + x + 1 = 0","rules":[],"why":"One of the factors has to be zero."},
+  {"line":"x = 1 or x = (-1 + i sqrt(3))/2 or x = (-1 - i sqrt(3))/2","rules":[],"why":"Solve each one. The quadratic has two complex roots."}]},
+ {"id":"exp-a","area":"exponents","start":"2^(-3)","answer":"1/8","kind":"log","form":"value","finished":["1/8"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"1/2^3","rules":[],"why":"A negative power means one over the positive power."},
+  {"line":"1/8","rules":[],"why":"Work out 2^3."}]},
+ {"id":"exp-b","area":"exponents","start":"x^2 * x^3","answer":"x^5","kind":"log","form":"value","finished":["x^5"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"x^5","rules":[],"why":"Multiplying powers of one base adds the exponents."}]},
+ {"id":"exp-c","area":"exponents","start":"(x^2)^3","answer":"x^6","kind":"log","form":"value","finished":["x^6"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"x^6","rules":[],"why":"A power of a power multiplies the exponents."}]},
+ {"id":"exp-d","area":"exponents","start":"x^5/x^2","answer":"x^3","kind":"log","form":"value","finished":["x^3"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"x^3","rules":[],"why":"Dividing powers of one base subtracts the exponents."}]},
+ {"id":"exp-e","area":"exponents","start":"8^(1/3) * 2","answer":"4","kind":"log","form":"value","finished":["4"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"2 * 2","rules":[],"why":"The power 1/3 is the cube root, and the cube root of 8 is 2."},
+  {"line":"4","rules":[],"why":"Multiply."}]},
+ {"id":"exp-f","area":"exponents","start":"x^(-2) * x^5","answer":"x^3","kind":"log","form":"value","finished":["x^3"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"x^3","rules":[],"why":"Add the exponents: -2 + 5 = 3."}]},
+ {"id":"exp-g","area":"exponents","start":"5^0 + 1","answer":"2","kind":"log","form":"value","finished":["2"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"1 + 1","rules":[],"why":"Any number but 0 to the power 0 is 1."},
+  {"line":"2","rules":[],"why":"Add."}]},
+ {"id":"exp-h","area":"exponents","start":"4^(3/2)","answer":"8","kind":"log","form":"value","finished":["8"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"2^3","rules":[],"why":"The power 1/2 is the square root, so take the root of 4, then cube."},
+  {"line":"8","rules":[],"why":"Work out 2^3."}]},
+ {"id":"log-a","area":"logarithms","start":"log2(8) + log2(4)","answer":"5","kind":"log","form":"value","finished":["5"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"3 + 2","rules":[],"why":"2^3 is 8 and 2^2 is 4."},{"line":"5","rules":[],"why":"Add."}]},
+ {"id":"log-b","area":"logarithms","start":"log3(81)","answer":"4","kind":"log","form":"value","finished":["4"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"log3(3^4)","rules":[],"why":"Write 81 as a power of 3."},
+  {"line":"4","rules":[],"why":"A log undoes a power of its own base."}]},
+ {"id":"log-c","area":"logarithms","start":"log2(3) + log2(5)","answer":"log2(15)","kind":"log","form":"value","finished":["log2(15)"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"log2(15)","rules":[],"why":"Adding logs of one base multiplies what is inside."}]},
+ {"id":"log-d","area":"logarithms","start":"log(1000) - log(10)","answer":"2","kind":"log","form":"value","finished":["2"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"3 - 1","rules":[],"why":"With no base written the base is 10, and 10^3 is 1000."},
+  {"line":"2","rules":[],"why":"Subtract."}]},
+ {"id":"log-e","area":"logarithms","start":"ln(e^3)","answer":"3","kind":"log","form":"value","finished":["3"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"3","rules":[],"why":"ln is the log with base e, so it undoes e^3."}]},
+ {"id":"log-f","area":"logarithms","start":"log2(x) + log2(3)","answer":"log2(3x)","kind":"log","form":"value","finished":["log2(3x)","log2(x * 3)"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"log2(3x)","rules":[],"why":"Adding logs of one base multiplies what is inside."}]},
+ {"id":"log-g","area":"logarithms","start":"log2(x) - log2(5)","answer":"log2(x/5)","kind":"log","form":"value","finished":["log2(x/5)"],"ask":"Simplify this, one line at a time.","steps":[
+  {"line":"log2(x/5)","rules":[],"why":"Subtracting logs of one base divides what is inside."}]},
+ {"id":"lge-a","area":"logarithms","start":"2^x = 8","answer":"3","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"2^x = 2^3","rules":[],"why":"Write 8 as a power of 2."},
+  {"line":"x = 3","rules":[],"why":"The bases match, so the exponents match."}]},
+ {"id":"lge-b","area":"logarithms","start":"3^(x - 1) = 27","answer":"4","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"3^(x - 1) = 3^3","rules":[],"why":"Write 27 as a power of 3."},
+  {"line":"x - 1 = 3","rules":[],"why":"The bases match, so the exponents match."},
+  {"line":"x = 4","rules":[],"why":"Add 1 to both sides."}]},
+ {"id":"lge-c","area":"logarithms","start":"4^x = 8","answer":"3/2","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"2^(2x) = 2^3","rules":[],"why":"Write both sides as powers of 2."},
+  {"line":"2x = 3","rules":[],"why":"The bases match, so the exponents match."},
+  {"line":"x = 3/2","rules":[],"why":"Divide both sides by 2."}]},
+ {"id":"lge-d","area":"logarithms","start":"2^x = 5","answer":"log2(5)","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x = log2(5)","rules":[],"why":"5 is not a whole power of 2, so take the log with base 2 of both sides."}]},
+ {"id":"lge-e","area":"logarithms","start":"e^x = 7","answer":"ln(7)","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x = ln(7)","rules":[],"why":"Take ln of both sides. It undoes the power of e."}]},
+ {"id":"lge-f","area":"logarithms","start":"5 * 3^x = 45","answer":"2","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"3^x = 9","rules":[],"why":"Divide both sides by 5."},
+  {"line":"x = 2","rules":[],"why":"9 is 3^2."}]},
+ {"id":"lge-g","area":"logarithms","start":"log2(x) = 3","answer":"8","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x = 2^3","rules":[],"why":"A log says what power to use, so x is 2 to that power."},
+  {"line":"x = 8","rules":[],"why":"Work out 2^3."}]},
+ {"id":"lge-h","area":"logarithms","start":"ln(x) = 2","answer":"e^2","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x = e^2","rules":[],"why":"ln is the log with base e, so x is e to that power."}]},
+ {"id":"lge-i","area":"logarithms","start":"log2(x) + log2(x - 2) = 3","answer":"4","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"log2(x(x - 2)) = 3","rules":[],"why":"Adding logs of one base multiplies what is inside."},
+  {"line":"x(x - 2) = 8","rules":[],"why":"Change the log to a power: 2^3 is 8."},
+  {"line":"x = 4 or x = -2","rules":[],"why":"Solve the quadratic x^2 - 2x - 8 = 0."},
+  {"line":"x = 4","rules":[],"why":"Test both in the first line: log2(-2) has no value, so -2 is not an answer."}]},
+ {"id":"lge-j","area":"logarithms","start":"log3(x + 1) = 2","answer":"8","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x + 1 = 9","rules":[],"why":"Change the log to a power: 3^2 is 9."},
+  {"line":"x = 8","rules":[],"why":"Subtract 1 from both sides."}]},
+ {"id":"lge-k","area":"logarithms","start":"2^x > 8","answer":"x > 3","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"2^x > 2^3","rules":[],"why":"Write 8 as a power of 2."},
+  {"line":"x > 3","rules":[],"why":"A base above 1 keeps the sign the same way."}]},
+ {"id":"lge-l","area":"logarithms","start":"(1/2)^x > 4","answer":"x < -2","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"2^(-x) > 2^2","rules":[],"why":"Write both sides as powers of 2."},
+  {"line":"-x > 2","rules":[],"why":"A base above 1 keeps the sign the same way."},
+  {"line":"x < -2","rules":[],"why":"Multiply by -1, which turns the sign."}]},
+ {"id":"lge-m","area":"logarithms","start":"log2(x) < 3","answer":"0 < x < 8","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"0 < x < 8","rules":[],"why":"Inside a log must be above 0, and 2^3 is 8."}]},
+ {"id":"lge-n","area":"logarithms","start":"2^x = -4","answer":"none","kind":"log","ask":"Solve this, one line at a time.","ending":"A power of 2 is always above zero, so it is never -4: there is no solution.","nudge":"Is a power of 2 ever below zero? Use the buttons below.","steps":[]},
+ {"id":"lge-o","area":"logarithms","start":"3^x = 7","answer":"ln(7)/ln(3)","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x ln(3) = ln(7)","rules":[],"why":"Take ln of both sides. The power comes down in front."},
+  {"line":"x = ln(7)/ln(3)","rules":[],"why":"Divide both sides by ln(3)."}]},
+ {"id":"lge-p","area":"logarithms","start":"log(x) = 2","answer":"100","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"x = 10^2","rules":[],"why":"With no base written the base is 10."},
+  {"line":"x = 100","rules":[],"why":"Work out 10^2."}]},
+ {"id":"lge-q","area":"logarithms","start":"log2(x) - log2(3) = 1","answer":"6","kind":"log","ask":"Solve this, one line at a time.","steps":[
+  {"line":"log2(x/3) = 1","rules":[],"why":"Subtracting logs of one base divides what is inside."},
+  {"line":"x/3 = 2","rules":[],"why":"Change the log to a power: 2^1 is 2."},
+  {"line":"x = 6","rules":[],"why":"Multiply both sides by 3."}]},
+ {"id":"fn-a","area":"functions","start":"2(3) + 1","answer":"7","kind":"expression","finished":["7"],"ask":"For f(x) = 2x + 1, work out f(3). Finish on one number.","graph":"2x + 1","steps":[
+  {"line":"6 + 1","rules":[],"why":"Multiply first."},{"line":"7","rules":[],"why":"Add."}]},
+ {"id":"fn-b","area":"functions","start":"(-3)^2 - 4","answer":"5","kind":"expression","finished":["5"],"ask":"For f(x) = x^2 - 4, work out f(-3). Finish on one number.","graph":"x^2 - 4","steps":[
+  {"line":"9 - 4","rules":[],"why":"The square of -3 is 9."},
+  {"line":"5","rules":[],"why":"Subtract."}]},
+ {"id":"fn-c","area":"functions","start":"3(2 + 1) - 2","answer":"7","kind":"expression","finished":["7"],"ask":"For f(x) = 3x - 2 and g(x) = x + 1, work out f(g(2)). Finish on one number.","steps":[
+  {"line":"3(3) - 2","rules":[],"why":"Work out g(2) first. It is 3."},
+  {"line":"9 - 2","rules":[],"why":"Multiply."},{"line":"7","rules":[],"why":"Subtract."}]},
+ {"id":"fn-d","area":"functions","start":"(7 - 3)/(4 - 2)","answer":"2","kind":"expression","finished":["2"],"ask":"Find the slope of the line through (2, 3) and (4, 7). Finish on one number.","graph":"2x - 1","steps":[
+  {"line":"4/2","rules":[],"why":"Slope is the rise over the run."},
+  {"line":"2","rules":[],"why":"Divide."}]},
+ {"id":"fn-e","area":"functions","start":"2x + y = 5","answer":"y = -2x + 5","kind":"system","vars":"xy","ask":"Write this line in the form y = mx + b.","goal":"y","graph":"-2x + 5","steps":[
+  {"line":"y = -2x + 5","rules":[],"why":"Subtract 2x from both sides."}]},
+ {"id":"fn-f","area":"functions","start":"3x + 2y = 6","answer":"y = (-3/2)x + 3","kind":"system","vars":"xy","ask":"Write this line in the form y = mx + b.","goal":"y","graph":"(-3/2)x + 3","steps":[
+  {"line":"2y = 6 - 3x","rules":[],"why":"Subtract 3x from both sides."},
+  {"line":"y = (-3/2)x + 3","rules":[],"why":"Divide every term by 2."}]},
+ {"id":"fn-g","area":"functions","start":"y = 2x + 3","answer":"x = (y - 3)/2","kind":"system","vars":"xy","ask":"To find the inverse of y = 2x + 3, solve it for x.","goal":"x","graph":"2x + 3","steps":[
+  {"line":"2x = y - 3","rules":[],"why":"Subtract 3 from both sides."},
+  {"line":"x = (y - 3)/2","rules":[],"why":"Divide both sides by 2."}]},
+ {"id":"fn-h","area":"functions","start":"y = 2x - 6, y = 0","answer":"x = 3, y = 0","kind":"system","vars":"xy","ask":"Find where the line y = 2x - 6 crosses the x-axis, where y = 0. Finish with x = a, y = b.","graph":"2x - 6","steps":[
+  {"line":"2x - 6 = 0","rules":[],"why":"Put 0 in place of y."},
+  {"line":"x = 3","rules":[],"why":"Add 6, then divide by 2."},
+  {"line":"x = 3, y = 0","rules":[],"why":"Write both values together."}]},
+ {"id":"fn-i","area":"functions","start":"x^2 - 5x + 6 = 0","answer":"2,3","ask":"Find where y = x^2 - 5x + 6 crosses the x-axis, by solving this.","graph":"x^2 - 5x + 6","steps":[
+  {"line":"(x - 2)(x - 3) = 0","rules":[],"why":"Find two numbers that multiply to 6 and add to -5."},
+  {"line":"x - 2 = 0 or x - 3 = 0","rules":[],"why":"One of the factors has to be zero."},
+  {"line":"x = 2 or x = 3","rules":[],"why":"Solve each one."}]},
+ {"id":"fn-j","area":"functions","start":"x - 2 >= 0","answer":"x >= 2","ask":"The domain of f(x) = sqrt(x - 2) is where the number under the root is not negative. Solve this.","graph":"sqrt(x - 2)","steps":[
+  {"line":"x >= 2","rules":[],"why":"Add 2 to both sides."}]},
+ {"id":"fn-k","area":"functions","start":"x - 3 < 0 or x - 3 > 0","answer":"x < 3 or x > 3","ask":"The domain of f(x) = 1/(x - 3) is everywhere the bottom is not zero. Solve this.","graph":"1/(x - 3)","steps":[
+  {"line":"x < 3 or x > 3","rules":[],"why":"Add 3 to both sides of each piece."}]},
+ {"id":"fn-l","area":"functions","start":"x^2 - 4x + 3","answer":"(x - 2)^2 - 1","kind":"expression","finished":["(x - 2)^2 - 1"],"ask":"Complete the square, so the turning point of y = x^2 - 4x + 3 shows.","graph":"x^2 - 4x + 3","steps":[
+  {"line":"(x - 2)^2 - 1","rules":[],"why":"Half of -4 is -2. (x - 2)^2 is x^2 - 4x + 4, so take 1 away to match. The turning point is (2, -1)."}]},
+ {"id":"fn-m","area":"functions","start":"(16 - 1)/(4 - 1)","answer":"5","kind":"expression","finished":["5"],"ask":"For f(x) = x^2, work out the average rate of change from x = 1 to x = 4. Finish on one number.","graph":"x^2","steps":[
+  {"line":"15/3","rules":[],"why":"Work out the top and the bottom."},
+  {"line":"5","rules":[],"why":"Divide."}]},
+ {"id":"fn-n","area":"functions","start":"y = x + 1, y = -x + 3","answer":"x = 1, y = 2","kind":"system","vars":"xy","ask":"Find where the lines y = x + 1 and y = -x + 3 meet. Finish with x = a, y = b.","graph":"x + 1","steps":[
+  {"line":"x + 1 = -x + 3","rules":[],"why":"Both equal y, so they equal each other."},
+  {"line":"2x = 2","rules":[],"why":"Add x to both sides, then subtract 1."},
+  {"line":"x = 1","rules":[],"why":"Divide both sides by 2."},
+  {"line":"y = 2","rules":[],"why":"Put x = 1 into y = x + 1."},
+  {"line":"x = 1, y = 2","rules":[],"why":"Write both values together."}]}
 ]

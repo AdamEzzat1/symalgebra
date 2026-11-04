@@ -18,6 +18,7 @@
 
   <section id="work" hidden>
     <p id="progress" class="note"></p>
+    <p id="prompt" hidden></p>
     <ol id="lines"></ol>
 
     <form id="entry" autocomplete="off">
@@ -27,7 +28,9 @@
         <button id="check" type="submit">Check</button>
       </div>
     </form>
+    <div id="graph" class="panel" hidden></div>
     <div id="keys" class="keys" aria-label="Symbols"></div>
+    <p id="two-answers" class="note" hidden></p>
 
     <div id="reply" aria-live="polite">
       <p id="message"></p>
@@ -40,8 +43,13 @@
       <button id="claim-none" type="button" class="quiet">No solution</button>
       <button id="claim-all" type="button" class="quiet">All real numbers</button>
       <button id="hint" type="button" class="quiet">Hint</button>
+      <button id="solution" type="button" class="quiet">Show the steps</button>
     </div>
     <p id="hint-text" class="panel" hidden></p>
+    <div id="solution-box" class="panel" hidden>
+      <ol id="solution-steps"></ol>
+      <p id="solution-ending"></p>
+    </div>
 
     <div class="row wrap">
       <button id="next" type="button" hidden>Next problem</button>

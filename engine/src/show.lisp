@@ -43,7 +43,10 @@
                (/ (format nil "~a/~a" (bracketed (first args) var) (bracketed (second args) var)))
                (^ (format nil "~a^~a" (bracketed (first args) var) (second args)))
                (neg (format nil "-~a" (bracketed (first args) var)))
-               (= (format nil "~a = ~a" (show (first args) var) (show (second args) var)))
+               (sqrt (format nil "sqrt(~a)" (show (first args) var)))
+               (abs (format nil "|~a|" (show (first args) var)))
+               ((= < <=) (format nil "~a ~a ~a" (show (first args) var) head (show (second args) var)))
+               (and (format nil "~{~a~^ and ~}" (mapcar (lambda (arg) (show arg var)) args)))
                (or (format nil "~{~a~^ or ~}" (mapcar (lambda (arg) (show arg var)) args))))))))
 
 (defun fill-template (template b var)

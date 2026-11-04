@@ -16,13 +16,14 @@ The file is S-expressions because the Lisp reader can load it unchanged.
 | `:guards` | Conditions from the closed list below |
 | `:params` | Metavariables that appear only in the replacement, each with a closed source |
 | `:explanation` | Template. `{?a}` shows that metavariable's matched text |
-| `:skills` | Tags from a closed list: arithmetic, identities, ordering, distribution, like-terms, fractions, balance, domains, quadratics |
+| `:skills` | Tags from a closed list: arithmetic, identities, ordering, distribution, like-terms, fractions, balance, domains, quadratics, radicals, polynomials |
 | `:mal` | `nil` for every rule here. A mal-rule needs published evidence or real observation (M5) |
 | `:positive` | `(before after)` line pairs where one use of the rule gives exactly `after` |
 | `:negative` | Line pairs the rule must not produce. Adding `guard` means only the guard stops it, and the step really is bad |
 
 In patterns, `?a` is a metavariable and a repeated name must match the same tree. `(neg ?a)` is unary
-minus. `(eval (+ ?m ?n))` computes exact arithmetic on literals. Numbers match literally.
+minus. `(eval (+ ?m ?n))` computes exact arithmetic on literals. Numbers match literally. `(rel ?a ?b)`
+stands for `<` or `<=`, and for the same one everywhere in the rule.
 
 ## Classes
 
@@ -45,9 +46,18 @@ from meaning, and a gained root is handled as [SEMANTICS.md](SEMANTICS.md) descr
 | `(total ?a)` | `?a` has a value everywhere: every denominator in it is a nonzero number |
 | `(factors ?m ?n ?s ?p)` | The literals `?m` and `?n` add to `?s` and multiply to `?p` |
 | `(square-of ?m ?p)` | The literal `?m` squared is `?p` |
+| `(cube-of ?m ?p)` | The literal `?m` cubed is `?p` |
+| `(positive-literal ?p)` | `?p` is a number above 0 |
+| `(positive-number ?p)`, `(negative-number ?p)` | `?p` is a number with that sign. These are semantic, so each must be shown to be needed |
+| `(real-discriminant ?a ?b ?c)` | `?b^2 - 4 * ?a * ?c` is not negative |
+| `(half-square ?s ?p)` | Half of `?s`, squared, is `?p` |
+| `(split-root ?m ?k ?p)` | `?p` is `?m` squared times `?k`, for whole `?m` above 0 and whole `?k` above 1 |
+| `(splits ?p ?q ?a ?b ?c)` | `(?p x + ?q)(?a/?p x + ?c/?q)` has coefficients `?a`, `?b`, `?c`, in whole numbers, for `?p` above 0 |
+| `(common-factor ?n ?c ...)` | Whole `?n` above 1 divides each of the others |
 
-`literal` is a type guard. The others are semantic, and the checker requires each to be necessary:
-with it removed, it must find a real counterexample. Parameter sources are `term`, `coefficient`,
+`literal`, `positive-literal` and `real-discriminant` are type guards: without them the line would have
+no value to compare, not a wrong one. The others are semantic, and the checker requires each to be
+necessary: with it removed, it must find a real counterexample. Parameter sources are `term`, `coefficient`,
 `lcd` and `pair`, the divisors of a line's integers with both signs. Adding to any closed list is a
 design change, not a data change.
 
@@ -64,7 +74,7 @@ sorted set, a repeated one counts once, and rules apply inside each alternative.
 
 ## Rules left out
 
-The brief capped the set at 40, and the owner's quadratics ruling of 2026-11-01 raised that to 50.
-Left out, all valid: `a - 0 → a`, `a / 1 → a`, `-(-a) → a`, factoring with a leading number such as
-`2x^2 + 7x + 3 → (2x + 1)(x + 3)`, and pulling a number out as in `2x + 4 → 2(x + 2)`. A student using
-one is accepted as "valid, method unnamed", never marked wrong.
+The brief capped the set at 40, and the owner's rulings of 2026-11-01 raised that to 50, then 65, then
+150 for the rest of algebra. Left out, all valid: `a - 0 → a`, `a / 1 → a`, `-(-a) → a`, and multiplying roots
+as in `sqrt(2) * sqrt(3) → sqrt(6)`. A student using one is accepted as "valid, method unnamed", never
+marked wrong.

@@ -1,6 +1,7 @@
 ;;;; The ordered tree of exactly what was typed. Nothing is simplified, so x/x stays x/x.
 ;;;; Numbers are exact rationals, the variable is :x, and heads match rules/rules.sexp:
-;;;; (+ a b) (- a b) (* a b) (/ a b) (neg a) (^ a n) (= left right) (or equation equation ...).
+;;;; (+ a b) (- a b) (* a b) (/ a b) (neg a) (^ a n) (sqrt a) (abs a), a relation (= left right) with
+;;;; < <= > >= in place of =, (and relation relation) for a range, (or relation-or-range ...).
 
 (in-package :symalgebra.engine)
 
@@ -15,6 +16,10 @@
 (defconstant +max-digits+ 8)
 (defconstant +max-depth+ 16)
 (defconstant +max-exponent+ 6)
+(defconstant +root-sign+ (code-char 8730))
+(defconstant +plus-minus+ (code-char 177))
+(defconstant +at-most+ (code-char 8804))
+(defconstant +at-least+ (code-char 8805))
 
 (defun ascii-digit-p (c)
   (char<= #\0 c #\9))
@@ -32,6 +37,12 @@
           (/ top (expt 10 (length part))))
         (parse-integer word))))
 
+(defvar *other-variables* "" "The letters of a system beyond its first, which read as :y and :z.")
+
+(defvar *imaginary* nil "True in a task where the letter i is the square root of -1.")
+
+(defvar *logs* nil "True in a task with logarithms, e, and any exponent.")
+
 (defun tokenize (text var)
   (let ((tokens '()) (i 0) (n (length text)))
     (loop while (< i n)
@@ -47,8 +58,33 @@
                      ((and (char= c #\o) (char/= var #\o) (< (1+ i) n) (char= (char text (1+ i)) #\r))
                       (push :or tokens)
                       (incf i 2))
+                     ((or (char= c +root-sign+) (eql (search "sqrt" text :start2 i :end2 (min n (+ i 4))) i))
+                      (push :sqrt tokens)
+                      (incf i (if (char= c +root-sign+) 1 4)))
+                     ((eql (search "abs" text :start2 i :end2 (min n (+ i 3))) i)
+                      (push :abs tokens)
+                      (incf i 3))
+                     ((char= c +plus-minus+) (push :pm tokens) (incf i))
+                     ((char= c +at-most+) (push :le tokens) (incf i))
+                     ((char= c +at-least+) (push :ge tokens) (incf i))
+                     ((find c "<>")
+                      (let ((loose (and (< (1+ i) n) (char= (char text (1+ i)) #\=))))
+                        (push (if (char= c #\<) (if loose :le :lt) (if loose :ge :gt)) tokens)
+                        (incf i (if loose 2 1))))
+                     ((and *logs* (eql (search "log" text :start2 i :end2 (min n (+ i 3))) i))
+                      (push :log tokens)
+                      (incf i 3))
+                     ((and *logs* (eql (search "ln" text :start2 i :end2 (min n (+ i 2))) i))
+                      (push :ln tokens)
+                      (incf i 2))
+                     ((and *logs* (char= c #\e)) (push :e tokens) (incf i))
                      ((char= c var) (push :var tokens) (incf i))
-                     ((find c "+-*/=()^") (push c tokens) (incf i))
+                     ((and *imaginary* (char= c #\i)) (push :i tokens) (incf i))
+                     ((find c *other-variables*)
+                      (push (if (zerop (position c *other-variables*)) :y :z) tokens)
+                      (incf i))
+                     ((find c "+-*/=()^|") (push c tokens) (incf i))
+                     ((and (char= c #\,) (plusp (length *other-variables*))) (push c tokens) (incf i))
                      ((alpha-char-p c) (refuse "unknown_symbol"))
                      (t (refuse "unparsed")))))
     (when (> (length tokens) +max-tokens+)
@@ -57,6 +93,8 @@
 
 (defvar *tokens*)
 (defvar *at*)
+(defvar *plus-minus* '+ "What a plus-or-minus sign reads as, on this pass over the line.")
+(defvar *in-bars* nil "True inside absolute value bars, where the next bar closes them.")
 
 (defun kind (&optional (offset 0))
   (let ((i (+ *at* offset)))
@@ -71,10 +109,15 @@
   (when (> depth +max-depth+)
     (refuse "too_deep"))
   (let ((left (parse-term depth)))
-    (loop while (member (kind) '(#\+ #\-))
-          do (let ((op (if (char= (take) #\+) '+ '-)))
+    (loop while (member (kind) '(#\+ #\- :pm))
+          do (let ((op (case (take) (#\+ '+) (#\- '-) (t *plus-minus*))))
                (setf left (list op left (parse-term depth)))))
     left))
+
+(defun multiplies-next-p (k)
+  "Does token kind K start a factor written straight after the last one?"
+  (or (member k '(:var :y :z :i :e :log :ln :sqrt :abs #\())
+      (and (eql k #\|) (not *in-bars*))))
 
 (defun parse-term (depth)
   (let ((left (parse-unary depth)))
@@ -87,23 +130,61 @@
                (take)
                (let ((right (parse-unary depth)))
                  ;; 1/2x could mean (1/2)x or 1/(2x), so it is a question, not a guess.
-                 (when (member (kind) '(:var #\())
+                 (when (multiplies-next-p (kind))
                    (refuse "ambiguous_division"))
                  (setf left (list '/ left right))))
-              ((member k '(:var #\())
+              ((multiplies-next-p k)
                (setf left (list '* left (parse-power depth))))
               (t (return left)))))))
+
+(defun negative (inner)
+  (if (numberp inner) (- inner) (list 'neg inner)))
 
 (defun parse-unary (depth)
   (cond ((eql (kind) #\-)
          (take)
+         (negative (parse-unary depth)))
+        ((eql (kind) :pm)
+         (take)
          (let ((inner (parse-unary depth)))
-           (if (numberp inner) (- inner) (list 'neg inner))))
+           (if (eq *plus-minus* '+) inner (negative inner))))
         (t (parse-power depth))))
+
+(defun read-base-p ()
+  "Is the bracket after log a base, with a second bracket after it?"
+  (and (eql (kind) #\()
+       (let ((depth 0))
+         (loop for i from 0
+               do (case (kind i)
+                    (#\( (incf depth))
+                    (#\) (decf depth)
+                     (when (zerop depth)
+                       (return (eql (kind (1+ i)) #\())))
+                    ((nil) (return nil)))))))
+
+(defun log-base-value (tree)
+  "A base written as a fraction in brackets."
+  (if (and (consp tree) (eq (first tree) '/) (numberp (second tree)) (numberp (third tree))
+           (/= (third tree) 0))
+      (/ (second tree) (third tree))
+      (refuse "log_base")))
+
+(defun parse-exponent (depth)
+  "The exponent after a ^ in a task with logarithms."
+  (let ((exponent (if (eql (kind) #\-)
+                      (progn (take) (negative (parse-atom depth)))
+                      (parse-atom depth))))
+    (if (and (integerp exponent) (< 0 exponent (1+ +max-exponent+)))
+        (values exponent t)
+        (values exponent nil))))
 
 (defun parse-power (depth)
   (let ((base (parse-atom depth)))
-    (cond ((eql (kind) #\^)
+    (cond ((and *logs* (eql (kind) #\^))
+           (take)
+           (multiple-value-bind (exponent plain) (parse-exponent depth)
+             (list (if (and plain (not (eq base :e))) '^ 'exp) base exponent)))
+          ((eql (kind) #\^)
            (take)
            (unless (eq (kind) :num)
              (refuse "unparsed"))
@@ -117,6 +198,21 @@
   (let ((k (kind)))
     (cond ((eq k :num) (take))
           ((eq k :var) (take) :x)
+          ((member k '(:y :z :i :e)) (take))
+          ((eq k :log)
+           (take)
+           (let ((base (if (eq (kind) :num) (take) (if (read-base-p) (parse-atom depth) 10))))
+             (list 'log (if (rationalp base) base (log-base-value base)) (parse-atom depth))))
+          ((eq k :ln) (take) (list 'log :e (parse-atom depth)))
+          ((eq k :sqrt) (take) (list 'sqrt (parse-atom depth)))
+          ((eq k :abs) (take) (list 'abs (parse-atom depth)))
+          ((and (eql k #\|) (not *in-bars*))
+           (take)
+           (let ((inner (let ((*in-bars* t)) (parse-expression (1+ depth)))))
+             (unless (eql (kind) #\|)
+               (refuse "unparsed"))
+             (take)
+             (list 'abs inner)))
           ((eql k #\()
            (take)
            (let ((inner (parse-expression (1+ depth))))
@@ -126,26 +222,64 @@
              inner))
           (t (refuse "unparsed")))))
 
-(defun parse-equation ()
-  (let ((left (parse-expression 0)))
-    (unless (eql (kind) #\=)
+(defun relation-head (k)
+  (case k (#\= '=) (:lt '<) (:le '<=) (:gt '>) (:ge '>=)))
+
+(defun same-way-p (a b)
+  (or (and (member a '(< <=)) (member b '(< <=)))
+      (and (member a '(> >=)) (member b '(> >=)))))
+
+(defun parse-relation ()
+  (let* ((left (parse-expression 0)) (head (relation-head (kind))))
+    (unless head
       (refuse "unparsed"))
     (take)
-    (list '= left (parse-expression 0))))
+    (let* ((middle (parse-expression 0)) (next (relation-head (kind))))
+      (cond ((null next) (list head left middle))
+            ((same-way-p head next)
+             (take)
+             (list 'and (list head left middle) (list next middle (parse-expression 0))))
+            (t (refuse "chain"))))))
 
-(defun parse-line (text &optional (var #\x))
-  "An (= left right) tree exactly as typed, or (or equation ...) for alternatives."
-  (let* ((*tokens* (tokenize text var))
-         (*at* 0)
-         (equations (list (parse-equation))))
+(defun parse-alternatives ()
+  (let* ((*at* 0)
+         (equations (list (parse-relation))))
     (loop while (eq (kind) :or)
           do (take)
-             (push (parse-equation) equations))
+             (push (parse-relation) equations))
     (when (kind)
-      (refuse (if (eql (kind) #\=) "chain" "unparsed")))
+      (refuse (if (relation-head (kind)) "chain" "unparsed")))
     (if (rest equations)
         (cons 'or (reverse equations))
         (first equations))))
+
+(defun parse-line (text &optional (var #\x))
+  "An (= left right) tree exactly as typed, or (or equation ...) for alternatives. One
+plus-or-minus sign on a line that has no `or` is the two alternatives it stands for."
+  (let* ((*tokens* (tokenize text var))
+         (signs (count :pm *tokens*)))
+    (cond ((zerop signs) (parse-alternatives))
+          ((or (> signs 1) (find :or *tokens*)) (refuse "unparsed"))
+          (t (list 'or
+                   (let ((*plus-minus* '+)) (parse-alternatives))
+                   (let ((*plus-minus* '-)) (parse-alternatives)))))))
+
+(defun parse-expression-line (text &optional (var #\x))
+  "The tree of an expression exactly as typed. A line with an equals sign here is unparsed."
+  (let* ((*tokens* (tokenize text var))
+         (*at* 0)
+         (tree (parse-expression 0)))
+    (when (or (kind) (find :pm *tokens*))
+      (refuse "unparsed"))
+    tree))
+
+(defvar *expression-task* nil "True while working on a task whose lines have no equals sign.")
+
+(defun read-tree (text var)
+  "A line of the current task, in the form rules read. An expression stands as an equation with 0."
+  (if *expression-task*
+      (list '= (parse-expression-line text var) 0)
+      (parse-line text var)))
 
 (defun tree-text (tree)
   "Fully bracketed text that parses back to TREE, for integer literals."
@@ -153,8 +287,11 @@
         ((numberp tree) (if (minusp tree) (format nil "(~a)" tree) (format nil "~a" tree)))
         (t (destructuring-bind (head &rest args) tree
              (case head
-               (= (format nil "~a = ~a" (tree-text (first args)) (tree-text (second args))))
+               ((= < <= > >=)
+                (format nil "~a ~a ~a" (tree-text (first args)) head (tree-text (second args))))
+               (abs (format nil "abs(~a)" (tree-text (first args))))
                (or (format nil "~{~a~^ or ~}" (mapcar #'tree-text args)))
                (neg (format nil "(-~a)" (tree-text (first args))))
+               (sqrt (format nil "sqrt(~a)" (tree-text (first args))))
                (^ (format nil "(~a^~a)" (tree-text (first args)) (second args)))
                (t (format nil "(~a ~a ~a)" (tree-text (first args)) head (tree-text (second args)))))))))

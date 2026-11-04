@@ -190,3 +190,25 @@ code { font: 1em var(--mono); }
   main { padding-top: 20px; }
   section { padding: 16px; }
 }
+
+#solution-steps span { display: block; font-size: 0.9em; }
+#solution-steps li { margin-bottom: 8px; }
+
+#graph svg {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+#graph .axis {
+  stroke: currentColor;
+  stroke-width: 0.06;
+  opacity: 0.5;
+}
+
+#graph .curve {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.12;
+}

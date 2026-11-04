@@ -12,7 +12,7 @@ from fractions import Fraction
 from lang import read_forms
 from semantics import verdict
 
-HEADS = {"+": "add", "*": "mul", "/": "div", "neg": "neg", "=": "eq"}
+HEADS = {"+": "add", "*": "mul", "/": "div", "neg": "neg", "sqrt": "sqrt", "=": "eq"}
 
 
 def tree(form):

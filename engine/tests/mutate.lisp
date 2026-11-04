@@ -1,7 +1,7 @@
 ;;;; Tier F mutation score: sbcl --script engine/tests/mutate.lisp, inside the image.
 ;;;; Each mutant is one fault in a copy of the source. A mutant survives if every test still passes.
 
-(defparameter *names* '("exact" "json" "load" "parse" "poly" "meaning" "rules" "search" "step" "show" "tutor"))
+(defparameter *names* (mapcar #'pathname-name (directory "engine/src/*.lisp")))
 (defparameter *copy* "mutant-src/")
 (defparameter *time-limit* "120")
 
@@ -59,7 +59,16 @@
       (prog1 (not (tests-pass-p))
         (spit (source-file *copy* name) original)))))
 
+(defun check-applies (mutant)
+  (destructuring-bind (name old new) mutant
+    (declare (ignore new))
+    (let ((found (occurrences old (slurp (source-file "engine/src/" name)))))
+      (unless (= found 1)
+        (format t "MUTANT DID NOT APPLY (~d matches): ~a~%" found old)
+        (sb-ext:exit :code 1 :abort t)))))
+
 (let ((mutants (read-mutants)) (killed 0))
+  (mapc #'check-applies mutants)
   (copy-source)
   (unless (tests-pass-p)
     (format t "BASELINE FAILS: the unmutated copy must pass~%")

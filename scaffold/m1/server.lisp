@@ -16,7 +16,7 @@
 (defpackage :symalgebra.m1.server
   (:use :cl :sb-bsd-sockets :symalgebra.m1.json :symalgebra.m1.api)
   (:import-from :symalgebra.engine #:load-practice #:practice-list #:practice-check #:practice-hint
-                #:bad-practice))
+                #:practice-solution #:practice-graph #:bad-practice))
 
 (in-package :symalgebra.m1.server)
 
@@ -123,6 +123,10 @@
                (handle-post stream head #'practice-check *practice*))
               ((and (string= method "POST") (string= path "/api/practice/hint"))
                (handle-post stream head #'practice-hint *practice*))
+              ((and (string= method "POST") (string= path "/api/practice/solution"))
+               (handle-post stream head #'practice-solution *practice*))
+              ((and (string= method "POST") (string= path "/api/practice/graph"))
+               (handle-post stream head #'practice-graph *practice*))
               (t (refuse stream 404)))))))
 
 (defun serve-connection (client)
